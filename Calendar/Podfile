@@ -7,3 +7,7 @@ use_frameworks!
 target 'Time+' do
   pod 'SQLite.swift', '~> 0.12.2'
 end
+
+target 'Time+Tests' do
+  pod 'SQLite.swift', '~> 0.12.2'
+end 

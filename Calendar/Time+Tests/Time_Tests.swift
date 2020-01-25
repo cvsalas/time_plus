@@ -20,8 +20,14 @@ class Time_Tests: XCTestCase {
     }
 
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        do{
+        for event in try EventsDatabase.sharedInstance.getEvents(time: "14:20", date: "2020-Jan-05"){
+            print(event[EventsDatabase.sharedInstance.columns.startTime])
+        }
+        }
+            catch{
+                fatalError("test failed")
+            }
     }
 
     func testPerformanceExample() {
