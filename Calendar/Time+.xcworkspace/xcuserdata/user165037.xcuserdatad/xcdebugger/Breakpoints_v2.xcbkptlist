@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "19E0765B-0C21-422B-8A9E-AFBF20ACF086"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "037E0335-3422-416E-9B5B-685C7A11F6E1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Time+/EventsDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "columns"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B06C2899-F5EB-4417-B03B-C2DB7948B4A5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Time+Tests/Time_Tests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "testExample()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9447C5E-EFDF-4739-A7D8-1AADAE7A5089"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Time+Tests/Time_Tests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "testExample()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "238D484A-D7A1-4EDA-BA76-AB4F0E50BA15"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Time+/EventsDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "EventsDatabase"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "238D484A-D7A1-4EDA-BA76-AB4F0E50BA15 - f86c0fb5f400ccc8"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Time_.EventsDatabase.deinit"
+                  moduleName = "Time+"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user165037/Desktop/time_plus/Calendar/Time+/EventsDatabase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "238D484A-D7A1-4EDA-BA76-AB4F0E50BA15 - bf101711b1b92ddb"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Time_.EventsDatabase.__deallocating_deinit"
+                  moduleName = "Time+"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user165037/Desktop/time_plus/Calendar/Time+/EventsDatabase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C67514F1-9F99-4AD0-B1CF-1A3FCB1D1A5E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Time+/EventsDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "EventsDatabase"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "C67514F1-9F99-4AD0-B1CF-1A3FCB1D1A5E - 53ff20222cc96996"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Time_.EventsDatabase.EventRepeate.init(rawValue: Swift.Int64) -&gt; Swift.Optional&lt;Time_.EventsDatabase.EventRepeate&gt;"
+                  moduleName = "Time+"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user165037/Desktop/time_plus/Calendar/Time+/EventsDatabase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "51">
+               </Location>
+               <Location
+                  uuid = "C67514F1-9F99-4AD0-B1CF-1A3FCB1D1A5E - 53ff20222cc96996"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Time_.EventsDatabase.EventRepeate.init(rawValue: Swift.Int64) -&gt; Swift.Optional&lt;Time_.EventsDatabase.EventRepeate&gt;"
+                  moduleName = "Time+"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user165037/Desktop/time_plus/Calendar/Time+/EventsDatabase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "62">
+               </Location>
+               <Location
+                  uuid = "C67514F1-9F99-4AD0-B1CF-1A3FCB1D1A5E - 53ff20222cc96996"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Time_.EventsDatabase.EventRepeate.init(rawValue: Swift.Int64) -&gt; Swift.Optional&lt;Time_.EventsDatabase.EventRepeate&gt;"
+                  moduleName = "Time+"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user165037/Desktop/time_plus/Calendar/Time+/EventsDatabase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "82">
+               </Location>
+               <Location
+                  uuid = "C67514F1-9F99-4AD0-B1CF-1A3FCB1D1A5E - 88ac905f36b0def7"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Time_.EventsDatabase.EventRepeate.rawValue.getter : Swift.Int64"
+                  moduleName = "Time+"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user165037/Desktop/time_plus/Calendar/Time+/EventsDatabase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "57">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B0EFF895-47EB-4EDE-A89B-5B1551B42354"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Time+/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "configureCalendar(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "22B99F80-9434-4E4A-A502-5C2913636D31"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Time+/EventsDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "datatypeValue"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
