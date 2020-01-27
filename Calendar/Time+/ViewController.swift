@@ -35,7 +35,7 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
     }
     
     func calendar(_ calendar: JTACMonthView, headerViewForDateRange range: (start: Date, end: Date), at indexPath: IndexPath) -> JTACMonthReusableView{
-        formatter.dateFormat = "MMM"
+        formatter.dateFormat = "MMM yyyy"
         let header = calendar.dequeueReusableJTAppleSupplementaryView(withReuseIdentifier: "MonthHeader", for: indexPath) as! MonthHeaderClass
         header.monthLabel.text = formatter.string(from: range.start)
         return header
