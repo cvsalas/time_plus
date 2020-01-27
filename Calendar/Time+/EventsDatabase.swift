@@ -16,13 +16,13 @@ class EventsDatabase {
     }
     
     /*typealias Event = (id: Int64,
-                        startTime: Date,
-                        endTime: Date,
-                        date: Date,
-                        repeate: Int64,
-                        icon: String,
-                        image: String,
-                        notification: Int64)*/
+     startTime: Date,
+     endTime: Date,
+     date: Date,
+     repeate: Int64,
+     icon: String,
+     image: String,
+     notification: Int64)*/
     
     let db : Connection
     let eventsTable = Table("events")
@@ -34,8 +34,8 @@ class EventsDatabase {
                    icon: Expression<String>("icon"),
                    image: Expression<String>("image"),
                    notification: Expression<Int64>("notification"))
-                   
-                   
+    
+    
     
     let dataBasePath =  "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!)/db.sqlite3"
     
@@ -52,8 +52,8 @@ class EventsDatabase {
                 t.column(columns.startTime)
                 t.column(columns.endTime)
                 t.column(columns.date)
-                t.column(columns.repeate,
-                         check: EventRepeate.none.rawValue...EventRepeate.weekely.rawValue ~= columns.repeate
+                t.column(columns.repeate
+                    /*, check: EventRepeate.none.rawValue...EventRepeate.weekely.rawValue ~= columns.repeate*/
                 )
                 t.column(columns.icon)
                 t.column(columns.image)
@@ -61,43 +61,119 @@ class EventsDatabase {
             })
             
         } catch Result.error(let message, let code, let statment){
-            fatalError("\(message) error code: \(code)")
+            fatalError("\(message) error code: \(code) statment: \(String(describing: statment))")
         } catch {
             fatalError("unknown error opening database")
         }
+        
         dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
         dateFormatter.dateFormat = "yyyy-MM-dd"
-
+        
         timeFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
         timeFormatter.dateFormat = "HH:mm"
+    }
+    
+    func updateEvents(cond: Expression<Bool>,  startTime: String? = nil, endTime: String? = nil, date: String? = nil,
+                      repeate: EventRepeate? = nil, iconPath: String? = nil, imagePath: String? = nil, notification: Int64? = nil){
+        updateEvent(cond: cond,
+                    startTime: startTime != nil ? timeFormatter.date(from: startTime!) : nil,
+                    endTime: endTime != nil ? timeFormatter.date(from: endTime!) : nil,
+                    date: date != nil ? dateFormatter.date(from: date!) : nil,
+                    iconPath: iconPath, imagePath: imagePath)
+    }
+    
+    
+    func updateEvent(cond: Expression<Bool>, startTime: Date? = nil, endTime: Date? = nil, date: Date? = nil,
+                     repeate: EventRepeate? = nil, iconPath: String? = nil, imagePath: String? = nil, notification: Int64? = nil) {
         
-        // test
+        let filterExpr = eventsTable.filter(cond)
+        var setters : [Setter] = []
+        
+        if let val = startTime{
+            setters.append(columns.startTime <- val)
+        }
+        
+        if let val = endTime{
+            setters.append(columns.endTime <- val)
+        }
+        
+        if let val = date{
+            setters.append(columns.date <- val)
+        }
+        
+        if let val = repeate{
+            setters.append(columns.repeate <- val.rawValue)
+        }
+        
+        if let val = iconPath{
+            setters.append(columns.icon <- val)
+        }
+        
+        if let val = imagePath{
+            setters.append(columns.image <- val)
+        }
+        
+        if let val = notification{
+            setters.append(columns.notification <- val)
+        }
+        
+        do{
+            try db.run(filterExpr.update(setters))
+        } catch {
+            fatalError("Could not update value")
+        }
+        
+    }
+    
+    
+    func enterEvent(startTime: String, endTime: String, date: String,
+                    repeate: EventRepeate = .none, iconPath: String, imagePath: String, notification: Int64 = 0) {
+        
+        enterEvent(startTime: timeFormatter.date(from: startTime)!, endTime: timeFormatter.date(from: endTime)!,
+                   date: dateFormatter.date(from: date)!, iconPath: iconPath, imagePath: imagePath)
+    }
+    
+    func enterEvent(startTime: Date, endTime: Date, date: Date,
+                    repeate: EventRepeate = .none, iconPath: String, imagePath: String, notification: Int64 = 0) {
+        
         let insert = eventsTable.insert(
-            columns.startTime <- timeFormatter.date(from: "14:15")!,
-            columns.endTime <- timeFormatter.date(from: "14:30")!,
-            columns.date <- dateFormatter.date(from: "2020-Jan-05")!,
+            columns.startTime <- startTime,
+            columns.endTime <- endTime,
+            columns.date <- date,
             columns.repeate <- EventRepeate.none.rawValue,
             columns.icon <- " ",
             columns.image <- " ",
             columns.notification <- 0)
+        
         do{
             try db.run(insert)
         }catch{
             fatalError("could not insert")
-
         }
-
-
+        
     }
     
-     
-   public func getEvents(time: String, date: String) throws -> [Row]{
-        let time = timeFormatter.date(from: time)
-        let date = dateFormatter.date(from: date)
+    func getEvents(startTime: String, endTime: String, date: String) -> [Row]{
         
-        let query = eventsTable.filter(columns.startTime <= time! && columns.endTime >= time! && columns.date == date!)
+        return  getEvents(startTime: timeFormatter.date(from: startTime)!,
+                          endTime: timeFormatter.date(from: endTime)!,
+                          date: dateFormatter.date(from: date)!)
         
-        return Array(try db.prepare(query))
+    }
+    
+    func getEvents(startTime: Date, endTime: Date, date: Date) -> [Row]{
+        
+        let query = eventsTable.filter(
+            !((columns.startTime < startTime && columns.endTime < startTime) ||
+                (columns.startTime > endTime && columns.endTime > endTime))
+                && columns.date == date)
+        do{
+            return Array(try db.prepare(query))
+            
+        } catch{
+            fatalError("could not getEvents")
+            
+        }
     }
     
 }
