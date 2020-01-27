@@ -36,13 +36,15 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
     
     func calendar(_ calendar: JTACMonthView, headerViewForDateRange range: (start: Date, end: Date), at indexPath: IndexPath) -> JTACMonthReusableView{
         formatter.dateFormat = "MMM yyyy"
+        let dateString = formatter.string(from: range.start).components(separatedBy: " ")
         let header = calendar.dequeueReusableJTAppleSupplementaryView(withReuseIdentifier: "MonthHeader", for: indexPath) as! MonthHeaderClass
-        header.monthLabel.text = formatter.string(from: range.start)
+        header.monthLabel.text = dateString[0]
+        header.yearLabel.text = dateString[1]
         return header
     }
     
     func calendarSizeForMonths(_ calendar: JTACMonthView?) -> MonthSize?{
-        return MonthSize(defaultSize: 50)
+        return MonthSize(defaultSize: 110)
     }
 
     

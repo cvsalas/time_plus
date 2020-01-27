@@ -10,10 +10,28 @@ import UIKit
 import SQLite
 import Foundation
 
-class EventsDatabase {
-    enum EventRepeate: Int64{
-        case none = 0, daily, weekely
+
+enum EventRepeate: Int64{
+    case none = 0, daily, weekely 
+}
+
+extension EventRepeate : Value{
+    static var declaredDatatype: String {
+        return "INTEGER"
     }
+
+    static func fromDatatypeValue(_ datatypeValue: Int64) -> EventRepeate{
+        return EventRepeate(rawValue: datatypeValue)!
+    }
+
+    var datatypeValue: Datatype {
+        print("self.rawvalue = \(self.rawValue)")
+        return self.rawValue
+    }
+}
+
+
+class EventsDatabase {
     
     /*typealias Event = (id: Int64,
      startTime: Date,
@@ -30,7 +48,7 @@ class EventsDatabase {
                    startTime: Expression<Date>("startTime"),
                    endTime: Expression<Date>("endTime"),
                    date: Expression<Date>("date"),
-                   repeate: Expression<Int64>("repeate"),
+                   repeate: Expression<EventRepeate>("repeate"),
                    icon: Expression<String>("icon"),
                    image: Expression<String>("image"),
                    notification: Expression<Int64>("notification"))
@@ -52,9 +70,7 @@ class EventsDatabase {
                 t.column(columns.startTime)
                 t.column(columns.endTime)
                 t.column(columns.date)
-                t.column(columns.repeate
-                    /*, check: EventRepeate.none.rawValue...EventRepeate.weekely.rawValue ~= columns.repeate*/
-                )
+                t.column(columns.repeate)
                 t.column(columns.icon)
                 t.column(columns.image)
                 t.column(columns.notification)
@@ -79,6 +95,7 @@ class EventsDatabase {
                     startTime: startTime != nil ? timeFormatter.date(from: startTime!) : nil,
                     endTime: endTime != nil ? timeFormatter.date(from: endTime!) : nil,
                     date: date != nil ? dateFormatter.date(from: date!) : nil,
+                    repeate: repeate != nil ? repeate : nil,
                     iconPath: iconPath, imagePath: imagePath)
     }
     
@@ -102,7 +119,7 @@ class EventsDatabase {
         }
         
         if let val = repeate{
-            setters.append(columns.repeate <- val.rawValue)
+            setters.append(columns.repeate <- val)
         }
         
         if let val = iconPath{
@@ -130,7 +147,7 @@ class EventsDatabase {
                     repeate: EventRepeate = .none, iconPath: String, imagePath: String, notification: Int64 = 0) {
         
         enterEvent(startTime: timeFormatter.date(from: startTime)!, endTime: timeFormatter.date(from: endTime)!,
-                   date: dateFormatter.date(from: date)!, iconPath: iconPath, imagePath: imagePath)
+                   date: dateFormatter.date(from: date)!, repeate: repeate, iconPath: iconPath, imagePath: imagePath)
     }
     
     func enterEvent(startTime: Date, endTime: Date, date: Date,
@@ -140,7 +157,7 @@ class EventsDatabase {
             columns.startTime <- startTime,
             columns.endTime <- endTime,
             columns.date <- date,
-            columns.repeate <- EventRepeate.none.rawValue,
+            columns.repeate <- repeate,
             columns.icon <- " ",
             columns.image <- " ",
             columns.notification <- 0)

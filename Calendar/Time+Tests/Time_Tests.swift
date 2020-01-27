@@ -25,10 +25,10 @@ class Time_Tests: XCTestCase {
         timeFormatter.dateFormat = "HH:mm"
         
         EventsDatabase.sharedInstance.enterEvent(startTime: "15:00", endTime: "16:00", date: "2020-Jan-15", iconPath: "yoMama", imagePath: "yoAunti")
-       // EventsDatabase.sharedInstance.enterEvent(startTime: "15:10", endTime: "16:00", date: "2020-Jan-15", iconPath: "yoMama", imagePath: "yoAunti")
+        EventsDatabase.sharedInstance.enterEvent(startTime: "15:10", endTime: "16:00", date: "2020-Jan-15", repeate: .daily, iconPath: "yoMama", imagePath: "yoAunti" )
 
         for event in EventsDatabase.sharedInstance.getEvents(startTime: "14:20", endTime: "16:00", date: "2020-Jan-15"){
-            print("start Time is \(timeFormatter.string(from: event[EventsDatabase.sharedInstance.columns.startTime])) , End time is \(timeFormatter.string(from: event[EventsDatabase.sharedInstance.columns.endTime])) Date is \(event[EventsDatabase.sharedInstance.columns.date]), icon path is \(event[EventsDatabase.sharedInstance.columns.icon])")
+            print("start Time is \(timeFormatter.string(from: event[EventsDatabase.sharedInstance.columns.startTime])) , End time is \(timeFormatter.string(from: event[EventsDatabase.sharedInstance.columns.endTime])) Date is \(event[EventsDatabase.sharedInstance.columns.date]), icon path is \(event[EventsDatabase.sharedInstance.columns.icon]), repeate is  \(event[EventsDatabase.sharedInstance.columns.repeate])")
         }
         
     }

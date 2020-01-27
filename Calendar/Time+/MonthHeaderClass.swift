@@ -11,5 +11,6 @@ import JTAppleCalendar
 
 class MonthHeaderClass: JTACMonthReusableView {
         
+    @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
 }
