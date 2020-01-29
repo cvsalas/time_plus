@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		720118E323CFA37A00A3A227 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720118E223CFA37A00A3A227 /* LaunchScreen.storyboard */; };
+		7216AECA23E1146100962A0F /* HourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7216AEC923E1146100962A0F /* HourCell.swift */; };
+		7216AECC23E121E600962A0F /* DayTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7216AECB23E121E600962A0F /* DayTableController.swift */; };
 		7269234F23DBC5E20033B63B /* EventsDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7269234E23DBC5E20033B63B /* EventsDatabase.swift */; };
 		7269235323DBC9490033B63B /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7269235223DBC9490033B63B /* SQLite.framework */; };
 		7269235E23DBFF7F0033B63B /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7269235D23DBFF7F0033B63B /* SQLite.framework */; };
@@ -62,6 +64,8 @@
 /* Begin PBXFileReference section */
 		21259B379CA5D4B29AE3CDDD /* Pods-Time+.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time+.release.xcconfig"; path = "Target Support Files/Pods-Time+/Pods-Time+.release.xcconfig"; sourceTree = "<group>"; };
 		720118E223CFA37A00A3A227 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7216AEC923E1146100962A0F /* HourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCell.swift; sourceTree = "<group>"; };
+		7216AECB23E121E600962A0F /* DayTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableController.swift; sourceTree = "<group>"; };
 		7269234E23DBC5E20033B63B /* EventsDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDatabase.swift; sourceTree = "<group>"; };
 		7269235223DBC9490033B63B /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7269235D23DBFF7F0033B63B /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +175,8 @@
 				811521C723CD272C0055F6F9 /* SecondViewController.swift */,
 				720118E223CFA37A00A3A227 /* LaunchScreen.storyboard */,
 				7269234E23DBC5E20033B63B /* EventsDatabase.swift */,
+				7216AEC923E1146100962A0F /* HourCell.swift */,
+				7216AECB23E121E600962A0F /* DayTableController.swift */,
 			);
 			path = "Time+";
 			sourceTree = "<group>";
@@ -449,11 +455,13 @@
 				F1E545E82390A2150046525A /* ViewController.swift in Sources */,
 				7269234F23DBC5E20033B63B /* EventsDatabase.swift in Sources */,
 				F1E545E42390A2150046525A /* AppDelegate.swift in Sources */,
+				7216AECA23E1146100962A0F /* HourCell.swift in Sources */,
 				F1D51DBB239214F400C411C7 /* DayCell.swift in Sources */,
 				F1E545E62390A2150046525A /* SceneDelegate.swift in Sources */,
 				811521C823CD272C0055F6F9 /* SecondViewController.swift in Sources */,
 				811521C623CD1FAB0055F6F9 /* MonthHeaderClass.swift in Sources */,
 				F1114D2B2394BA1600EE3803 /* Event.swift in Sources */,
+				7216AECC23E121E600962A0F /* DayTableController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

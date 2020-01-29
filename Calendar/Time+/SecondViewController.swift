@@ -13,10 +13,16 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var weekDayLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var hourlyTable: UITableView!
+    
+    let tableController = DayTableController(clocksDir: "")
     var receivedDate = (weekDay: "", date: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hourlyTable.dataSource = tableController
+        hourlyTable.delegate = tableController
+        
         weekDayLabel.text = receivedDate.weekDay
         dateLabel.text = receivedDate.date
         // Do any additional setup after loading the view.
