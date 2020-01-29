@@ -20,6 +20,8 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
         super.viewDidLoad()
         calendarView.scrollingMode = .stopAtEachCalendarFrame
         calendarView.scrollDirection = .horizontal
+    self.navigationController?.setNavigationBarHidden(true, animated: true)
+
         // Do any additional setup after loading the view.
     }
     
