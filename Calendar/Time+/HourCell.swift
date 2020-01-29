@@ -10,6 +10,7 @@ import UIKit
 
 class HourCell: UITableViewCell {
 
+    @IBOutlet weak var sunMoonImage: UIImageView!
     @IBOutlet weak var clockImage: UIImageView!
     @IBOutlet var firstHalfImages : [UIImageView]!
     @IBOutlet var secondHalfImages : [UIImageView]!
