@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B27625A23E2B30600053AD1 /* fa-solid-900.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B27625823E2B30600053AD1 /* fa-solid-900.ttf */; };
+		2B27625B23E2B30600053AD1 /* fa-regular-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B27625923E2B30600053AD1 /* fa-regular-400.ttf */; };
 		720118E323CFA37A00A3A227 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720118E223CFA37A00A3A227 /* LaunchScreen.storyboard */; };
 		7269234F23DBC5E20033B63B /* EventsDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7269234E23DBC5E20033B63B /* EventsDatabase.swift */; };
 		7269235323DBC9490033B63B /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7269235223DBC9490033B63B /* SQLite.framework */; };
@@ -61,6 +63,8 @@
 
 /* Begin PBXFileReference section */
 		21259B379CA5D4B29AE3CDDD /* Pods-Time+.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time+.release.xcconfig"; path = "Target Support Files/Pods-Time+/Pods-Time+.release.xcconfig"; sourceTree = "<group>"; };
+		2B27625823E2B30600053AD1 /* fa-solid-900.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fa-solid-900.ttf"; path = "../../../Font-Awesome-master/webfonts/fa-solid-900.ttf"; sourceTree = "<group>"; };
+		2B27625923E2B30600053AD1 /* fa-regular-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fa-regular-400.ttf"; path = "../../../Font-Awesome-master/webfonts/fa-regular-400.ttf"; sourceTree = "<group>"; };
 		720118E223CFA37A00A3A227 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7269234E23DBC5E20033B63B /* EventsDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDatabase.swift; sourceTree = "<group>"; };
 		7269235223DBC9490033B63B /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +126,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B27625723E2B2CC00053AD1 /* Font Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2B27625923E2B30600053AD1 /* fa-regular-400.ttf */,
+				2B27625823E2B30600053AD1 /* fa-solid-900.ttf */,
+			);
+			path = "Font Resources";
+			sourceTree = "<group>";
+		};
 		F13DB5E062806C2D64B6145F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +149,7 @@
 		F1E545D72390A2150046525A = {
 			isa = PBXGroup;
 			children = (
+				2B27625723E2B2CC00053AD1 /* Font Resources */,
 				F1E546152390A2520046525A /* JTAppleCalendar.xcodeproj */,
 				F1E545E22390A2150046525A /* Time+ */,
 				F1E545F92390A2170046525A /* Time+Tests */,
@@ -339,6 +353,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				720118E323CFA37A00A3A227 /* LaunchScreen.storyboard in Resources */,
+				2B27625B23E2B30600053AD1 /* fa-regular-400.ttf in Resources */,
+				2B27625A23E2B30600053AD1 /* fa-solid-900.ttf in Resources */,
 				F1E545ED2390A2170046525A /* Assets.xcassets in Resources */,
 				F1E545EB2390A2150046525A /* Main.storyboard in Resources */,
 			);
