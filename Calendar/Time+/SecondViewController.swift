@@ -19,6 +19,7 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         weekDayLabel.text = receivedDate.weekDay
         dateLabel.text = receivedDate.date
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         // Do any additional setup after loading the view.
     }
 
