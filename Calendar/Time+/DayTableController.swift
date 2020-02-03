@@ -8,7 +8,11 @@
 
 import UIKit
 
-class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
+class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource, DatePickerWithDoneDelegate {
+    func doneTapped() {
+        print("hello")
+    }
+    
     
     var clocksImages : [UIImage] = []
     let numOfCells = 24
@@ -34,6 +38,14 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
         cell.sunMoonImage.image = sunMoonImage
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let size = tableView.frame.size.height/2
+        let d = DatePickerWithDone(frame: CGRect(x: 0, y: tableView.frame.size.height - size, width: tableView.frame.size.width, height: size))
+        d.delegate = self
+        d.frame = CGRect(x: 0, y: tableView.frame.size.height - size - 100, width: tableView.frame.size.width, height: size + 100)
+        tableView.addSubview(d)
     }
 
 }

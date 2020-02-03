@@ -16,6 +16,7 @@
 		811521C623CD1FAB0055F6F9 /* MonthHeaderClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811521C523CD1FAB0055F6F9 /* MonthHeaderClass.swift */; };
 		811521C823CD272C0055F6F9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811521C723CD272C0055F6F9 /* SecondViewController.swift */; };
 		81CD934F23D816AC0021D12D /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81CD934E23D816AC0021D12D /* SQLite.framework */; };
+		81FD006223E69DBB00CB094A /* DatePickerWithDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD006123E69DBB00CB094A /* DatePickerWithDone.swift */; };
 		946A0B5A22E43D69C84E9391 /* Pods_Time_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF58B56B9F0112D657016630 /* Pods_Time_.framework */; };
 		F1114D2B2394BA1600EE3803 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1114D2A2394BA1600EE3803 /* Event.swift */; };
 		F1D51DBB239214F400C411C7 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D51DBA239214F400C411C7 /* DayCell.swift */; };
@@ -72,6 +73,7 @@
 		811521C523CD1FAB0055F6F9 /* MonthHeaderClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeaderClass.swift; sourceTree = "<group>"; };
 		811521C723CD272C0055F6F9 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		81CD934E23D816AC0021D12D /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81FD006123E69DBB00CB094A /* DatePickerWithDone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerWithDone.swift; sourceTree = "<group>"; };
 		AEDCDABBC36C882821061D7C /* Pods_Time_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Time_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2A49AEDB1BF5B0650DF0D26 /* Pods-Time+.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time+.debug.xcconfig"; path = "Target Support Files/Pods-Time+/Pods-Time+.debug.xcconfig"; sourceTree = "<group>"; };
 		BA2487EEB068272DECECABBE /* Pods-Time+Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time+Tests.release.xcconfig"; path = "Target Support Files/Pods-Time+Tests/Pods-Time+Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				7269234E23DBC5E20033B63B /* EventsDatabase.swift */,
 				7216AEC923E1146100962A0F /* HourCell.swift */,
 				7216AECB23E121E600962A0F /* DayTableController.swift */,
+				81FD006123E69DBB00CB094A /* DatePickerWithDone.swift */,
 			);
 			path = "Time+";
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				811521C823CD272C0055F6F9 /* SecondViewController.swift in Sources */,
 				811521C623CD1FAB0055F6F9 /* MonthHeaderClass.swift in Sources */,
 				F1114D2B2394BA1600EE3803 /* Event.swift in Sources */,
+				81FD006223E69DBB00CB094A /* DatePickerWithDone.swift in Sources */,
 				7216AECC23E121E600962A0F /* DayTableController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
