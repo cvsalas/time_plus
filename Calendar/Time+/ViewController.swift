@@ -35,11 +35,10 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
     }
     
     func calendar(_ calendar: JTACMonthView, headerViewForDateRange range: (start: Date, end: Date), at indexPath: IndexPath) -> JTACMonthReusableView{
-        formatter.dateFormat = "MMM yyyy"
+        formatter.dateFormat = "MMMM yyyy"
         let dateString = formatter.string(from: range.start).components(separatedBy: " ")
         let header = calendar.dequeueReusableJTAppleSupplementaryView(withReuseIdentifier: "MonthHeader", for: indexPath) as! MonthHeaderClass
-        header.monthLabel.text = dateString[0]
-        header.yearLabel.text = dateString[1]
+        header.monthLabel.text = dateString[0] + " " + dateString[1]
         return header
     }
     
@@ -82,7 +81,6 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
     }
     
     func calendar(_ calendar: JTACMonthView, didSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath){
-        
         selectedDate = date
         performSegue(withIdentifier: "firstLink", sender: self)
        
