@@ -20,6 +20,7 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableController.view = self
         hourlyTable.dataSource = tableController
         hourlyTable.delegate = tableController
         

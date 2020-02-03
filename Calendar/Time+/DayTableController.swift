@@ -16,6 +16,7 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource, 
     
     var clocksImages : [UIImage] = []
     let numOfCells = 24
+    var view : UIViewController?
     
     init(clocksDir: String){
         for _ in 0...numOfCells{
@@ -41,11 +42,12 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource, 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let size = tableView.frame.size.height/2
+        view?.performSegue(withIdentifier: "toAddEvent", sender: view)
+       /* let size = tableView.frame.size.height/2
         let d = DatePickerWithDone(frame: CGRect(x: 0, y: tableView.frame.size.height - size, width: tableView.frame.size.width, height: size))
         d.delegate = self
         d.frame = CGRect(x: 0, y: tableView.frame.size.height - size - 100, width: tableView.frame.size.width, height: size + 100)
-        tableView.addSubview(d)
+        tableView.addSubview(d)*/
     }
 
 }
