@@ -10,7 +10,7 @@ import UIKit
 import JTAppleCalendar
 
 class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewDataSource {
-        
+    
     @IBOutlet weak var calendarView: JTACMonthView!
     
     fileprivate var selectedDate = Date()
@@ -45,11 +45,11 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
     func calendarSizeForMonths(_ calendar: JTACMonthView?) -> MonthSize?{
         return MonthSize(defaultSize: 110)
     }
-
+    
     
     func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
         
-       
+        
         formatter.dateFormat = "yyyy MM dd"
         let startDate = Date()
         let endDate = formatter.date(from: "2020 12 31")
@@ -83,7 +83,7 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
     func calendar(_ calendar: JTACMonthView, didSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath){
         selectedDate = date
         performSegue(withIdentifier: "firstLink", sender: self)
-       
+        
     }
     
     @IBAction func toHelpScreen(_ sender: Any) {
@@ -92,17 +92,15 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "firstLink"){
-            let dayView = segue.destination as! SecondViewController
-                  formatter.dateFormat = "EEE, MMM dd"
-                  let dateString = formatter.string(from: selectedDate).components(separatedBy: ",")
-                  dayView.receivedDate.weekDay = dateString[0]
-                  dayView.receivedDate.date = dateString[1]
+            let dayView = segue.destination as! DailyViewController
+            dayView.receivedDate = selectedDate
+            
         } else if (segue.identifier == "HelpScreenSegue"){
             //Nothing here for now
         }
-      
+        
         
     }
-
+    
 }
 

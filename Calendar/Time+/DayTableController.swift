@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource, DatePickerWithDoneDelegate {
+class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
     func doneTapped() {
         print("hello")
     }

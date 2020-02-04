@@ -8,24 +8,28 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class DailyViewController: UIViewController {
 
     
     @IBOutlet weak var weekDayLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var hourlyTable: UITableView!
     
-    let tableController = DayTableController(clocksDir: "")
-    var receivedDate = (weekDay: "", date: "")
+    var tableController : DayTableController!
+    var receivedDate : Date!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableController = DayTableController(clocksDir: "")
         tableController.view = self
         hourlyTable.dataSource = tableController
         hourlyTable.delegate = tableController
         
-        weekDayLabel.text = receivedDate.weekDay
-        dateLabel.text = receivedDate.date
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEE, MMM dd "
+        let dateElements = formatter.string(from: receivedDate).components(separatedBy: ",")
+        weekDayLabel.text = dateElements[0]
+        dateLabel.text = dateElements[1]
         // Do any additional setup after loading the view.
     }
 

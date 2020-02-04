@@ -13,8 +13,9 @@
 		7269234F23DBC5E20033B63B /* EventsDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7269234E23DBC5E20033B63B /* EventsDatabase.swift */; };
 		7269235323DBC9490033B63B /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7269235223DBC9490033B63B /* SQLite.framework */; };
 		7269235E23DBFF7F0033B63B /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7269235D23DBFF7F0033B63B /* SQLite.framework */; };
+		810F6DD823E944120083224F /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F6DD723E944120083224F /* AddEventViewController.swift */; };
 		811521C623CD1FAB0055F6F9 /* MonthHeaderClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811521C523CD1FAB0055F6F9 /* MonthHeaderClass.swift */; };
-		811521C823CD272C0055F6F9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811521C723CD272C0055F6F9 /* SecondViewController.swift */; };
+		811521C823CD272C0055F6F9 /* DailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811521C723CD272C0055F6F9 /* DailyViewController.swift */; };
 		81CD934F23D816AC0021D12D /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81CD934E23D816AC0021D12D /* SQLite.framework */; };
 		81FD006223E69DBB00CB094A /* DatePickerWithDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD006123E69DBB00CB094A /* DatePickerWithDone.swift */; };
 		8FD1005923E8E90A004FA125 /* helpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD1005823E8E90A004FA125 /* helpScreenViewController.swift */; };
@@ -71,8 +72,9 @@
 		7269234E23DBC5E20033B63B /* EventsDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDatabase.swift; sourceTree = "<group>"; };
 		7269235223DBC9490033B63B /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7269235D23DBFF7F0033B63B /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		810F6DD723E944120083224F /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		811521C523CD1FAB0055F6F9 /* MonthHeaderClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeaderClass.swift; sourceTree = "<group>"; };
-		811521C723CD272C0055F6F9 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		811521C723CD272C0055F6F9 /* DailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
 		81CD934E23D816AC0021D12D /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81FD006123E69DBB00CB094A /* DatePickerWithDone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerWithDone.swift; sourceTree = "<group>"; };
 		8FD1005823E8E90A004FA125 /* helpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpScreenViewController.swift; sourceTree = "<group>"; };
@@ -177,12 +179,13 @@
 				F1E545F12390A2170046525A /* Info.plist */,
 				F1D51DBA239214F400C411C7 /* DayCell.swift */,
 				F1114D2A2394BA1600EE3803 /* Event.swift */,
-				811521C723CD272C0055F6F9 /* SecondViewController.swift */,
+				811521C723CD272C0055F6F9 /* DailyViewController.swift */,
 				720118E223CFA37A00A3A227 /* LaunchScreen.storyboard */,
 				7269234E23DBC5E20033B63B /* EventsDatabase.swift */,
 				7216AEC923E1146100962A0F /* HourCell.swift */,
 				7216AECB23E121E600962A0F /* DayTableController.swift */,
 				81FD006123E69DBB00CB094A /* DatePickerWithDone.swift */,
+				810F6DD723E944120083224F /* AddEventViewController.swift */,
 			);
 			path = "Time+";
 			sourceTree = "<group>";
@@ -459,13 +462,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1E545E82390A2150046525A /* ViewController.swift in Sources */,
+				810F6DD823E944120083224F /* AddEventViewController.swift in Sources */,
 				8FD1005923E8E90A004FA125 /* helpScreenViewController.swift in Sources */,
 				7269234F23DBC5E20033B63B /* EventsDatabase.swift in Sources */,
 				F1E545E42390A2150046525A /* AppDelegate.swift in Sources */,
 				7216AECA23E1146100962A0F /* HourCell.swift in Sources */,
 				F1D51DBB239214F400C411C7 /* DayCell.swift in Sources */,
 				F1E545E62390A2150046525A /* SceneDelegate.swift in Sources */,
-				811521C823CD272C0055F6F9 /* SecondViewController.swift in Sources */,
+				811521C823CD272C0055F6F9 /* DailyViewController.swift in Sources */,
 				811521C623CD1FAB0055F6F9 /* MonthHeaderClass.swift in Sources */,
 				F1114D2B2394BA1600EE3803 /* Event.swift in Sources */,
 				81FD006223E69DBB00CB094A /* DatePickerWithDone.swift in Sources */,
