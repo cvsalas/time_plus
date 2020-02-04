@@ -84,17 +84,23 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
         selectedDate = date
         performSegue(withIdentifier: "firstLink", sender: self)
        
-        
     }
     
+    @IBAction func toHelpScreen(_ sender: Any) {
+        performSegue(withIdentifier: "HelpScreenSegue", sender: self)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dayView = segue.destination as! SecondViewController
-        formatter.dateFormat = "EEE, MMM dd"
-        let dateString = formatter.string(from: selectedDate).components(separatedBy: ",")
-         
-        dayView.receivedDate.weekDay = dateString[0]
-        dayView.receivedDate.date = dateString[1]
+        if(segue.identifier == "firstLink"){
+            let dayView = segue.destination as! SecondViewController
+                  formatter.dateFormat = "EEE, MMM dd"
+                  let dateString = formatter.string(from: selectedDate).components(separatedBy: ",")
+                  dayView.receivedDate.weekDay = dateString[0]
+                  dayView.receivedDate.date = dateString[1]
+        } else if (segue.identifier == "HelpScreenSegue"){
+            //Nothing here for now
+        }
+      
         
     }
 

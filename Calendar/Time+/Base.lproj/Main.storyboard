@@ -132,6 +132,23 @@
                                     <outlet property="ibCalendarDelegate" destination="BYZ-38-t0r" id="lm9-dm-ioM"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrc-tB-rxL" userLabel="FAQButton">
+                                <rect key="frame" x="20" y="840" width="21" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button" image="questionmark.square.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="toHelpScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ywd-j6-y1m"/>
+                                    <segue destination="6Gv-Jl-76y" kind="presentation" identifier="HelpScreenSegue" id="B6a-AA-5ff"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bw-8A-M75" userLabel="PreferencesButton">
+                                <rect key="frame" x="371" y="840" width="23" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button" image="gear" catalog="system"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -145,6 +162,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
+        </scene>
+        <!--Help Screen View Controller-->
+        <scene sceneID="KbD-Wa-91R">
+            <objects>
+                <viewController id="6Gv-Jl-76y" customClass="helpScreenViewController" customModule="Time_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u24-Rk-Mmi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylR-wS-pFa">
+                                <rect key="frame" x="370" y="20" width="24" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button" image="house.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="returnHomeSegue:" destination="6Gv-Jl-76y" eventType="touchUpInside" id="HDb-ZZ-SeS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="x7a-gU-erz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MiF-to-0kk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="855.80357142857144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="P1d-mi-rVZ">
@@ -457,4 +500,9 @@
             <point key="canvasLocation" x="2869.5652173913045" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gear" catalog="system" width="64" height="58"/>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
+        <image name="questionmark.square.fill" catalog="system" width="64" height="56"/>
+    </resources>
 </document>
