@@ -23,8 +23,6 @@ class AddEventViewController: UIViewController {
     }
     
     
-    
-    
     @IBAction func DoneButtonPressed(_ sender: Any) {
         if let start = startTime, let end = endTime{
             EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: Date(), iconPath: "", imagePath: "")

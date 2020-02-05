@@ -16,13 +16,7 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     var clocksImages : [UIImage] = []
     let numOfCells = 24
-    var view : UIViewController?
-    
-    init(clocksDir: String){
-        for _ in 0...numOfCells{
-            clocksImages.append(UIImage(named: "Image")!)
-        }
-    }
+    var view : DailyViewController?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numOfCells
@@ -39,15 +33,32 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
         cell.sunMoonImage.image = sunMoonImage
         
         return cell
+        
+        
+    }
+    
+    func populateHourPart(cell: HourCell, row: Int, begMinute: String, endMinute: String){
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.paddingCharacter = "0"
+        numberFormatter.minimumIntegerDigits = 2
+        
+        
+        let firstPart: Date = dateFormatter.date(from: "\(numberFormatter.string(from: NSNumber(value:row))!):\(begMinute)")!
+        let secondPart: Date = dateFormatter.date(from: "\(numberFormatter.string(from: NSNumber(value: row))!)\(endMinute)")!
+        
+        
+        let events = EventsDatabase.sharedInstance.getEvents(startTime: firstPart, endTime: secondPart, date: view!.receivedDate)
+        
+        cell.firstHalfImages[0].image =  events[0][EventsDatabase.sharedInstance.columns.image] == "" ?  cell.clockImage.image! : UIImage(named: events[0][EventsDatabase.sharedInstance.columns.image])
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         view?.performSegue(withIdentifier: "toAddEvent", sender: view)
-       /* let size = tableView.frame.size.height/2
-        let d = DatePickerWithDone(frame: CGRect(x: 0, y: tableView.frame.size.height - size, width: tableView.frame.size.width, height: size))
-        d.delegate = self
-        d.frame = CGRect(x: 0, y: tableView.frame.size.height - size - 100, width: tableView.frame.size.width, height: size + 100)
-        tableView.addSubview(d)*/
     }
-
+    
 }

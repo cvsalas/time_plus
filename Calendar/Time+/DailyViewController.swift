@@ -20,7 +20,7 @@ class DailyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableController = DayTableController(clocksDir: "")
+        tableController = DayTableController()
         tableController.view = self
         hourlyTable.dataSource = tableController
         hourlyTable.delegate = tableController
