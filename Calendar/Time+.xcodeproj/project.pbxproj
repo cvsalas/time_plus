@@ -20,7 +20,6 @@
 		81FD006223E69DBB00CB094A /* DatePickerWithDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD006123E69DBB00CB094A /* DatePickerWithDone.swift */; };
 		8FD1005923E8E90A004FA125 /* helpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD1005823E8E90A004FA125 /* helpScreenViewController.swift */; };
 		946A0B5A22E43D69C84E9391 /* Pods_Time_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF58B56B9F0112D657016630 /* Pods_Time_.framework */; };
-		F1114D2B2394BA1600EE3803 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1114D2A2394BA1600EE3803 /* Event.swift */; };
 		F1D51DBB239214F400C411C7 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D51DBA239214F400C411C7 /* DayCell.swift */; };
 		F1E545E42390A2150046525A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E545E32390A2150046525A /* AppDelegate.swift */; };
 		F1E545E62390A2150046525A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E545E52390A2150046525A /* SceneDelegate.swift */; };
@@ -83,7 +82,6 @@
 		BA2487EEB068272DECECABBE /* Pods-Time+Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time+Tests.release.xcconfig"; path = "Target Support Files/Pods-Time+Tests/Pods-Time+Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BF58B56B9F0112D657016630 /* Pods_Time_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Time_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1AA94DE04E71CE3267D8469 /* Pods-Time+Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time+Tests.debug.xcconfig"; path = "Target Support Files/Pods-Time+Tests/Pods-Time+Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		F1114D2A2394BA1600EE3803 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F1D51DBA239214F400C411C7 /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		F1E545E02390A2150046525A /* Time+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E545E32390A2150046525A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 				F1E545EC2390A2170046525A /* Assets.xcassets */,
 				F1E545F12390A2170046525A /* Info.plist */,
 				F1D51DBA239214F400C411C7 /* DayCell.swift */,
-				F1114D2A2394BA1600EE3803 /* Event.swift */,
 				811521C723CD272C0055F6F9 /* DailyViewController.swift */,
 				720118E223CFA37A00A3A227 /* LaunchScreen.storyboard */,
 				7269234E23DBC5E20033B63B /* EventsDatabase.swift */,
@@ -471,7 +468,6 @@
 				F1E545E62390A2150046525A /* SceneDelegate.swift in Sources */,
 				811521C823CD272C0055F6F9 /* DailyViewController.swift in Sources */,
 				811521C623CD1FAB0055F6F9 /* MonthHeaderClass.swift in Sources */,
-				F1114D2B2394BA1600EE3803 /* Event.swift in Sources */,
 				81FD006223E69DBB00CB094A /* DatePickerWithDone.swift in Sources */,
 				7216AECC23E121E600962A0F /* DayTableController.swift in Sources */,
 			);

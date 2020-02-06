@@ -32,6 +32,13 @@ class DailyViewController: UIViewController {
         dateLabel.text = dateElements[1]
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let addEventView = segue.destination as! AddEventViewController
+        addEventView.currentDay = receivedDate
+    }
 
     /*
     // MARK: - Navigation

@@ -9,10 +9,6 @@
 import UIKit
 
 class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
-    func doneTapped() {
-        print("hello")
-    }
-    
     
     var clocksImages : [UIImage] = []
     let numOfCells = 24
@@ -25,19 +21,23 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "hourCell") as! HourCell
         let clock = (indexPath.row % 12) + 1
-        let sun = indexPath.row < 11
-        let sunMoonImage = UIImage(named: sun ? "sun" : "moon")
+        let am = indexPath.row < 11
+        let timeString = "\(clock)\(am ? "am" : "pm")"
         
+        resetCell(cell: cell)
         
         cell.clockImage.image = UIImage(named: "\(clock)oClock")!
-        cell.sunMoonImage.image = sunMoonImage
+        cell.amPmLabel.text = timeString
+        
+        populateHourPart(partImages: &cell.firstHalfImages, row: indexPath.row, begMinute: "00", endMinute: "29", defaultImage: UIImage(named: "\(clock)oClock")!)
+        populateHourPart(partImages: &cell.secondHalfImages, row: indexPath.row, begMinute: "30", endMinute: "59", defaultImage: UIImage(named: "\(clock)oClock")!)
         
         return cell
         
         
     }
     
-    func populateHourPart(cell: HourCell, row: Int, begMinute: String, endMinute: String){
+    func populateHourPart( partImages: inout [UIImageView], row: Int, begMinute: String, endMinute: String, defaultImage: UIImage?){
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
@@ -48,14 +48,30 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
         
         
         let firstPart: Date = dateFormatter.date(from: "\(numberFormatter.string(from: NSNumber(value:row))!):\(begMinute)")!
-        let secondPart: Date = dateFormatter.date(from: "\(numberFormatter.string(from: NSNumber(value: row))!)\(endMinute)")!
-        
-        
+        let secondPart: Date = dateFormatter.date(from: "\(numberFormatter.string(from: NSNumber(value: row))!):\(endMinute)")!
         let events = EventsDatabase.sharedInstance.getEvents(startTime: firstPart, endTime: secondPart, date: view!.receivedDate)
         
-        cell.firstHalfImages[0].image =  events[0][EventsDatabase.sharedInstance.columns.image] == "" ?  cell.clockImage.image! : UIImage(named: events[0][EventsDatabase.sharedInstance.columns.image])
-        
+        if events.count >= 1 {
+            partImages[0].image =  events[0][EventsDatabase.sharedInstance.columns.image] == "" ?  defaultImage! : UIImage(named: events[0][EventsDatabase.sharedInstance.columns.image])
+            if events.count >= 2{
+                partImages[1].image =  events[1][EventsDatabase.sharedInstance.columns.image] == "" ?  defaultImage! : UIImage(named: events[1][EventsDatabase.sharedInstance.columns.image])
+                if events.count > 2 {
+                    let extensionImage = defaultImage
+                    partImages[2].image = extensionImage
+                }
+            }
+        }
     }
+    
+    func resetCell(cell: HourCell){
+        for imageView in cell.firstHalfImages{
+            imageView.image = nil
+        }
+        for imageView in cell.secondHalfImages{
+            imageView.image = nil
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         view?.performSegue(withIdentifier: "toAddEvent", sender: view)

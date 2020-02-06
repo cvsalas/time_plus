@@ -14,6 +14,8 @@ class AddEventViewController: UIViewController {
     var startTime : Date!
     var endTime : Date!
     var icon : UIImage!
+    
+    var currentDay: Date!
     @IBOutlet weak var repeateSegment: UISegmentedControl!
     
     override func viewDidLoad() {
@@ -25,7 +27,7 @@ class AddEventViewController: UIViewController {
     
     @IBAction func DoneButtonPressed(_ sender: Any) {
         if let start = startTime, let end = endTime{
-            EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: Date(), iconPath: "", imagePath: "")
+            EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: currentDay, iconPath: "", imagePath: "")
         }
         navigationController?.popViewController(animated: true)
         
