@@ -18,6 +18,9 @@ class helpScreenViewController: UIViewController {
         super.viewDidLoad()
         let size = CGSize(width: 100, height: 100)
         preferredContentSize = size
+        weekDayLabel.text = receivedDate.weekDay
+        dateLabel.text = receivedDate.date
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         // Do any additional setup after loading the view.
     }
     

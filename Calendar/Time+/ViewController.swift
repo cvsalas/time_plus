@@ -20,6 +20,7 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
         super.viewDidLoad()
         calendarView.scrollingMode = .stopAtEachCalendarFrame
         calendarView.scrollDirection = .horizontal
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         // Do any additional setup after loading the view.
     }
     
@@ -38,7 +39,12 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
         formatter.dateFormat = "MMMM yyyy"
         let dateString = formatter.string(from: range.start).components(separatedBy: " ")
         let header = calendar.dequeueReusableJTAppleSupplementaryView(withReuseIdentifier: "MonthHeader", for: indexPath) as! MonthHeaderClass
+<<<<<<< HEAD
         header.monthLabel.text = dateString[0] + " " + dateString[1]
+=======
+        let fullDate = dateString[0] + " " + dateString[1]
+        header.headerLabel.text = fullDate
+>>>>>>> master
         return header
     }
     
@@ -48,13 +54,15 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
     
     
     func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
+<<<<<<< HEAD
         
         
+=======
+>>>>>>> master
         formatter.dateFormat = "yyyy MM dd"
         let startDate = Date()
         let endDate = formatter.date(from: "2020 12 31")
         return ConfigurationParameters(startDate: startDate, endDate: endDate!)
-        
     }
     
     
