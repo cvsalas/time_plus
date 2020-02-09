@@ -11,7 +11,7 @@ import UIKit
 
 protocol DatePickerWithDoneDelegate {
     func doneTapped(picker: DatePickerWithDone)
-    func pickerWillDisappear(picker: DatePickerWithDone)
+    func pickerDisappeared(picker: DatePickerWithDone)
 }
 class DatePickerWithDone: UIView {
     
@@ -67,7 +67,7 @@ class DatePickerWithDone: UIView {
     
     override func removeFromSuperview() {
         super.removeFromSuperview()
-        delegate.pickerWillDisappear(picker: self)
+        delegate.pickerDisappeared(picker: self)
     }
     
     @objc func doneTapped(){

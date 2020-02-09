@@ -86,7 +86,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         picker.removeFromSuperview()
     }
     
-    func pickerWillDisappear(picker: DatePickerWithDone) {
+    func pickerDisappeared(picker: DatePickerWithDone) {
         setTimes(picker: picker)
     }
     

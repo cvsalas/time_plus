@@ -40,8 +40,21 @@ class DailyViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let addEventView = segue.destination as! AddEventViewController
-        addEventView.currentDay = receivedDate
+        
+        switch segue.identifier{
+            
+        case "toAddevent":
+            let addEventView = segue.destination as! AddEventViewController
+            addEventView.currentDay = receivedDate
+            
+        case "toHourlyView":
+            let hourlyView = segue.destination as! detailedViewController
+            hourlyView.sender = self.tableController
+            
+        default:
+            fatalError("attempt to jump using unidentified sigue")
+        }
+        
     }
 
     /*

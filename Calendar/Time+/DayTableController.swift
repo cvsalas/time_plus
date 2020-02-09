@@ -14,6 +14,8 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
     let numOfCells = 24
     var view : DailyViewController?
     
+    var selectedRow = 0
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numOfCells
     }
@@ -74,6 +76,8 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        selectedRow = indexPath.row
         view?.performSegue(withIdentifier: "toAddEvent", sender: view)
     }
     
