@@ -37,13 +37,12 @@ class DailyViewController: UIViewController {
         super.viewWillAppear(animated)
         hourlyTable.reloadData()
     }
-    
-    
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         switch segue.identifier{
             
-        case "toAddevent":
+        case "toAddEvent":
             let addEventView = segue.destination as! AddEventViewController
             addEventView.currentDay = receivedDate
             
@@ -57,6 +56,12 @@ class DailyViewController: UIViewController {
         
     }
 
+    @IBAction func addEventButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toAddEvent", sender: self)
+
+    }
+    
+    
     /*
     // MARK: - Navigation
 

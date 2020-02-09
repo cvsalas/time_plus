@@ -28,12 +28,18 @@ class detailedViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         
         let startTime = dateFormatter.date(from: "\(sender.selectedRow):00")!
         let endTime = dateFormatter.date(from: "\(sender.selectedRow):59")!
         
+        dateFormatter.dateStyle = .none
+        dateFormatter.timeStyle = .short
+        viewStartTime.text = dateFormatter.string(from: startTime)
+        viewEndTime.text = dateFormatter.string(from: endTime)
+
         let events = EventsDatabase.sharedInstance.getEvents(startTime: startTime, endTime: endTime, date: sender.view!.receivedDate)
         
         eventsTableController.events = events

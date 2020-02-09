@@ -78,7 +78,7 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         selectedRow = indexPath.row
-        view?.performSegue(withIdentifier: "toAddEvent", sender: view)
+        view?.performSegue(withIdentifier: "toHourlyView", sender: self)
     }
     
 }
