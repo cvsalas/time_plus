@@ -9,12 +9,17 @@
 import UIKit
 
 
+protocol DatePickerWithDoneDelegate {
+    func doneTapped(picker: DatePickerWithDone)
+    func pickerWillDisappear(picker: DatePickerWithDone)
+}
 class DatePickerWithDone: UIView {
     
     private let toolBarRelativeHeight: CGFloat = 0.20
     private let pickerRelativeHeight: CGFloat = 0.80
     private let toolbar = UIToolbar()
     private let datePicker = UIDatePicker()
+    var delegate : DatePickerWithDoneDelegate!
 
     var date : Date {
         get {
@@ -31,7 +36,6 @@ class DatePickerWithDone: UIView {
         }
     }
     
-    var doneFunction : ((DatePickerWithDone)->Void)!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,17 +64,15 @@ class DatePickerWithDone: UIView {
         addSubview(datePicker)
     }
     
-
+    
+    override func removeFromSuperview() {
+        super.removeFromSuperview()
+        delegate.pickerWillDisappear(picker: self)
+    }
     
     @objc func doneTapped(){
-        doneFunction(self)
+        delegate.doneTapped(picker: self)
     }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawifunc ng code
-    }
-    */
+    
 
 }

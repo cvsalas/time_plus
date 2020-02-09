@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Pn-au-stc" customClass="JTACMonthView" customModule="JTAppleCalendar">
-                                <rect key="frame" x="20" y="102" width="374" height="419"/>
+                                <rect key="frame" x="20" y="102" width="374" height="594"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="594" id="4gZ-Dp-Agv"/>
@@ -400,19 +400,39 @@
                                             <action selector="endTimeButtonPressed:" destination="6ri-1w-Vc6" eventType="touchUpInside" id="YM7-aw-EI2"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="startTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIe-kO-bWK">
+                                        <rect key="frame" x="18" y="136" width="87" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="endTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aF-tf-zQW">
+                                        <rect key="frame" x="293" y="136" width="76" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="MIe-kO-bWK" secondAttribute="trailing" constant="289" id="DOf-re-eHw"/>
                                     <constraint firstItem="eVP-dE-9FU" firstAttribute="top" secondItem="9H3-FA-0y9" secondAttribute="top" constant="46" id="DXA-wU-2Zz"/>
                                     <constraint firstAttribute="bottom" secondItem="Cxt-fx-dav" secondAttribute="bottom" constant="47" id="Duk-yk-46F"/>
+                                    <constraint firstItem="MIe-kO-bWK" firstAttribute="top" secondItem="9H3-FA-0y9" secondAttribute="top" constant="136" id="Dyg-XJ-BYU"/>
                                     <constraint firstItem="eVP-dE-9FU" firstAttribute="leading" secondItem="9H3-FA-0y9" secondAttribute="leading" constant="130" id="Fvn-9X-Sl3"/>
+                                    <constraint firstAttribute="trailing" secondItem="3aF-tf-zQW" secondAttribute="trailing" constant="25" id="JjG-CC-lm1"/>
                                     <constraint firstAttribute="trailing" secondItem="eVP-dE-9FU" secondAttribute="trailing" constant="126" id="NK4-FZ-lKV"/>
+                                    <constraint firstAttribute="bottom" secondItem="3aF-tf-zQW" secondAttribute="bottom" constant="18" id="PfR-PQ-Kxs"/>
+                                    <constraint firstItem="MIe-kO-bWK" firstAttribute="leading" secondItem="9H3-FA-0y9" secondAttribute="leading" constant="18" id="RJF-CT-Qa5"/>
                                     <constraint firstAttribute="bottom" secondItem="eVP-dE-9FU" secondAttribute="bottom" constant="60" id="Rq1-xz-04Y"/>
                                     <constraint firstAttribute="bottom" secondItem="5K6-RM-8lD" secondAttribute="bottom" constant="47" id="Rx4-fo-X51"/>
                                     <constraint firstItem="Cxt-fx-dav" firstAttribute="leading" secondItem="9H3-FA-0y9" secondAttribute="leading" constant="276" id="XKP-Ly-55g"/>
                                     <constraint firstItem="5K6-RM-8lD" firstAttribute="leading" secondItem="9H3-FA-0y9" secondAttribute="leading" constant="8" id="Xkh-87-Hin"/>
                                     <constraint firstItem="Cxt-fx-dav" firstAttribute="top" secondItem="9H3-FA-0y9" secondAttribute="top" constant="33" id="kUr-hj-U6j"/>
+                                    <constraint firstItem="3aF-tf-zQW" firstAttribute="leading" secondItem="9H3-FA-0y9" secondAttribute="leading" constant="293" id="lM4-eu-lRw"/>
                                     <constraint firstItem="5K6-RM-8lD" firstAttribute="top" secondItem="9H3-FA-0y9" secondAttribute="top" constant="33" id="oqn-Wd-Or9"/>
+                                    <constraint firstAttribute="bottom" secondItem="MIe-kO-bWK" secondAttribute="bottom" constant="18" id="qWg-IS-oaq"/>
+                                    <constraint firstItem="3aF-tf-zQW" firstAttribute="top" secondItem="9H3-FA-0y9" secondAttribute="top" constant="136" id="sqv-pJ-5Wq"/>
                                     <constraint firstAttribute="trailing" secondItem="5K6-RM-8lD" secondAttribute="trailing" constant="279" id="tgr-kC-0CV"/>
                                     <constraint firstAttribute="trailing" secondItem="Cxt-fx-dav" secondAttribute="trailing" constant="8" id="ux1-xZ-NfV"/>
                                 </constraints>
@@ -490,7 +510,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="endTimeLabel" destination="3aF-tf-zQW" id="2cO-rJ-HAv"/>
                         <outlet property="repeateSegment" destination="xWY-lZ-BTc" id="wKx-uA-Nn1"/>
+                        <outlet property="startTimeLabel" destination="MIe-kO-bWK" id="MOW-Nh-3KG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="be5-ld-nME" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -8,19 +8,31 @@
 
 import UIKit
 
-class AddEventViewController: UIViewController {
+class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     
+    fileprivate enum ButtonPressed{
+        case Start, End
+    }
     
     var startTime : Date!
     var endTime : Date!
-    var icon : UIImage!
+    @IBOutlet weak var startTimeLabel: UILabel!
+    @IBOutlet weak var endTimeLabel: UILabel!
     
+    
+    fileprivate var buttonPressed : ButtonPressed!
     var currentDay: Date!
+    let dateFormatter = DateFormatter()
     @IBOutlet weak var repeateSegment: UISegmentedControl!
+    
+    let datePickerTag = 0xDEADBEEF
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dateFormatter.dateStyle = .none
+        dateFormatter.timeStyle = .short
         
+        //setRepeatControlAppearance()
         // Do any additional setup after loading the view.
     }
     
@@ -34,28 +46,62 @@ class AddEventViewController: UIViewController {
     }
     
     
+    func setRepeatControlAppearance(){
+        let size = CGSize(width: 117.333,height: 72)
+        UIGraphicsBeginImageContext(size)
+        defer {UIGraphicsEndImageContext()}
+        UIColor.green.setFill()
+        let rect = CGRect(origin: .zero, size: size)
+        UIBezierPath(roundedRect: rect, cornerRadius: size.height/2).fill()
+        let image = UIGraphicsGetImageFromCurrentImageContext()?.withRenderingMode(.alwaysTemplate)
+        
+        repeateSegment.setBackgroundImage(image, for: .normal, barMetrics: .default)
+    }
     
     @IBAction func endTimeButtonPressed(_ sender: Any) {
-        displayPickere(){ picker in
-            self.endTime = picker.date
-            picker.removeFromSuperview()
-        }
+        displayPickere()
+        buttonPressed = .End
     }
     @IBAction func startTimeButtonPressed(_ sender: Any) {
-        displayPickere(){ picker in
+        displayPickere()
+        buttonPressed = .Start
+    }
+    
+    func displayPickere(){
+        self.view.viewWithTag(datePickerTag)?.removeFromSuperview()
+
+        let height = self.view.frame.size.height/2
+        let datePicker = DatePickerWithDone(frame: CGRect(x: 0, y: self.view.frame.size.height - height, width: self.view.frame.size.width, height: height))
+        
+        datePicker.datePickerMode = .time
+        datePicker.delegate = self
+        datePicker.tag = datePickerTag
+        self.view.addSubview(datePicker)
+    }
+    
+
+    
+    func doneTapped(picker: DatePickerWithDone) {
+        setTimes(picker: picker)
+        picker.removeFromSuperview()
+    }
+    
+    func pickerWillDisappear(picker: DatePickerWithDone) {
+        setTimes(picker: picker)
+    }
+    
+    func setTimes(picker: DatePickerWithDone){
+        if(buttonPressed == .Start){
             self.startTime = picker.date
-            picker.removeFromSuperview()
+            self.startTimeLabel.text = self.dateFormatter.string(from: self.startTime)
+        }
+        else{
+            self.endTime = picker.date
+            self.endTimeLabel.text = self.dateFormatter.string(from: self.endTime)
         }
     }
     
-    func displayPickere(doneFunc: @escaping (DatePickerWithDone)->Void){
-        let height = self.view.frame.size.height/2
-        
-        let datePicker = DatePickerWithDone(frame: CGRect(x: 0, y: self.view.frame.size.height - height, width: self.view.frame.size.width, height: height))
-        datePicker.datePickerMode = .time
-        datePicker.doneFunction = doneFunc
-        self.view.addSubview(datePicker)
-    }
+    
     /*
      // MARK: - Navigation
      
