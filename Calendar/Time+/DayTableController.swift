@@ -14,14 +14,16 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
     let numOfCells = 24
     var view : DailyViewController?
     
+    var selectedRow = 0
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numOfCells
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "hourCell") as! HourCell
-        let clock = (indexPath.row % 12) + 1
-        let am = indexPath.row < 11
+        let clock = indexPath.row == 0 || indexPath.row == 12 ? 12 : (indexPath.row % 12)
+        let am = indexPath.row < 12
         let timeString = "\(clock)\(am ? "am" : "pm")"
         
         resetCell(cell: cell)
@@ -74,7 +76,9 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        view?.performSegue(withIdentifier: "toAddEvent", sender: view)
+        
+        selectedRow = indexPath.row
+        view?.performSegue(withIdentifier: "toHourlyView", sender: self)
     }
     
 }

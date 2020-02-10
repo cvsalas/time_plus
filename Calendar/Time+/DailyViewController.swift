@@ -33,13 +33,35 @@ class DailyViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hourlyTable.reloadData()
+    }
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let addEventView = segue.destination as! AddEventViewController
-        addEventView.currentDay = receivedDate
+        
+        switch segue.identifier{
+            
+        case "toAddEvent":
+            let addEventView = segue.destination as! AddEventViewController
+            addEventView.currentDay = receivedDate
+            
+        case "toHourlyView":
+            let hourlyView = segue.destination as! detailedViewController
+            hourlyView.sender = self.tableController
+            
+        default:
+            fatalError("attempt to jump using unidentified sigue")
+        }
+        
     }
 
+    @IBAction func addEventButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toAddEvent", sender: self)
+
+    }
+    
+    
     /*
     // MARK: - Navigation
 

@@ -13,12 +13,13 @@
 		7216AECA23E1146100962A0F /* HourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7216AEC923E1146100962A0F /* HourCell.swift */; };
 		7216AECC23E121E600962A0F /* DayTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7216AECB23E121E600962A0F /* DayTableController.swift */; };
 		7269234F23DBC5E20033B63B /* EventsDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7269234E23DBC5E20033B63B /* EventsDatabase.swift */; };
-		7269235323DBC9490033B63B /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7269235223DBC9490033B63B /* SQLite.framework */; };
 		7269235E23DBFF7F0033B63B /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7269235D23DBFF7F0033B63B /* SQLite.framework */; };
 		810F6DD823E944120083224F /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F6DD723E944120083224F /* AddEventViewController.swift */; };
 		811521C623CD1FAB0055F6F9 /* MonthHeaderClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811521C523CD1FAB0055F6F9 /* MonthHeaderClass.swift */; };
 		811521C823CD272C0055F6F9 /* DailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811521C723CD272C0055F6F9 /* DailyViewController.swift */; };
-		81CD934F23D816AC0021D12D /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81CD934E23D816AC0021D12D /* SQLite.framework */; };
+		81A1BCE223EFE8CB001724DB /* detailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1BCE123EFE8CB001724DB /* detailedViewController.swift */; };
+		81A1BCE423EFEEAD001724DB /* DetailedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1BCE323EFEEAD001724DB /* DetailedCell.swift */; };
+		81A1BCE623EFF857001724DB /* DetailedEventsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1BCE523EFF857001724DB /* DetailedEventsTableController.swift */; };
 		81FD006223E69DBB00CB094A /* DatePickerWithDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD006123E69DBB00CB094A /* DatePickerWithDone.swift */; };
 		8FD1005923E8E90A004FA125 /* helpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD1005823E8E90A004FA125 /* helpScreenViewController.swift */; };
 		946A0B5A22E43D69C84E9391 /* Pods_Time_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF58B56B9F0112D657016630 /* Pods_Time_.framework */; };
@@ -73,12 +74,13 @@
 		7216AEC923E1146100962A0F /* HourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCell.swift; sourceTree = "<group>"; };
 		7216AECB23E121E600962A0F /* DayTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableController.swift; sourceTree = "<group>"; };
 		7269234E23DBC5E20033B63B /* EventsDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDatabase.swift; sourceTree = "<group>"; };
-		7269235223DBC9490033B63B /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7269235D23DBFF7F0033B63B /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		810F6DD723E944120083224F /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		811521C523CD1FAB0055F6F9 /* MonthHeaderClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeaderClass.swift; sourceTree = "<group>"; };
 		811521C723CD272C0055F6F9 /* DailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
-		81CD934E23D816AC0021D12D /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81A1BCE123EFE8CB001724DB /* detailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailedViewController.swift; sourceTree = "<group>"; };
+		81A1BCE323EFEEAD001724DB /* DetailedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCell.swift; sourceTree = "<group>"; };
+		81A1BCE523EFF857001724DB /* DetailedEventsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedEventsTableController.swift; sourceTree = "<group>"; };
 		81FD006123E69DBB00CB094A /* DatePickerWithDone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerWithDone.swift; sourceTree = "<group>"; };
 		8FD1005823E8E90A004FA125 /* helpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpScreenViewController.swift; sourceTree = "<group>"; };
 		AEDCDABBC36C882821061D7C /* Pods_Time_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Time_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,8 +110,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7269235323DBC9490033B63B /* SQLite.framework in Frameworks */,
-				81CD934F23D816AC0021D12D /* SQLite.framework in Frameworks */,
 				F1E5461E2390A3BE0046525A /* JTAppleCalendar.framework in Frameworks */,
 				946A0B5A22E43D69C84E9391 /* Pods_Time_.framework in Frameworks */,
 			);
@@ -197,6 +197,9 @@
 				7216AECB23E121E600962A0F /* DayTableController.swift */,
 				81FD006123E69DBB00CB094A /* DatePickerWithDone.swift */,
 				810F6DD723E944120083224F /* AddEventViewController.swift */,
+				81A1BCE123EFE8CB001724DB /* detailedViewController.swift */,
+				81A1BCE323EFEEAD001724DB /* DetailedCell.swift */,
+				81A1BCE523EFF857001724DB /* DetailedEventsTableController.swift */,
 			);
 			path = "Time+";
 			sourceTree = "<group>";
@@ -231,8 +234,6 @@
 			isa = PBXGroup;
 			children = (
 				7269235D23DBFF7F0033B63B /* SQLite.framework */,
-				7269235223DBC9490033B63B /* SQLite.framework */,
-				81CD934E23D816AC0021D12D /* SQLite.framework */,
 				BF58B56B9F0112D657016630 /* Pods_Time_.framework */,
 				AEDCDABBC36C882821061D7C /* Pods_Time_Tests.framework */,
 			);
@@ -481,11 +482,14 @@
 				F1E545E42390A2150046525A /* AppDelegate.swift in Sources */,
 				7216AECA23E1146100962A0F /* HourCell.swift in Sources */,
 				F1D51DBB239214F400C411C7 /* DayCell.swift in Sources */,
+				81A1BCE223EFE8CB001724DB /* detailedViewController.swift in Sources */,
 				F1E545E62390A2150046525A /* SceneDelegate.swift in Sources */,
 				811521C823CD272C0055F6F9 /* DailyViewController.swift in Sources */,
 				811521C623CD1FAB0055F6F9 /* MonthHeaderClass.swift in Sources */,
+				81A1BCE423EFEEAD001724DB /* DetailedCell.swift in Sources */,
 				81FD006223E69DBB00CB094A /* DatePickerWithDone.swift in Sources */,
 				7216AECC23E121E600962A0F /* DayTableController.swift in Sources */,
+				81A1BCE623EFF857001724DB /* DetailedEventsTableController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
