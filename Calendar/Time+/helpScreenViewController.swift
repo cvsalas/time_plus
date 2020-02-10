@@ -16,14 +16,11 @@ class helpScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD:Calendar/Time+/helpScreenViewController.swift
         let size = CGSize(width: 100, height: 100)
         preferredContentSize = size
-=======
         weekDayLabel.text = receivedDate.weekDay
         dateLabel.text = receivedDate.date
         self.navigationController?.setNavigationBarHidden(false, animated: true)
->>>>>>> master:Calendar/Time+/SecondViewController.swift
         // Do any additional setup after loading the view.
     }
     

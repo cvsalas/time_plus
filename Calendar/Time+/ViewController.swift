@@ -10,7 +10,7 @@ import UIKit
 import JTAppleCalendar
 
 class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewDataSource {
-        
+    
     @IBOutlet weak var calendarView: JTACMonthView!
     
     fileprivate var selectedDate = Date()
@@ -39,17 +39,26 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
         formatter.dateFormat = "MMMM yyyy"
         let dateString = formatter.string(from: range.start).components(separatedBy: " ")
         let header = calendar.dequeueReusableJTAppleSupplementaryView(withReuseIdentifier: "MonthHeader", for: indexPath) as! MonthHeaderClass
+<<<<<<< HEAD
+        header.monthLabel.text = dateString[0] + " " + dateString[1]
+=======
         let fullDate = dateString[0] + " " + dateString[1]
         header.headerLabel.text = fullDate
+>>>>>>> master
         return header
     }
     
     func calendarSizeForMonths(_ calendar: JTACMonthView?) -> MonthSize?{
         return MonthSize(defaultSize: 110)
     }
-
+    
     
     func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
+<<<<<<< HEAD
+        
+        
+=======
+>>>>>>> master
         formatter.dateFormat = "yyyy MM dd"
         let startDate = Date()
         let endDate = formatter.date(from: "2020 12 31")
@@ -80,23 +89,26 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
     }
     
     func calendar(_ calendar: JTACMonthView, didSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath){
-        
         selectedDate = date
         performSegue(withIdentifier: "firstLink", sender: self)
-       
         
     }
     
+    @IBAction func toHelpScreen(_ sender: Any) {
+        performSegue(withIdentifier: "HelpScreenSegue", sender: self)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dayView = segue.destination as! SecondViewController
-        formatter.dateFormat = "EEE, MMM dd"
-        let dateString = formatter.string(from: selectedDate).components(separatedBy: ",")
-         
-        dayView.receivedDate.weekDay = dateString[0]
-        dayView.receivedDate.date = dateString[1]
+        if(segue.identifier == "firstLink"){
+            let dayView = segue.destination as! DailyViewController
+            dayView.receivedDate = selectedDate
+            
+        } else if (segue.identifier == "HelpScreenSegue"){
+            //Nothing here for now
+        }
+        
         
     }
-
+    
 }
 

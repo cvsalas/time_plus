@@ -33,15 +33,6 @@ extension EventRepeate : Value{
 
 class EventsDatabase {
     
-    /*typealias Event = (id: Int64,
-     startTime: Date,
-     endTime: Date,
-     date: Date,
-     repeate: Int64,
-     icon: String,
-     image: String,
-     notification: Int64)*/
-    
     let db : Connection
     let eventsTable = Table("events")
     let columns = (id: Expression<Int64>("id"),
@@ -107,15 +98,15 @@ class EventsDatabase {
         var setters : [Setter] = []
         
         if let val = startTime{
-            setters.append(columns.startTime <- val)
+            setters.append(columns.startTime <- stripDate(val))
         }
         
         if let val = endTime{
-            setters.append(columns.endTime <- val)
+            setters.append(columns.endTime <- stripDate(val))
         }
         
         if let val = date{
-            setters.append(columns.date <- val)
+            setters.append(columns.date <- stripTime(val))
         }
         
         if let val = repeate{
@@ -154,12 +145,12 @@ class EventsDatabase {
                     repeate: EventRepeate = .none, iconPath: String, imagePath: String, notification: Int64 = 0) {
         
         let insert = eventsTable.insert(
-            columns.startTime <- startTime,
-            columns.endTime <- endTime,
-            columns.date <- date,
+            columns.startTime <- stripDate(startTime),
+            columns.endTime <- stripDate(endTime),
+            columns.date <- stripTime(date),
             columns.repeate <- repeate,
-            columns.icon <- " ",
-            columns.image <- " ",
+            columns.icon <- iconPath,
+            columns.image <- imagePath,
             columns.notification <- 0)
         
         do{
@@ -179,11 +170,10 @@ class EventsDatabase {
     }
     
     func getEvents(startTime: Date, endTime: Date, date: Date) -> [Row]{
-        
         let query = eventsTable.filter(
-            !((columns.startTime < startTime && columns.endTime < startTime) ||
-                (columns.startTime > endTime && columns.endTime > endTime))
-                && columns.date == date)
+            !((columns.startTime < stripDate(startTime) && columns.endTime < stripDate(startTime)) ||
+                (columns.startTime > stripDate(endTime) && columns.endTime > stripDate(endTime)))
+            && columns.date == stripTime(date))
         do{
             return Array(try db.prepare(query))
             
@@ -191,6 +181,16 @@ class EventsDatabase {
             fatalError("could not getEvents")
             
         }
+    }
+    
+    func stripTime(_ date: Date) -> Date{
+        return Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
+    }
+    
+    func stripDate(_ date: Date) -> Date{
+        let components = Calendar.current.dateComponents([.hour,.minute], from: date)
+        let strippedDate = Calendar.current.date(from: components)
+        return strippedDate!
     }
     
 }
