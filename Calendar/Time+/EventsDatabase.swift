@@ -35,7 +35,7 @@ class EventsDatabase {
     
     let db : Connection
     let eventsTable = Table("events")
-    let columns = (id: Expression<Int64>("id"),
+    static let columns = (id: Expression<Int64>("id"),
                    startTime: Expression<Date>("startTime"),
                    endTime: Expression<Date>("endTime"),
                    date: Expression<Date>("date"),
@@ -52,19 +52,21 @@ class EventsDatabase {
     
     let dateFormatter = DateFormatter()
     let timeFormatter = DateFormatter()
+    static let defaultTimeFormat = "HH:mm"
+    static let defaultDateFormat = "yyyy-MM-dd"
     
     private init(){
         do{
             db = try Connection(dataBasePath)
             try db.run(eventsTable.create(ifNotExists: true) { t in
-                t.column(columns.id, primaryKey: .autoincrement)
-                t.column(columns.startTime)
-                t.column(columns.endTime)
-                t.column(columns.date)
-                t.column(columns.repeate)
-                t.column(columns.icon)
-                t.column(columns.image)
-                t.column(columns.notification)
+                t.column(EventsDatabase.columns.id, primaryKey: .autoincrement)
+                t.column(EventsDatabase.columns.startTime)
+                t.column(EventsDatabase.columns.endTime)
+                t.column(EventsDatabase.columns.date)
+                t.column(EventsDatabase.columns.repeate)
+                t.column(EventsDatabase.columns.icon)
+                t.column(EventsDatabase.columns.image)
+                t.column(EventsDatabase.columns.notification)
             })
             
         } catch Result.error(let message, let code, let statment){
@@ -74,14 +76,16 @@ class EventsDatabase {
         }
         
         dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = EventsDatabase.defaultDateFormat
         
         timeFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
-        timeFormatter.dateFormat = "HH:mm"
+        timeFormatter.dateFormat = EventsDatabase.defaultTimeFormat
     }
     
     func updateEvents(cond: Expression<Bool>,  startTime: String? = nil, endTime: String? = nil, date: String? = nil,
-                      repeate: EventRepeate? = nil, iconPath: String? = nil, imagePath: String? = nil, notification: Int64? = nil){
+                      repeate: EventRepeate? = nil, iconPath: String? = nil, imagePath: String? = nil, notification: Int64? = nil, timeFormat: String = EventsDatabase.defaultTimeFormat, dateFormat: String = EventsDatabase.defaultTimeFormat){
+        timeFormatter.dateFormat = timeFormat
+        dateFormatter.dateFormat = dateFormat
         updateEvent(cond: cond,
                     startTime: startTime != nil ? timeFormatter.date(from: startTime!) : nil,
                     endTime: endTime != nil ? timeFormatter.date(from: endTime!) : nil,
@@ -98,31 +102,31 @@ class EventsDatabase {
         var setters : [Setter] = []
         
         if let val = startTime{
-            setters.append(columns.startTime <- stripDate(val))
+            setters.append(EventsDatabase.columns.startTime <- stripDate(val))
         }
         
         if let val = endTime{
-            setters.append(columns.endTime <- stripDate(val))
+            setters.append(EventsDatabase.columns.endTime <- stripDate(val))
         }
         
         if let val = date{
-            setters.append(columns.date <- stripTime(val))
+            setters.append(EventsDatabase.columns.date <- stripTime(val))
         }
         
         if let val = repeate{
-            setters.append(columns.repeate <- val)
+            setters.append(EventsDatabase.columns.repeate <- val)
         }
         
         if let val = iconPath{
-            setters.append(columns.icon <- val)
+            setters.append(EventsDatabase.columns.icon <- val)
         }
         
         if let val = imagePath{
-            setters.append(columns.image <- val)
+            setters.append(EventsDatabase.columns.image <- val)
         }
         
         if let val = notification{
-            setters.append(columns.notification <- val)
+            setters.append(EventsDatabase.columns.notification <- val)
         }
         
         do{
@@ -135,7 +139,10 @@ class EventsDatabase {
     
     
     func enterEvent(startTime: String, endTime: String, date: String,
-                    repeate: EventRepeate = .none, iconPath: String, imagePath: String, notification: Int64 = 0) {
+                    repeate: EventRepeate = .none, iconPath: String, imagePath: String, notification: Int64 = 0, timeFormat: String = EventsDatabase.defaultTimeFormat, dateFormat: String = EventsDatabase.defaultTimeFormat) {
+        
+        timeFormatter.dateFormat = timeFormat
+        dateFormatter.dateFormat = dateFormat
         
         enterEvent(startTime: timeFormatter.date(from: startTime)!, endTime: timeFormatter.date(from: endTime)!,
                    date: dateFormatter.date(from: date)!, repeate: repeate, iconPath: iconPath, imagePath: imagePath)
@@ -145,13 +152,13 @@ class EventsDatabase {
                     repeate: EventRepeate = .none, iconPath: String, imagePath: String, notification: Int64 = 0) {
         
         let insert = eventsTable.insert(
-            columns.startTime <- stripDate(startTime),
-            columns.endTime <- stripDate(endTime),
-            columns.date <- stripTime(date),
-            columns.repeate <- repeate,
-            columns.icon <- iconPath,
-            columns.image <- imagePath,
-            columns.notification <- 0)
+            EventsDatabase.columns.startTime <- stripDate(startTime),
+            EventsDatabase.columns.endTime <- stripDate(endTime),
+            EventsDatabase.columns.date <- stripTime(date),
+            EventsDatabase.columns.repeate <- repeate,
+            EventsDatabase.columns.icon <- iconPath,
+            EventsDatabase.columns.image <- imagePath,
+            EventsDatabase.columns.notification <- 0)
         
         do{
             try db.run(insert)
@@ -161,7 +168,10 @@ class EventsDatabase {
         
     }
     
-    func getEvents(startTime: String, endTime: String, date: String) -> [Row]{
+    func getEvents(startTime: String, endTime: String, date: String, timeFormat: String = EventsDatabase.defaultTimeFormat, dateFormat: String = EventsDatabase.defaultTimeFormat) -> [Row]{
+    
+        timeFormatter.dateFormat = timeFormat
+        dateFormatter.dateFormat = dateFormat
         
         return  getEvents(startTime: timeFormatter.date(from: startTime)!,
                           endTime: timeFormatter.date(from: endTime)!,
@@ -171,9 +181,9 @@ class EventsDatabase {
     
     func getEvents(startTime: Date, endTime: Date, date: Date) -> [Row]{
         let query = eventsTable.filter(
-            !((columns.startTime < stripDate(startTime) && columns.endTime < stripDate(startTime)) ||
-                (columns.startTime > stripDate(endTime) && columns.endTime > stripDate(endTime)))
-            && columns.date == stripTime(date))
+            !((EventsDatabase.columns.startTime < stripDate(startTime) && EventsDatabase.columns.endTime < stripDate(startTime)) ||
+                (EventsDatabase.columns.startTime > stripDate(endTime) && EventsDatabase.columns.endTime > stripDate(endTime)))
+            && EventsDatabase.columns.date == stripTime(date))
         do{
             return Array(try db.prepare(query))
             

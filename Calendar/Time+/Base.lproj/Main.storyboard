@@ -562,12 +562,6 @@
                                                     <rect key="frame" x="233" y="17" width="121" height="211"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="060-Mu-SNX">
-                                                    <rect key="frame" x="149" y="89" width="23" height="61"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="51"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IconTitile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3U-m9-muP">
                                                     <rect key="frame" x="10" y="180" width="99" height="32"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
@@ -577,6 +571,12 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EndTime" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAU-vA-pKP">
                                                     <rect key="frame" x="112" y="158" width="108" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="060-Mu-SNX">
+                                                    <rect key="frame" x="157" y="89" width="23" height="61"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="51"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -600,7 +600,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="z1c-4l-jjl" secondAttribute="bottom" constant="16" id="gaP-Ho-QXM"/>
                                                 <constraint firstItem="cAU-vA-pKP" firstAttribute="leading" secondItem="dvP-eF-4pZ" secondAttribute="leading" constant="112" id="oB6-4D-Qa8"/>
                                                 <constraint firstItem="j3U-m9-muP" firstAttribute="leading" secondItem="dvP-eF-4pZ" secondAttribute="leading" constant="10" id="p1I-P3-gcG"/>
-                                                <constraint firstItem="060-Mu-SNX" firstAttribute="leading" secondItem="UdD-c6-r4Q" secondAttribute="trailing" constant="45" id="pAG-mU-RrX"/>
+                                                <constraint firstItem="060-Mu-SNX" firstAttribute="leading" secondItem="UdD-c6-r4Q" secondAttribute="trailing" constant="53" id="pAG-mU-RrX"/>
                                                 <constraint firstItem="UdD-c6-r4Q" firstAttribute="top" secondItem="dvP-eF-4pZ" secondAttribute="top" constant="50" id="sq8-mm-CDg"/>
                                                 <constraint firstItem="pjM-0x-Bls" firstAttribute="leading" secondItem="dvP-eF-4pZ" secondAttribute="leading" constant="112" id="y5V-kK-ZAn"/>
                                                 <constraint firstAttribute="trailing" secondItem="UdD-c6-r4Q" secondAttribute="trailing" constant="270" id="yGX-eU-tKv"/>

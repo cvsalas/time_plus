@@ -26,8 +26,8 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         
         cell.icon.text = "default"
         cell.iconeTitle.text = "default"
-        let startTime = events[indexPath.row][EventsDatabase.sharedInstance.columns.startTime]
-        let endTime = events[indexPath.row][EventsDatabase.sharedInstance.columns.endTime]
+        let startTime = events[indexPath.row][EventsDatabase.columns.startTime]
+        let endTime = events[indexPath.row][EventsDatabase.columns.endTime]
         
         
         cell.startTimeLabel.text = dateFormatter.string(from: startTime)

@@ -54,9 +54,9 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
         let events = EventsDatabase.sharedInstance.getEvents(startTime: firstPart, endTime: secondPart, date: view!.receivedDate)
         
         if events.count >= 1 {
-            partImages[0].image =  events[0][EventsDatabase.sharedInstance.columns.image] == "" ?  defaultImage! : UIImage(named: events[0][EventsDatabase.sharedInstance.columns.image])
+            partImages[0].image =  events[0][EventsDatabase.columns.image] == "" ?  defaultImage! : UIImage(named: events[0][EventsDatabase.columns.image])
             if events.count >= 2{
-                partImages[1].image =  events[1][EventsDatabase.sharedInstance.columns.image] == "" ?  defaultImage! : UIImage(named: events[1][EventsDatabase.sharedInstance.columns.image])
+                partImages[1].image =  events[1][EventsDatabase.columns.image] == "" ?  defaultImage! : UIImage(named: events[1][EventsDatabase.columns.image])
                 if events.count > 2 {
                     let extensionImage = defaultImage
                     partImages[2].image = extensionImage
