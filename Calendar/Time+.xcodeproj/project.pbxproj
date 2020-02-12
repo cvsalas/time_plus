@@ -47,13 +47,6 @@
 			remoteGlobalIDString = F1E545DF2390A2150046525A;
 			remoteInfo = "Time+";
 		};
-		F1E546192390A2520046525A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F1E546152390A2520046525A /* JTAppleCalendar.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3BE7994F233A346B00A37CA8;
-			remoteInfo = JTAppleCalendar;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -90,7 +83,6 @@
 		F1E546012390A2180046525A /* Time+UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Time+UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E546052390A2180046525A /* Time_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_UITests.swift; sourceTree = "<group>"; };
 		F1E546072390A2180046525A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1E546152390A2520046525A /* JTAppleCalendar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JTAppleCalendar.xcodeproj; path = "../JTAppleCalendar-master/JTAppleCalendar.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +127,6 @@
 		F1E545D72390A2150046525A = {
 			isa = PBXGroup;
 			children = (
-				F1E546152390A2520046525A /* JTAppleCalendar.xcodeproj */,
 				F1E545E22390A2150046525A /* Time+ */,
 				F1E545F92390A2170046525A /* Time+Tests */,
 				F1E546042390A2180046525A /* Time+UITests */,
@@ -197,14 +188,6 @@
 				F1E546072390A2180046525A /* Info.plist */,
 			);
 			path = "Time+UITests";
-			sourceTree = "<group>";
-		};
-		F1E546162390A2520046525A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F1E5461A2390A2520046525A /* JTAppleCalendar.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		F1E5461D2390A3BE0046525A /* Frameworks */ = {
@@ -311,12 +294,6 @@
 			mainGroup = F1E545D72390A2150046525A;
 			productRefGroup = F1E545E12390A2150046525A /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = F1E546162390A2520046525A /* Products */;
-					ProjectRef = F1E546152390A2520046525A /* JTAppleCalendar.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				F1E545DF2390A2150046525A /* Time+ */,
@@ -325,16 +302,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		F1E5461A2390A2520046525A /* JTAppleCalendar.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = JTAppleCalendar.framework;
-			remoteRef = F1E546192390A2520046525A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F1E545DE2390A2150046525A /* Resources */ = {
@@ -631,7 +598,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2PLXSBA7GR;
-				HEADER_SEARCH_PATHS = "~/Desktop/JTAppleCalendar-master/Sources/JTAppleCalendar/**";
 				INFOPLIST_FILE = "Time+/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -651,7 +617,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2PLXSBA7GR;
-				HEADER_SEARCH_PATHS = "~/Desktop/JTAppleCalendar-master/Sources/JTAppleCalendar/**";
 				INFOPLIST_FILE = "Time+/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
