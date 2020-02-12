@@ -29,7 +29,6 @@
 		F1E545ED2390A2170046525A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1E545EC2390A2170046525A /* Assets.xcassets */; };
 		F1E545FB2390A2180046525A /* Time_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E545FA2390A2180046525A /* Time_Tests.swift */; };
 		F1E546062390A2180046525A /* Time_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E546052390A2180046525A /* Time_UITests.swift */; };
-		F1E5461E2390A3BE0046525A /* JTAppleCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E5461A2390A2520046525A /* JTAppleCalendar.framework */; };
 		FA78A2B7F773FE00264C728C /* Pods_Time_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDCDABBC36C882821061D7C /* Pods_Time_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,13 +52,6 @@
 			containerPortal = F1E546152390A2520046525A /* JTAppleCalendar.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 3BE7994F233A346B00A37CA8;
-			remoteInfo = JTAppleCalendar;
-		};
-		F1E5461B2390A3AE0046525A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F1E546152390A2520046525A /* JTAppleCalendar.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 3BE7994E233A346B00A37CA8;
 			remoteInfo = JTAppleCalendar;
 		};
 /* End PBXContainerItemProxy section */
@@ -106,7 +98,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1E5461E2390A3BE0046525A /* JTAppleCalendar.framework in Frameworks */,
 				946A0B5A22E43D69C84E9391 /* Pods_Time_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,7 +233,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				F1E5461C2390A3AE0046525A /* PBXTargetDependency */,
 			);
 			name = "Time+";
 			productName = "Time+";
@@ -506,11 +496,6 @@
 			target = F1E545DF2390A2150046525A /* Time+ */;
 			targetProxy = F1E546022390A2180046525A /* PBXContainerItemProxy */;
 		};
-		F1E5461C2390A3AE0046525A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = JTAppleCalendar;
-			targetProxy = F1E5461B2390A3AE0046525A /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -645,6 +630,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2PLXSBA7GR;
 				HEADER_SEARCH_PATHS = "~/Desktop/JTAppleCalendar-master/Sources/JTAppleCalendar/**";
 				INFOPLIST_FILE = "Time+/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -664,6 +650,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2PLXSBA7GR;
 				HEADER_SEARCH_PATHS = "~/Desktop/JTAppleCalendar-master/Sources/JTAppleCalendar/**";
 				INFOPLIST_FILE = "Time+/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
