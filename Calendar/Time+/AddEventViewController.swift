@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
+class AddEventViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, DatePickerWithDoneDelegate {
     
     fileprivate enum ButtonPressed{
         case Start, End
@@ -79,8 +79,6 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         self.view.addSubview(datePicker)
     }
     
-
-    
     func doneTapped(picker: DatePickerWithDone) {
         setTimes(picker: picker)
         picker.removeFromSuperview()
@@ -101,15 +99,40 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         }
     }
     
+    //CAMERA CODE FROM HERE ON DOWN -- @RAF & TEAM
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    var imagePickerController : UIImagePickerController!
+    var imageTaken: UIImage!
+
+    @IBAction func cameraButton(_ sender: Any) {
+        imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .camera
+        
+        // If you were to create a custom overlay, need new view from a xib?
+        //imagePickerController.showsCameraControls = false
+        
+        present(imagePickerController, animated: true, completion: nil)
+    }
     
+    //Called after taking a picture
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imagePickerController.dismiss(animated: true, completion: nil)
+        imageTaken = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        saveImage(imageName: "test.png")
+    }
+    
+    func saveImage(imageName: String){
+       //create an instance of the FileManager
+       let fileManager = FileManager.default
+       //get the image path
+       let imagePath = (NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+        print(imagePath)
+       //get the image we took with camera
+        let image = imageTaken
+       //get the PNG data for this image
+        let data = image!.pngData()
+       //store it in the document directory
+        fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
+    }
 }

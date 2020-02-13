@@ -445,14 +445,6 @@
                                     <constraint firstItem="5K6-RM-8lD" firstAttribute="top" secondItem="9H3-FA-0y9" secondAttribute="top" constant="17" id="zj7-YX-Huv"/>
                                 </constraints>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xWY-lZ-BTc">
-                                <rect key="frame" x="31" y="639" width="313" height="72"/>
-                                <segments>
-                                    <segment title="x0"/>
-                                    <segment title="Daily"/>
-                                    <segment title="Weekly"/>
-                                </segments>
-                            </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ERM-DU-a2W">
                                 <rect key="frame" x="16" y="231" width="343" height="336"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -490,12 +482,40 @@
                                     </subviews>
                                 </collectionReusableView>
                             </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xWY-lZ-BTc">
+                                <rect key="frame" x="16" y="597" width="343" height="72"/>
+                                <segments>
+                                    <segment title="x0"/>
+                                    <segment title="Daily"/>
+                                    <segment title="Weekly"/>
+                                </segments>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHX-1d-LGM">
+                                <rect key="frame" x="16" y="691" width="343" height="87"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKr-Dr-zQ1">
+                                        <rect key="frame" x="146" y="24" width="51" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="camera.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="cameraButton:" destination="6ri-1w-Vc6" eventType="touchUpInside" id="4jw-5x-sqa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.33461155129999998" green="0.51076748699999996" blue="0.29022872799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="B6l-kR-TiH" firstAttribute="bottom" secondItem="xWY-lZ-BTc" secondAttribute="bottom" constant="68" id="028-hK-fs4"/>
+                            <constraint firstItem="B6l-kR-TiH" firstAttribute="bottom" secondItem="xWY-lZ-BTc" secondAttribute="bottom" constant="110" id="028-hK-fs4"/>
                             <constraint firstItem="9H3-FA-0y9" firstAttribute="width" secondItem="dfs-px-XVM" secondAttribute="width" multiplier="0.946667" id="5Hd-0D-Qcf"/>
-                            <constraint firstItem="xWY-lZ-BTc" firstAttribute="width" secondItem="dfs-px-XVM" secondAttribute="width" multiplier="0.834667" id="8hr-vA-Osr"/>
+                            <constraint firstItem="xWY-lZ-BTc" firstAttribute="width" secondItem="dfs-px-XVM" secondAttribute="width" multiplier="0.834667" constant="30" id="8hr-vA-Osr"/>
+                            <constraint firstItem="pHX-1d-LGM" firstAttribute="leading" secondItem="xWY-lZ-BTc" secondAttribute="leading" id="CZv-UH-mXz"/>
+                            <constraint firstItem="pHX-1d-LGM" firstAttribute="bottom" secondItem="B6l-kR-TiH" secondAttribute="bottom" id="Gmd-fG-qkA"/>
+                            <constraint firstItem="pHX-1d-LGM" firstAttribute="top" secondItem="xWY-lZ-BTc" secondAttribute="bottom" constant="23" id="HDq-yU-rg1"/>
+                            <constraint firstItem="B6l-kR-TiH" firstAttribute="trailing" secondItem="pHX-1d-LGM" secondAttribute="trailing" constant="16" id="exb-uE-9ml"/>
                             <constraint firstItem="xWY-lZ-BTc" firstAttribute="centerX" secondItem="dfs-px-XVM" secondAttribute="centerX" id="fse-UJ-AxA"/>
                             <constraint firstItem="ERM-DU-a2W" firstAttribute="height" secondItem="dfs-px-XVM" secondAttribute="height" multiplier="0.413793" id="g5F-F6-WU4"/>
                             <constraint firstItem="xWY-lZ-BTc" firstAttribute="centerX" secondItem="9H3-FA-0y9" secondAttribute="centerX" id="ja0-bH-BPr"/>
@@ -503,7 +523,7 @@
                             <constraint firstItem="xWY-lZ-BTc" firstAttribute="height" secondItem="dfs-px-XVM" secondAttribute="height" multiplier="0.0874384" id="mNz-0m-q3f"/>
                             <constraint firstItem="ERM-DU-a2W" firstAttribute="width" secondItem="dfs-px-XVM" secondAttribute="width" multiplier="0.914667" id="p2M-NN-oX2"/>
                             <constraint firstItem="9H3-FA-0y9" firstAttribute="top" secondItem="B6l-kR-TiH" secondAttribute="top" constant="10" id="qfU-SK-ovk"/>
-                            <constraint firstItem="xWY-lZ-BTc" firstAttribute="top" secondItem="ERM-DU-a2W" secondAttribute="bottom" constant="72" id="swc-ev-qPC"/>
+                            <constraint firstItem="xWY-lZ-BTc" firstAttribute="top" secondItem="ERM-DU-a2W" secondAttribute="bottom" constant="30" id="swc-ev-qPC"/>
                             <constraint firstItem="xWY-lZ-BTc" firstAttribute="centerX" secondItem="ERM-DU-a2W" secondAttribute="centerX" id="t3h-o3-DLe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="B6l-kR-TiH"/>
@@ -650,6 +670,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera.fill" catalog="system" width="64" height="48"/>
         <image name="gear" catalog="system" width="64" height="58"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="minus" catalog="system" width="64" height="12"/>
