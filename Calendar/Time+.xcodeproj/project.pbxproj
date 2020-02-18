@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BEFEC6723F2183B00546158 /* Font Resources in Resources */ = {isa = PBXBuildFile; fileRef = 2BEFEC6623F2183B00546158 /* Font Resources */; };
+		2BEFEC9423F779E700546158 /* IconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEFEC9323F779E700546158 /* IconViewController.swift */; };
 		720118E323CFA37A00A3A227 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720118E223CFA37A00A3A227 /* LaunchScreen.storyboard */; };
 		7216AECA23E1146100962A0F /* HourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7216AEC923E1146100962A0F /* HourCell.swift */; };
 		7216AECC23E121E600962A0F /* DayTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7216AECB23E121E600962A0F /* DayTableController.swift */; };
@@ -66,6 +68,8 @@
 
 /* Begin PBXFileReference section */
 		21259B379CA5D4B29AE3CDDD /* Pods-Time+.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time+.release.xcconfig"; path = "Target Support Files/Pods-Time+/Pods-Time+.release.xcconfig"; sourceTree = "<group>"; };
+		2BEFEC6623F2183B00546158 /* Font Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Font Resources"; sourceTree = "<group>"; };
+		2BEFEC9323F779E700546158 /* IconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconViewController.swift; sourceTree = "<group>"; };
 		720118E223CFA37A00A3A227 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7216AEC923E1146100962A0F /* HourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCell.swift; sourceTree = "<group>"; };
 		7216AECB23E121E600962A0F /* DayTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableController.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 		F1E545D72390A2150046525A = {
 			isa = PBXGroup;
 			children = (
+				2BEFEC6623F2183B00546158 /* Font Resources */,
 				F1E546152390A2520046525A /* JTAppleCalendar.xcodeproj */,
 				F1E545E22390A2150046525A /* Time+ */,
 				F1E545F92390A2170046525A /* Time+Tests */,
@@ -171,6 +176,7 @@
 				F1E545E52390A2150046525A /* SceneDelegate.swift */,
 				F1E545E72390A2150046525A /* ViewController.swift */,
 				F1E545E92390A2150046525A /* Main.storyboard */,
+				2BEFEC9323F779E700546158 /* IconViewController.swift */,
 				8FD1005823E8E90A004FA125 /* helpScreenViewController.swift */,
 				811521C523CD1FAB0055F6F9 /* MonthHeaderClass.swift */,
 				F1E545EC2390A2170046525A /* Assets.xcassets */,
@@ -351,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BEFEC6723F2183B00546158 /* Font Resources in Resources */,
 				720118E323CFA37A00A3A227 /* LaunchScreen.storyboard in Resources */,
 				F1E545ED2390A2170046525A /* Assets.xcassets in Resources */,
 				F1E545EB2390A2150046525A /* Main.storyboard in Resources */,
@@ -470,6 +477,7 @@
 				F1E545E62390A2150046525A /* SceneDelegate.swift in Sources */,
 				811521C823CD272C0055F6F9 /* DailyViewController.swift in Sources */,
 				811521C623CD1FAB0055F6F9 /* MonthHeaderClass.swift in Sources */,
+				2BEFEC9423F779E700546158 /* IconViewController.swift in Sources */,
 				81A1BCE423EFEEAD001724DB /* DetailedCell.swift in Sources */,
 				81FD006223E69DBB00CB094A /* DatePickerWithDone.swift in Sources */,
 				7216AECC23E121E600962A0F /* DayTableController.swift in Sources */,
