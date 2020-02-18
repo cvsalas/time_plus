@@ -20,6 +20,9 @@
 		81A1BCE223EFE8CB001724DB /* detailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1BCE123EFE8CB001724DB /* detailedViewController.swift */; };
 		81A1BCE423EFEEAD001724DB /* DetailedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1BCE323EFEEAD001724DB /* DetailedCell.swift */; };
 		81A1BCE623EFF857001724DB /* DetailedEventsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1BCE523EFF857001724DB /* DetailedEventsTableController.swift */; };
+		81B786B823FBC5A500F4CECA /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B786B723FBC5A500F4CECA /* IconCollectionViewCell.swift */; };
+		81B786BA23FBC6C200F4CECA /* IconCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B786B923FBC6C200F4CECA /* IconCollectionReusableView.swift */; };
+		81B786BE23FBD55C00F4CECA /* IconsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B786BD23FBD55C00F4CECA /* IconsCollectionViewController.swift */; };
 		81FD006223E69DBB00CB094A /* DatePickerWithDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD006123E69DBB00CB094A /* DatePickerWithDone.swift */; };
 		8FD1005923E8E90A004FA125 /* helpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD1005823E8E90A004FA125 /* helpScreenViewController.swift */; };
 		8FFEEDEB23FA210A0025C3C6 /* libJTAppleCalendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFEEDE723FA210A0025C3C6 /* libJTAppleCalendar.a */; };
@@ -65,6 +68,9 @@
 		81A1BCE123EFE8CB001724DB /* detailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailedViewController.swift; sourceTree = "<group>"; };
 		81A1BCE323EFEEAD001724DB /* DetailedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCell.swift; sourceTree = "<group>"; };
 		81A1BCE523EFF857001724DB /* DetailedEventsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedEventsTableController.swift; sourceTree = "<group>"; };
+		81B786B723FBC5A500F4CECA /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
+		81B786B923FBC6C200F4CECA /* IconCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionReusableView.swift; sourceTree = "<group>"; };
+		81B786BD23FBD55C00F4CECA /* IconsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IconsCollectionViewController.swift; path = "/Users/user165037/Desktop/time_plus/Calendar/Time+/IconsCollectionViewController.swift"; sourceTree = "<absolute>"; };
 		81FD006123E69DBB00CB094A /* DatePickerWithDone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerWithDone.swift; sourceTree = "<group>"; };
 		8FD1005823E8E90A004FA125 /* helpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpScreenViewController.swift; sourceTree = "<group>"; };
 		8FFEEDDD23F9D0790025C3C6 /* libJTAppleCalendar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libJTAppleCalendar.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,10 +171,13 @@
 		F1E545E22390A2150046525A /* Time+ */ = {
 			isa = PBXGroup;
 			children = (
+				81B786BD23FBD55C00F4CECA /* IconsCollectionViewController.swift */,
 				F1E545E32390A2150046525A /* AppDelegate.swift */,
 				F1E545E52390A2150046525A /* SceneDelegate.swift */,
 				F1E545E72390A2150046525A /* ViewController.swift */,
 				F1E545E92390A2150046525A /* Main.storyboard */,
+				81B786B923FBC6C200F4CECA /* IconCollectionReusableView.swift */,
+				81B786B723FBC5A500F4CECA /* IconCollectionViewCell.swift */,
 				8FD1005823E8E90A004FA125 /* helpScreenViewController.swift */,
 				811521C523CD1FAB0055F6F9 /* MonthHeaderClass.swift */,
 				F1E545EC2390A2170046525A /* Assets.xcassets */,
@@ -400,6 +409,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81B786BA23FBC6C200F4CECA /* IconCollectionReusableView.swift in Sources */,
+				81B786BE23FBD55C00F4CECA /* IconsCollectionViewController.swift in Sources */,
 				F1E545E82390A2150046525A /* ViewController.swift in Sources */,
 				810F6DD823E944120083224F /* AddEventViewController.swift in Sources */,
 				8FD1005923E8E90A004FA125 /* helpScreenViewController.swift in Sources */,
@@ -407,6 +418,7 @@
 				F1E545E42390A2150046525A /* AppDelegate.swift in Sources */,
 				7216AECA23E1146100962A0F /* HourCell.swift in Sources */,
 				F1D51DBB239214F400C411C7 /* DayCell.swift in Sources */,
+				81B786B823FBC5A500F4CECA /* IconCollectionViewCell.swift in Sources */,
 				81A1BCE223EFE8CB001724DB /* detailedViewController.swift in Sources */,
 				F1E545E62390A2150046525A /* SceneDelegate.swift in Sources */,
 				811521C823CD272C0055F6F9 /* DailyViewController.swift in Sources */,
