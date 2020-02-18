@@ -12,6 +12,6 @@ class IconCollectionReusableView: UICollectionReusableView {
         
     @IBOutlet weak var iconLabel: UILabel!
     
-    @IBOutlet weak var iconName: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
 
 }
