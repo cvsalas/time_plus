@@ -9,12 +9,11 @@
 import UIKit
 
 class HourCell: UITableViewCell {
+    @IBOutlet var TopHalfViews : [UIView]!
+    @IBOutlet var BottomHalfViews : [UIView]!
 
-    @IBOutlet weak var amPmLabel: UILabel!
-    @IBOutlet weak var clockImage: UIImageView!
-    @IBOutlet var firstHalfImages : [UIImageView]!
-    @IBOutlet var secondHalfImages : [UIImageView]!
-
+    @IBOutlet weak var AMPMLabel: UILabel!
+    @IBOutlet weak var ClockImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

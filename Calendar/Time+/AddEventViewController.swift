@@ -51,10 +51,9 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         // Do any additional setup after loading the view.
     }
     
-    
     @IBAction func DoneButtonPressed(_ sender: Any) {
         if let start = startTime, let end = endTime{
-            EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: currentDay, iconPath: "", imagePath: "")
+            EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: currentDay, iconPath: primaryVisual.entry, imagePath: "")
         }
         
         navigationController?.popViewController(animated: true)
@@ -124,7 +123,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         }
     }
     
-   
+    
     @IBAction func ellipsisPressed(_ sender: Any) {
         self.visualSelected = .Primary
         performSegue(withIdentifier: "toIconsView", sender: self)
@@ -175,13 +174,20 @@ extension AddEventViewController : UICollectionViewDelegate, UICollectionViewDat
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
-    }
-    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "defualtIconsFooter", for: indexPath)
+        return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "defaultIconsFooter", for: indexPath)
     }
     
+    internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return collectionView.dequeueReusableCell(withReuseIdentifier: "iconCell", for: indexPath)
+    }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+         // #warning Incomplete implementation, return the number of sections
+         return 1
+     }
+   
+    @IBAction func iconSelectionButton(_ sender: Any) {
+        performSegue(withIdentifier: "toIconsView", sender: self)
+    }
 }

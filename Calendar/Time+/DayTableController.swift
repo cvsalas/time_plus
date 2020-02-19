@@ -28,18 +28,18 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
         
         resetCell(cell: cell)
         
-        cell.clockImage.image = UIImage(named: "\(clock)oClock")!
-        cell.amPmLabel.text = timeString
+        cell.ClockImage.image = UIImage(named: "\(clock)oClock")!
+        cell.AMPMLabel.text = timeString
         
-        populateHourPart(partImages: &cell.firstHalfImages, row: indexPath.row, begMinute: "00", endMinute: "29", defaultImage: UIImage(named: "\(clock)oClock")!)
-        populateHourPart(partImages: &cell.secondHalfImages, row: indexPath.row, begMinute: "30", endMinute: "59", defaultImage: UIImage(named: "\(clock)oClock")!)
+        populateHourPart(thisView: &cell.TopHalfViews, row: indexPath.row, begMinute: "00", endMinute: "29")
+        populateHourPart(thisView: &cell.BottomHalfViews, row: indexPath.row, begMinute: "30", endMinute: "59")
         
         return cell
         
         
     }
     
-    func populateHourPart( partImages: inout [UIImageView], row: Int, begMinute: String, endMinute: String, defaultImage: UIImage?){
+    func populateHourPart(thisView: inout [UIView], row: Int, begMinute: String, endMinute: String){
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
@@ -54,23 +54,36 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
         let events = EventsDatabase.sharedInstance.getEvents(startTime: firstPart, endTime: secondPart, date: view!.receivedDate)
         
         if events.count >= 1 {
-            partImages[0].image =  events[0][EventsDatabase.columns.image] == "" ?  defaultImage! : UIImage(named: events[0][EventsDatabase.columns.image])
-            if events.count >= 2{
-                partImages[1].image =  events[1][EventsDatabase.columns.image] == "" ?  defaultImage! : UIImage(named: events[1][EventsDatabase.columns.image])
-                if events.count > 2 {
-                    let extensionImage = defaultImage
-                    partImages[2].image = extensionImage
-                }
-            }
+            thisView[0].addSubview(parseString(iconSelected: events[0][EventsDatabase.columns.icon]))  
+//            if events.count >= 2{
+//                thisView[1].image =  events[1][EventsDatabase.columns.image] == "" ?  defaultImage! : UIImage(named: events[1][EventsDatabase.columns.image])
+//                if events.count > 2 {
+//                    let extensionImage = defaultImage
+//                    thisView[2].image = extensionImage
+//                }
+//            }
         }
     }
     
+    func parseString(iconSelected : String) -> IconView {
+        let compArray = iconSelected.components(separatedBy: ":")
+        let code = UnicodeScalar(compArray[0])
+        let name = compArray[1]
+        let icon = Icon(name: name, code: code!)
+        let iconView = IconView(icon: icon, iconFontSize: 25, nameFontSize: 25, frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        return iconView
+    }
+    
     func resetCell(cell: HourCell){
-        for imageView in cell.firstHalfImages{
-            imageView.image = nil
+        for view in cell.TopHalfViews{
+            while let subview = view.subviews.last {
+                subview.removeFromSuperview()
+            }
         }
-        for imageView in cell.secondHalfImages{
-            imageView.image = nil
+        for view in cell.BottomHalfViews{
+            while let subview = view.subviews.last {
+                subview.removeFromSuperview()
+            }
         }
     }
     
