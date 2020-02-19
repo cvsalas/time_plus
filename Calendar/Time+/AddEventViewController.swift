@@ -16,6 +16,9 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
     
     var startTime : Date!
     var endTime : Date!
+    var icon1 : UILabel!
+    var image2 : UIView!
+    var ellipsis2 : Bool = false
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
     
@@ -96,6 +99,25 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
         else{
             self.endTime = picker.date
             self.endTimeLabel.text = self.dateFormatter.string(from: self.endTime)
+        }
+    }
+    
+    @IBAction func MoreIconsMiddleRow(_ sender: Any) {
+        ellipsis2 = true
+        performSegue(withIdentifier: "toIconGallery", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "toIconGallery"){
+            if (ellipsis2){
+                let iconGalleryView = segue.destination as! IconViewController
+                iconGalleryView.icon_return = {(iconView : IconViewController) in self.image2 = iconView.icon}
+                
+            }
+            else{
+                let iconGalleryView = segue.destination as! IconViewController
+                iconGalleryView.icon_return = {(iconView : IconViewController) in self.icon1 = iconView.icon}
+            }
         }
     }
     

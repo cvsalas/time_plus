@@ -21,6 +21,8 @@
 		81A1BCE423EFEEAD001724DB /* DetailedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1BCE323EFEEAD001724DB /* DetailedCell.swift */; };
 		81A1BCE623EFF857001724DB /* DetailedEventsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1BCE523EFF857001724DB /* DetailedEventsTableController.swift */; };
 		81FD006223E69DBB00CB094A /* DatePickerWithDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD006123E69DBB00CB094A /* DatePickerWithDone.swift */; };
+		8F38727B23FCC97B00EAD8F3 /* IconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F38727A23FCC97B00EAD8F3 /* IconViewController.swift */; };
+		8F38727D23FCCA4200EAD8F3 /* Font Resources in Resources */ = {isa = PBXBuildFile; fileRef = 8F38727C23FCCA4200EAD8F3 /* Font Resources */; };
 		8FD1005923E8E90A004FA125 /* helpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD1005823E8E90A004FA125 /* helpScreenViewController.swift */; };
 		8FFEEDEB23FA210A0025C3C6 /* libJTAppleCalendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFEEDE723FA210A0025C3C6 /* libJTAppleCalendar.a */; };
 		8FFEEDEE23FA210A0025C3C6 /* libSQLite.swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFEEDEA23FA210A0025C3C6 /* libSQLite.swift.a */; };
@@ -66,6 +68,8 @@
 		81A1BCE323EFEEAD001724DB /* DetailedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCell.swift; sourceTree = "<group>"; };
 		81A1BCE523EFF857001724DB /* DetailedEventsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedEventsTableController.swift; sourceTree = "<group>"; };
 		81FD006123E69DBB00CB094A /* DatePickerWithDone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerWithDone.swift; sourceTree = "<group>"; };
+		8F38727A23FCC97B00EAD8F3 /* IconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconViewController.swift; sourceTree = "<group>"; };
+		8F38727C23FCCA4200EAD8F3 /* Font Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Font Resources"; sourceTree = "<group>"; };
 		8FD1005823E8E90A004FA125 /* helpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpScreenViewController.swift; sourceTree = "<group>"; };
 		8FFEEDDD23F9D0790025C3C6 /* libJTAppleCalendar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libJTAppleCalendar.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FFEEDDF23F9D0790025C3C6 /* libSQLite.swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSQLite.swift.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +146,7 @@
 		F1E545D72390A2150046525A = {
 			isa = PBXGroup;
 			children = (
+				8F38727C23FCCA4200EAD8F3 /* Font Resources */,
 				F1E545E22390A2150046525A /* Time+ */,
 				F1E545F92390A2170046525A /* Time+Tests */,
 				F1E546042390A2180046525A /* Time+UITests */,
@@ -176,6 +181,7 @@
 				F1D51DBA239214F400C411C7 /* DayCell.swift */,
 				811521C723CD272C0055F6F9 /* DailyViewController.swift */,
 				720118E223CFA37A00A3A227 /* LaunchScreen.storyboard */,
+				8F38727A23FCC97B00EAD8F3 /* IconViewController.swift */,
 				7269234E23DBC5E20033B63B /* EventsDatabase.swift */,
 				7216AEC923E1146100962A0F /* HourCell.swift */,
 				7216AECB23E121E600962A0F /* DayTableController.swift */,
@@ -326,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F38727D23FCCA4200EAD8F3 /* Font Resources in Resources */,
 				720118E323CFA37A00A3A227 /* LaunchScreen.storyboard in Resources */,
 				F1E545ED2390A2170046525A /* Assets.xcassets in Resources */,
 				F1E545EB2390A2150046525A /* Main.storyboard in Resources */,
@@ -411,6 +418,7 @@
 				F1E545E62390A2150046525A /* SceneDelegate.swift in Sources */,
 				811521C823CD272C0055F6F9 /* DailyViewController.swift in Sources */,
 				811521C623CD1FAB0055F6F9 /* MonthHeaderClass.swift in Sources */,
+				8F38727B23FCC97B00EAD8F3 /* IconViewController.swift in Sources */,
 				81A1BCE423EFEEAD001724DB /* DetailedCell.swift in Sources */,
 				81FD006223E69DBB00CB094A /* DatePickerWithDone.swift in Sources */,
 				7216AECC23E121E600962A0F /* DayTableController.swift in Sources */,

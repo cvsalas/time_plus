@@ -7,6 +7,11 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="fa-solid-900.ttf">
+            <string>FontAwesome5Free-Solid</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Ib Calendar Data Source-->
         <scene sceneID="tne-QT-ifu">
@@ -474,12 +479,6 @@
                                 <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Yei-Dc-I4G">
                                     <rect key="frame" x="0.0" y="93" width="343" height="85"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jRZ-oQ-w5F" userLabel="Misc Image">
-                                            <rect key="frame" x="125" y="4" width="124" height="77"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                    </subviews>
                                 </collectionReusableView>
                             </collectionView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xWY-lZ-BTc">
@@ -503,8 +502,24 @@
                                             <action selector="cameraButton:" destination="6ri-1w-Vc6" eventType="touchUpInside" id="4jw-5x-sqa"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2N-d2-egc">
+                                        <rect key="frame" x="220" y="28" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="MoreIconsMiddleRow:" destination="6ri-1w-Vc6" eventType="touchUpInside" id="pQd-2z-tr3"/>
+                                            <segue destination="3a6-CG-gVj" kind="show" identifier="toIconGallery" id="FzT-fW-eKz"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.33461155129999998" green="0.51076748699999996" blue="0.29022872799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="n2N-d2-egc" firstAttribute="top" secondItem="pHX-1d-LGM" secondAttribute="topMargin" constant="20" id="0uw-2g-UjO"/>
+                                    <constraint firstItem="n2N-d2-egc" firstAttribute="centerX" secondItem="pHX-1d-LGM" secondAttribute="centerX" constant="71.5" id="H6g-lC-dfm"/>
+                                    <constraint firstItem="n2N-d2-egc" firstAttribute="centerY" secondItem="pHX-1d-LGM" secondAttribute="centerY" id="HR6-eQ-xU3"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -667,6 +682,918 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OLQ-bB-ZfR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1879.2" y="854.18719211822668"/>
+        </scene>
+        <!--Icon View Controller-->
+        <scene sceneID="p6t-Qi-Xxi">
+            <objects>
+                <viewController id="3a6-CG-gVj" customClass="IconViewController" customModule="Time_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="22K-b9-R9j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGP-Pi-3R9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F30-M9-dtg">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1800"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zyf-Xd-kF5" userLabel="MainIcons">
+                                                <rect key="frame" x="4" y="60" width="367" height="143"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Rd2-g8-wUM" userLabel="Main.Row1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="367" height="62"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euG-Go-Xcr">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="EllipsisButtom:" destination="3a6-CG-gVj" eventType="touchUpInside" id="AWF-dv-XDz"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQQ-H6-VF9">
+                                                                <rect key="frame" x="103.66666666666669" y="0.0" width="50" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="doctorButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="iJX-3R-x1D"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAg-jD-WAc">
+                                                                <rect key="frame" x="213" y="0.0" width="38" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="medicineButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="tDV-ON-l3e"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pm9-YK-cXa">
+                                                                <rect key="frame" x="304" y="0.0" width="63" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="tvButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="NLc-3c-b8F"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="6Fk-vj-XgY" userLabel="Main.Row2">
+                                                        <rect key="frame" x="0.0" y="72" width="367" height="71"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vi6-4i-GWd">
+                                                                <rect key="frame" x="0.0" y="0.0" width="63" height="71"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="friendsButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="jWR-Lp-ECC"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oqs-Ch-dZH">
+                                                                <rect key="frame" x="113" y="0.0" width="41" height="71"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="excerciseButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="SA8-rv-Hfu"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFM-QB-HaK">
+                                                                <rect key="frame" x="215" y="0.0" width="41" height="71"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="foodButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="LDL-gs-U7g"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMv-wc-M0j">
+                                                                <rect key="frame" x="308" y="0.0" width="59" height="71"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pzY-a9-hHH" userLabel="HobbiesIcon">
+                                                <rect key="frame" x="-6.3333333333333428" y="248" width="387.66666666666674" height="215"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="0iI-oi-8Vb" userLabel="HobbiesIcon.Row1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="387.66666666666669" height="62"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="miQ-2A-CcO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="44" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="bookButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="TAv-AA-rzT"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jxd-dF-Ccb">
+                                                                <rect key="frame" x="108.33333333333331" y="0.0" width="50" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="cameraIcon:" destination="3a6-CG-gVj" eventType="touchUpInside" id="xu8-sd-1U7"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hY3-vS-ukx">
+                                                                <rect key="frame" x="219.66666666666669" y="0.0" width="50" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="chessButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="4p0-lX-jjz"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3l-zG-zfA">
+                                                                <rect key="frame" x="324.66666666666663" y="0.0" width="63" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="weightButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="uhz-VE-75L"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="bwB-K4-1Ge" userLabel="HobbiesIcon.Row2">
+                                                        <rect key="frame" x="0.0" y="72" width="387.66666666666669" height="62"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gz7-Va-rKc">
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJJ-5V-H4R">
+                                                                <rect key="frame" x="107.33333333333331" y="0.0" width="63" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="entertainmentButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="m2S-Cf-obk"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xj8-zu-Xjs">
+                                                                <rect key="frame" x="224" y="0.0" width="50" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="musicButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="bCr-2g-aw5"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqL-wZ-5pI">
+                                                                <rect key="frame" x="330.66666666666663" y="0.0" width="57" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="hammerIcon:" destination="3a6-CG-gVj" eventType="touchUpInside" id="kUS-aq-NcI"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Yjh-w3-cKh" userLabel="HobbiesIcon.Row3">
+                                                        <rect key="frame" x="0.0" y="144" width="387.66666666666669" height="71"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTG-95-7t2">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="71"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="songButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="baN-Ew-4WA"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wan-aQ-0x7">
+                                                                <rect key="frame" x="104.66666666666666" y="0.0" width="63" height="71"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="gasButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="n0P-k8-e3V"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNK-rt-TbS">
+                                                                <rect key="frame" x="217.66666666666669" y="0.0" width="59" height="71"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG5-Ie-3Li">
+                                                                <rect key="frame" x="328.66666666666663" y="0.0" width="59" height="71"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KpT-P6-amo" userLabel="NatureIcon">
+                                                <rect key="frame" x="-6.3333333333333428" y="508" width="387.66666666666674" height="143"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="pAi-M5-SQA" userLabel="NatureIcon.Row1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="387.66666666666669" height="62"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klX-MT-Jyg">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="binoButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="Wlc-an-nok"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Er-RD-U3d">
+                                                                <rect key="frame" x="118.66666666666666" y="0.0" width="38" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="hikingButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="qnO-a9-GF7"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jQ-EY-bOa">
+                                                                <rect key="frame" x="218.66666666666669" y="0.0" width="63" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="campButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="MDM-NQ-0z2"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbF-YH-EEb">
+                                                                <rect key="frame" x="337.66666666666663" y="0.0" width="50" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="skiButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="uhD-eQ-QzV"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="mJ3-AA-Cce" userLabel="NatureIcon.Row2">
+                                                        <rect key="frame" x="0.0" y="72" width="387.66666666666669" height="71"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezj-qu-3k9">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="71"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="snowboardButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="go9-5E-sji"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWZ-t6-1TN">
+                                                                <rect key="frame" x="111" y="0.0" width="50" height="71"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="snowButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="0To-AA-FJY"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHU-WB-I6x">
+                                                                <rect key="frame" x="215.66666666666669" y="0.0" width="63" height="71"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="beachButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="a9s-DW-zEE"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agb-qA-AeC">
+                                                                <rect key="frame" x="328.66666666666663" y="0.0" width="59" height="71"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8K9-jt-gWp" userLabel="WorkIcons">
+                                                <rect key="frame" x="-11" y="696" width="397" height="215"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="G5d-HP-ngS" userLabel="WorkIcons.Row1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="397" height="62"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVO-DC-zgz">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="briefCaseButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="CSd-4X-ZpY"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Tl-hB-wyc">
+                                                                <rect key="frame" x="110" y="0.0" width="57" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="creditcardButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="K52-28-UOG"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbN-Xb-1Ak">
+                                                                <rect key="frame" x="227" y="0.0" width="50" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="gavelButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="sVB-g9-o4L"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="az2-wL-ZK5">
+                                                                <rect key="frame" x="334" y="0.0" width="63" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="graduateButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="ZzN-5Q-x2O"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="63E-HR-6Yj" userLabel="WorkIcons.Row2">
+                                                        <rect key="frame" x="0.0" y="72" width="397" height="62"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QzH-sS-uJF">
+                                                                <rect key="frame" x="0.0" y="0.0" width="44" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="hospitalButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="a18-EO-gHP"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GD0-H7-ELN">
+                                                                <rect key="frame" x="115.66666666666669" y="0.0" width="50" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="landmarkButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="Ocr-xa-DdD"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4b-Cd-Ijc">
+                                                                <rect key="frame" x="234.33333333333337" y="0.0" width="50" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="phoneButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="jxt-pC-1pW"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSd-ZM-wPU">
+                                                                <rect key="frame" x="359" y="0.0" width="38" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="prescriptionButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="Ijd-7Y-iC9"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Ofy-yq-XMJ" userLabel="WorkIcons.Row3">
+                                                        <rect key="frame" x="0.0" y="144" width="397" height="71"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8m-vh-w7a">
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="71"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="shoppingButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="YAP-JA-4vY"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMn-9y-ufk">
+                                                                <rect key="frame" x="110" y="0.0" width="63" height="71"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="theaterButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="TFA-Lb-D8c"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lz-Tq-arf">
+                                                                <rect key="frame" x="223" y="0.0" width="63" height="71"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="voteButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="z0g-BD-Ri4"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8J4-6e-P4U">
+                                                                <rect key="frame" x="338" y="0.0" width="59" height="71"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="x84-N4-SOQ" userLabel="SelfCareButtons">
+                                                <rect key="frame" x="-6.6666666666666572" y="956" width="388.33333333333326" height="133"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="78p-js-EeU" userLabel="SelfCare.Row1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="388.33333333333331" height="62"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0N-nV-bj7">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50.333333333333336" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="showerButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="isx-nF-60K"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LW0-JJ-nNl">
+                                                                <rect key="frame" x="105.33333333333334" y="0.0" width="63" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="sleepButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="Ik3-h9-Gi5"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WY2-KR-T4P">
+                                                                <rect key="frame" x="223.33333333333331" y="0.0" width="50" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="catButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="EO4-bv-BBo"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6g-hf-6sD">
+                                                                <rect key="frame" x="331.33333333333337" y="0.0" width="57" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="dogButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="doA-Ed-dKP"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="4zl-Zj-OEi" userLabel="SelfCare.Row1">
+                                                        <rect key="frame" x="0.0" y="62" width="388.33333333333331" height="71"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgP-Li-qfe">
+                                                                <rect key="frame" x="0.0" y="0.0" width="63.333333333333336" height="71"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="coffeeButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="ncj-ZW-ssI"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tb3-TA-jve">
+                                                                <rect key="frame" x="121.66666666666669" y="0.0" width="38" height="71"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="prayButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="S2V-ml-oJK"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQp-OS-Cwo">
+                                                                <rect key="frame" x="220.33333333333331" y="0.0" width="59" height="71"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUv-6l-sgw">
+                                                                <rect key="frame" x="329.33333333333337" y="0.0" width="59" height="71"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mdM-Ep-Kee" userLabel="Travel">
+                                                <rect key="frame" x="-4.3333333333333428" y="1134" width="383.66666666666674" height="134"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="C06-mh-aX7" userLabel="Travel.Row1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="383.66666666666669" height="62"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGT-r8-Efk">
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="anchorButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="oRB-wb-Gax"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ecd-Cq-Ja3">
+                                                                <rect key="frame" x="107" y="0.0" width="63" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="bicycleButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="1MP-vR-7YI"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shn-Bs-8Vh">
+                                                                <rect key="frame" x="223.66666666666669" y="0.0" width="50" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="carButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="CRt-3x-cpc"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZK-AC-vjW">
+                                                                <rect key="frame" x="333.66666666666663" y="0.0" width="50" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="busButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="Ld6-Rn-bv9"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="NYK-QU-Zif" userLabel="Travel.Row2">
+                                                        <rect key="frame" x="0.0" y="72" width="383.66666666666669" height="62"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8M-GE-qDW">
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="movingButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="nsd-6X-kWz"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcV-Zb-Max">
+                                                                <rect key="frame" x="113" y="0.0" width="57" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="planeButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="Zgo-s0-ca9"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mok-OR-CLe">
+                                                                <rect key="frame" x="232.66666666666669" y="0.0" width="44" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="trainButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="IMZ-Lm-VAD"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqA-iC-aQk">
+                                                                <rect key="frame" x="351.66666666666663" y="0.0" width="32" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="walkingButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="qPh-ad-0iS"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yPe-5P-nhx" userLabel="FamilyIcons">
+                                                <rect key="frame" x="-5" y="1313" width="385" height="143"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="owG-df-xfs" userLabel="Family.Row1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="385" height="62"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBc-8c-ptJ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="babyButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="e57-Hj-ihp"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L91-ro-pXz">
+                                                                <rect key="frame" x="114.66666666666669" y="0.0" width="44" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="birthdayButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="L8z-nx-FAK"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Knd-jk-nK4">
+                                                                <rect key="frame" x="217" y="0.0" width="63" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="partyButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="t5r-7W-86x"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bj-Mj-B7O">
+                                                                <rect key="frame" x="335" y="0.0" width="50" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="loveButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="duG-Yi-UXM"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="TUW-8Q-HF4" userLabel="Family.Row1">
+                                                        <rect key="frame" x="0.0" y="72" width="385" height="71"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDN-LA-678">
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="71"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="homeButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="vzK-bq-6mJ"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muY-Rh-NtZ">
+                                                                <rect key="frame" x="108" y="0.0" width="59" height="71"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1Y-NX-70r">
+                                                                <rect key="frame" x="217" y="0.0" width="59" height="71"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cA6-62-AL2">
+                                                                <rect key="frame" x="326" y="0.0" width="59" height="71"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Uhu-1F-klc" userLabel="SportsIcons">
+                                                <rect key="frame" x="-2.6666666666666572" y="1501" width="380.33333333333326" height="215"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="lff-b1-44G" userLabel="Spots.Row1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="380.33333333333331" height="62"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KP-gc-WjX">
+                                                                <rect key="frame" x="0.0" y="0.0" width="49" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="baseballButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="3ym-CO-q34"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZX-np-8av">
+                                                                <rect key="frame" x="110.33333333333334" y="0.0" width="49" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="basketballButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="nGy-Od-U9s"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Swm-Mn-os8">
+                                                                <rect key="frame" x="221" y="0.0" width="49" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="bowlingButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="L4c-Ja-zpg"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zju-IS-ITK">
+                                                                <rect key="frame" x="331.33333333333337" y="0.0" width="49" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="footballButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="cFe-cN-sWR"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="woq-Bc-3zb" userLabel="Spots.Row2">
+                                                        <rect key="frame" x="0.0" y="72" width="380.33333333333331" height="62"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1J-Dz-BvB">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="soccerButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="eRp-f5-l4m"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQ2-ge-3I7">
+                                                                <rect key="frame" x="112.66666666666669" y="0.0" width="41" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="golfButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="jmK-cb-8cn"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBU-Cw-9ao">
+                                                                <rect key="frame" x="216.66666666666666" y="0.0" width="49.999999999999972" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="hockeyButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="var-O7-hUJ"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJb-F3-BW0">
+                                                                <rect key="frame" x="319.33333333333337" y="0.0" width="61" height="62"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="`">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="skateButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="ptV-qq-5Nh"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="gZ5-bc-jRE" userLabel="Spots.Row3">
+                                                        <rect key="frame" x="0.0" y="144" width="380.33333333333331" height="71"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lb-Mz-ish">
+                                                                <rect key="frame" x="0.0" y="0.0" width="63" height="71"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="swimButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="ot5-Yd-3Gp"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hf-nC-io8">
+                                                                <rect key="frame" x="113" y="0.0" width="50" height="71"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="pingpongButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="Kpk-79-z7i"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ge-hX-dxV">
+                                                                <rect key="frame" x="219.33333333333331" y="0.0" width="50" height="71"/>
+                                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="50"/>
+                                                                <state key="normal" title="">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="volleyballButton:" destination="3a6-CG-gVj" eventType="touchUpInside" id="K45-nZ-82l"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qR-BV-3dQ">
+                                                                <rect key="frame" x="321.33333333333337" y="0.0" width="59" height="71"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.80559307339999997" green="0.94932216410000003" blue="0.81241661310000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="zyf-Xd-kF5" firstAttribute="top" secondItem="F30-M9-dtg" secondAttribute="top" constant="60" id="3Bq-yG-VvV"/>
+                                            <constraint firstItem="x84-N4-SOQ" firstAttribute="centerX" secondItem="F30-M9-dtg" secondAttribute="centerX" id="8s5-QY-lXg"/>
+                                            <constraint firstItem="mdM-Ep-Kee" firstAttribute="centerX" secondItem="F30-M9-dtg" secondAttribute="centerX" id="979-8c-vfx"/>
+                                            <constraint firstItem="KpT-P6-amo" firstAttribute="centerX" secondItem="F30-M9-dtg" secondAttribute="centerX" id="AFq-eS-TSP"/>
+                                            <constraint firstItem="KpT-P6-amo" firstAttribute="top" secondItem="pzY-a9-hHH" secondAttribute="bottom" constant="45" id="C9b-Bx-gc2"/>
+                                            <constraint firstItem="Uhu-1F-klc" firstAttribute="centerX" secondItem="F30-M9-dtg" secondAttribute="centerX" id="JzF-FQ-7bS"/>
+                                            <constraint firstItem="mdM-Ep-Kee" firstAttribute="top" secondItem="x84-N4-SOQ" secondAttribute="bottom" constant="45" id="OJi-TU-fhG"/>
+                                            <constraint firstItem="8K9-jt-gWp" firstAttribute="centerX" secondItem="F30-M9-dtg" secondAttribute="centerX" id="Onu-1X-lvn"/>
+                                            <constraint firstItem="yPe-5P-nhx" firstAttribute="top" secondItem="mdM-Ep-Kee" secondAttribute="bottom" constant="45" id="QXt-YN-Hwx"/>
+                                            <constraint firstItem="pzY-a9-hHH" firstAttribute="centerX" secondItem="F30-M9-dtg" secondAttribute="centerX" id="RLv-2f-2Z4"/>
+                                            <constraint firstItem="x84-N4-SOQ" firstAttribute="top" secondItem="8K9-jt-gWp" secondAttribute="bottom" constant="45" id="UPq-z5-9LY"/>
+                                            <constraint firstItem="Uhu-1F-klc" firstAttribute="top" secondItem="yPe-5P-nhx" secondAttribute="bottom" constant="45" id="fyL-qo-IfG"/>
+                                            <constraint firstItem="yPe-5P-nhx" firstAttribute="centerX" secondItem="F30-M9-dtg" secondAttribute="centerX" id="ifK-5L-Eik"/>
+                                            <constraint firstItem="zyf-Xd-kF5" firstAttribute="centerX" secondItem="F30-M9-dtg" secondAttribute="centerX" id="oBS-jE-iip"/>
+                                            <constraint firstItem="pzY-a9-hHH" firstAttribute="top" secondItem="zyf-Xd-kF5" secondAttribute="bottom" constant="45" id="oq9-z8-NrA"/>
+                                            <constraint firstItem="8K9-jt-gWp" firstAttribute="top" secondItem="KpT-P6-amo" secondAttribute="bottom" constant="45" id="y0U-Ov-fxQ"/>
+                                            <constraint firstAttribute="height" constant="1800" id="zx6-Of-q6A"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="F30-M9-dtg" firstAttribute="width" secondItem="foj-AQ-JsF" secondAttribute="width" id="5mU-cl-ScV"/>
+                                    <constraint firstItem="F30-M9-dtg" firstAttribute="bottom" secondItem="NU8-di-RS5" secondAttribute="bottom" id="Bl6-EB-WAg"/>
+                                    <constraint firstItem="F30-M9-dtg" firstAttribute="trailing" secondItem="NU8-di-RS5" secondAttribute="trailing" id="Hpq-Hg-94a"/>
+                                    <constraint firstItem="F30-M9-dtg" firstAttribute="leading" secondItem="NU8-di-RS5" secondAttribute="leading" id="kQL-nU-D2m"/>
+                                    <constraint firstItem="F30-M9-dtg" firstAttribute="top" secondItem="NU8-di-RS5" secondAttribute="top" id="urH-XC-eeD"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="NU8-di-RS5"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="foj-AQ-JsF"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="uGP-Pi-3R9" secondAttribute="bottom" id="0em-rZ-L4s"/>
+                            <constraint firstItem="uGP-Pi-3R9" firstAttribute="leading" secondItem="Tpg-SE-SXb" secondAttribute="leading" id="21i-NB-2AX"/>
+                            <constraint firstItem="uGP-Pi-3R9" firstAttribute="top" secondItem="22K-b9-R9j" secondAttribute="top" id="Mp3-7m-ibr"/>
+                            <constraint firstItem="uGP-Pi-3R9" firstAttribute="trailing" secondItem="Tpg-SE-SXb" secondAttribute="trailing" id="aZM-dw-X4r"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Tpg-SE-SXb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kr1-zc-1c2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3tf-1f-rMb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2905" y="856"/>
         </scene>
     </scenes>
     <resources>
