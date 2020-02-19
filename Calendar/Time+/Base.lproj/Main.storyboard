@@ -604,36 +604,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="Vug-7a-crW">
-                            <size key="itemSize" width="149" height="129"/>
+                            <size key="itemSize" width="119" height="91"/>
                             <size key="headerReferenceSize" width="50" height="105"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="iconCell" id="UAC-Qf-7yT" customClass="IconCollectionViewCell" customModule="Time_" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="105" width="150" height="150"/>
+                                <rect key="frame" x="0.0" y="105" width="119" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="W22-IH-pjy">
-                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="119" height="91"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhU-14-LPt">
-                                            <rect key="frame" x="44" y="16" width="61" height="22.5"/>
-                                            <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="17"/>
+                                            <rect key="frame" x="12" y="16" width="95" height="27.5"/>
+                                            <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="27"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dU-NK-yHN">
-                                            <rect key="frame" x="3.5" y="91.5" width="142" height="22.5"/>
+                                            <rect key="frame" x="3" y="60" width="113" height="16"/>
                                             <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="jhU-14-LPt" firstAttribute="width" secondItem="W22-IH-pjy" secondAttribute="width" multiplier="0.408257" id="4B4-kM-b1B"/>
+                                        <constraint firstItem="jhU-14-LPt" firstAttribute="width" secondItem="W22-IH-pjy" secondAttribute="width" multiplier="0.8" id="4B4-kM-b1B"/>
                                         <constraint firstItem="jhU-14-LPt" firstAttribute="centerX" secondItem="0dU-NK-yHN" secondAttribute="centerX" id="6Yi-W8-L2X"/>
-                                        <constraint firstItem="jhU-14-LPt" firstAttribute="height" secondItem="W22-IH-pjy" secondAttribute="height" multiplier="0.175258" id="AAh-ce-84D"/>
+                                        <constraint firstItem="jhU-14-LPt" firstAttribute="height" secondItem="W22-IH-pjy" secondAttribute="height" multiplier="0.3" id="AAh-ce-84D"/>
                                         <constraint firstItem="0dU-NK-yHN" firstAttribute="width" secondItem="W22-IH-pjy" secondAttribute="width" multiplier="0.95" id="VQX-kM-W3y"/>
                                         <constraint firstAttribute="bottom" secondItem="0dU-NK-yHN" secondAttribute="bottom" constant="15" id="nHf-Mc-WQb"/>
                                         <constraint firstItem="jhU-14-LPt" firstAttribute="centerX" secondItem="W22-IH-pjy" secondAttribute="centerX" id="qkL-oT-4td"/>
@@ -642,7 +642,7 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                <size key="customSize" width="150" height="150"/>
+                                <size key="customSize" width="119" height="91"/>
                                 <connections>
                                     <outlet property="iconLabel" destination="jhU-14-LPt" id="CI9-ok-ozq"/>
                                     <outlet property="nameLabel" destination="0dU-NK-yHN" id="BCV-rr-KHZ"/>
@@ -653,21 +653,27 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6D-hr-Urr">
-                                    <rect key="frame" x="169.5" y="14" width="75" height="42"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6D-hr-Urr">
+                                    <rect key="frame" x="185" y="14" width="44.5" height="17"/>
                                     <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zK-9n-3CE">
-                                    <rect key="frame" x="173" y="57" width="68" height="40"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zK-9n-3CE">
+                                    <rect key="frame" x="65" y="67" width="290" height="17"/>
                                     <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="I6D-hr-Urr" secondAttribute="bottom" constant="74" id="Pzt-4r-MuA"/>
+                                <constraint firstItem="I6D-hr-Urr" firstAttribute="centerX" secondItem="OsT-l9-4EC" secondAttribute="centerX" id="SVp-Fv-jDK"/>
+                                <constraint firstItem="0zK-9n-3CE" firstAttribute="top" secondItem="I6D-hr-Urr" secondAttribute="top" constant="53" id="Tj3-f0-iYY"/>
+                                <constraint firstItem="I6D-hr-Urr" firstAttribute="centerX" secondItem="0zK-9n-3CE" secondAttribute="centerX" constant="-3" id="VL1-se-1pj"/>
+                                <constraint firstItem="0zK-9n-3CE" firstAttribute="width" secondItem="OsT-l9-4EC" secondAttribute="width" multiplier="0.7" id="a89-h9-05W"/>
+                                <constraint firstItem="I6D-hr-Urr" firstAttribute="top" secondItem="OsT-l9-4EC" secondAttribute="top" constant="14" id="jwO-yO-lnb"/>
+                            </constraints>
                             <connections>
                                 <outlet property="iconLabel" destination="I6D-hr-Urr" id="4lZ-u9-N7o"/>
                                 <outlet property="nameLabel" destination="0zK-9n-3CE" id="LI1-Rg-i8E"/>
