@@ -502,24 +502,20 @@
                                             <action selector="cameraButton:" destination="6ri-1w-Vc6" eventType="touchUpInside" id="4jw-5x-sqa"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2N-d2-egc">
-                                        <rect key="frame" x="220" y="28" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2N-d2-egc">
+                                        <rect key="frame" x="231" y="24" width="46" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="MoreIconsMiddleRow:" destination="6ri-1w-Vc6" eventType="touchUpInside" id="pQd-2z-tr3"/>
-                                            <segue destination="3a6-CG-gVj" kind="show" identifier="toIconGallery" id="FzT-fW-eKz"/>
+                                            <segue destination="3a6-CG-gVj" kind="show" identifier="toIconGallery" id="HLs-UJ-7Pk"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.33461155129999998" green="0.51076748699999996" blue="0.29022872799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="n2N-d2-egc" firstAttribute="top" secondItem="pHX-1d-LGM" secondAttribute="topMargin" constant="20" id="0uw-2g-UjO"/>
-                                    <constraint firstItem="n2N-d2-egc" firstAttribute="centerX" secondItem="pHX-1d-LGM" secondAttribute="centerX" constant="71.5" id="H6g-lC-dfm"/>
-                                    <constraint firstItem="n2N-d2-egc" firstAttribute="centerY" secondItem="pHX-1d-LGM" secondAttribute="centerY" id="HR6-eQ-xU3"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

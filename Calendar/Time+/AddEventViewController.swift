@@ -104,7 +104,6 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
     
     @IBAction func MoreIconsMiddleRow(_ sender: Any) {
         ellipsis2 = true
-        performSegue(withIdentifier: "toIconGallery", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
