@@ -41,9 +41,8 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
         if let start = startTime, let end = endTime{
             EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: currentDay, iconPath: "", imagePath: "")
         }
-       // navigationController?.popViewController(animated: true)
-        performSegue(withIdentifier: "toIconsView", sender: self)
-
+        navigationController?.popViewController(animated: true)
+        
     }
     
     
@@ -113,8 +112,7 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
         // If you were to create a custom overlay, need new view from a xib?
         //imagePickerController.showsCameraControls = false
         
-       // present(imagePickerController, animated: true, completion: nil)
-        performSegue(withIdentifier: "toIconsView", sender: self)
+        present(imagePickerController, animated: true, completion: nil)
     }
     
     //Called after taking a picture
