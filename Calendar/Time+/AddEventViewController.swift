@@ -8,22 +8,35 @@
 
 import UIKit
 
-class AddEventViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, DatePickerWithDoneDelegate {
+class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     
     fileprivate enum ButtonPressed{
         case Start, End
     }
     
-    var startTime : Date!
-    var endTime : Date!
+    fileprivate enum VisualKind {
+        case Primary, Secondary
+    }
+
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
+    @IBOutlet weak var repeateSegment: UISegmentedControl!
+    @IBOutlet weak var defaultIconsCollectionView: UICollectionView!
     
     
+    var primaryVisual : EventsDataBaseStringEntry!
+    var secondaryVisual : EventsDataBaseStringEntry!
+    
+    var startTime : Date!
+    var endTime : Date!
     fileprivate var buttonPressed : ButtonPressed!
+    fileprivate var visualSelected : VisualKind = .Primary
+    
     var currentDay: Date!
     let dateFormatter = DateFormatter()
-    @IBOutlet weak var repeateSegment: UISegmentedControl!
+    
+    var imagePickerController : UIImagePickerController!
+    var imageTaken: UIImage!
     
     let datePickerTag = 0xDEADBEEF
     
@@ -32,6 +45,8 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
         
+        defaultIconsCollectionView.dataSource = self
+        defaultIconsCollectionView.delegate = self
         //setRepeatControlAppearance()
         // Do any additional setup after loading the view.
     }
@@ -41,8 +56,9 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
         if let start = startTime, let end = endTime{
             EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: currentDay, iconPath: "", imagePath: "")
         }
-        navigationController?.popViewController(animated: true)
         
+        navigationController?.popViewController(animated: true)
+
     }
     
     
@@ -99,40 +115,73 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
         }
     }
     
-    //CAMERA CODE FROM HERE ON DOWN -- @RAF & TEAM
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "toIconsView"){
+            if(visualSelected == .Primary){
+                let iconView = segue.destination as! IconsCollectionViewController
+                iconView.iconSelected = {iconCell in self.primaryVisual = Icon(name: iconCell.nameLabel.text!, code: UnicodeScalar(iconCell.iconLabel.text!)!) }
+            }
+        }
+    }
     
-    var imagePickerController : UIImagePickerController!
-    var imageTaken: UIImage!
+   
+    @IBAction func ellipsisPressed(_ sender: Any) {
+        self.visualSelected = .Primary
+        performSegue(withIdentifier: "toIconsView", sender: self)
+    }
+}
 
-    @IBAction func cameraButton(_ sender: Any) {
-        imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.sourceType = .camera
-        
-        // If you were to create a custom overlay, need new view from a xib?
-        //imagePickerController.showsCameraControls = false
-        
-        present(imagePickerController, animated: true, completion: nil)
+
+extension AddEventViewController : UINavigationControllerDelegate, UIImagePickerControllerDelegate{
+    //CAMERA CODE FROM HERE ON DOWN -- @RAF & TEAM
+
+       @IBAction func cameraButton(_ sender: Any) {
+           imagePickerController = UIImagePickerController()
+           imagePickerController.delegate = self
+           imagePickerController.sourceType = .camera
+           
+           // If you were to create a custom overlay, need new view from a xib?
+           //imagePickerController.showsCameraControls = false
+           
+          // present(imagePickerController, animated: true, completion: nil)
+           performSegue(withIdentifier: "toIconsView", sender: self)
+       }
+       
+       //Called after taking a picture
+       internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+           imagePickerController.dismiss(animated: true, completion: nil)
+           imageTaken = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+           saveImage(imageName: "test.png")
+       }
+       
+       func saveImage(imageName: String){
+          //create an instance of the FileManager
+          let fileManager = FileManager.default
+          //get the image path
+          let imagePath = (NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+           print(imagePath)
+          //get the image we took with camera
+           let image = imageTaken
+          //get the PNG data for this image
+           let data = image!.pngData()
+          //store it in the document directory
+           fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
+       }
+}
+
+
+extension AddEventViewController : UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
     }
     
-    //Called after taking a picture
-    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        imagePickerController.dismiss(animated: true, completion: nil)
-        imageTaken = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-        saveImage(imageName: "test.png")
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
     }
     
-    func saveImage(imageName: String){
-       //create an instance of the FileManager
-       let fileManager = FileManager.default
-       //get the image path
-       let imagePath = (NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
-        print(imagePath)
-       //get the image we took with camera
-        let image = imageTaken
-       //get the PNG data for this image
-        let data = image!.pngData()
-       //store it in the document directory
-        fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "defualtIconsFooter", for: indexPath)
     }
+    
+    
 }
