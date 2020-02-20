@@ -25,7 +25,6 @@ extension EventRepeate : Value{
     }
 
     var datatypeValue: Datatype {
-        print("self.rawvalue = \(self.rawValue)")
         return self.rawValue
     }
 }
@@ -194,7 +193,7 @@ class EventsDatabase {
     }
     
     func stripTime(_ date: Date) -> Date{
-        return Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
+        return Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: date)!
     }
     
     func stripDate(_ date: Date) -> Date{

@@ -52,9 +52,10 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
         let firstPart: Date = dateFormatter.date(from: "\(numberFormatter.string(from: NSNumber(value:row))!):\(begMinute)")!
         let secondPart: Date = dateFormatter.date(from: "\(numberFormatter.string(from: NSNumber(value: row))!):\(endMinute)")!
         let events = EventsDatabase.sharedInstance.getEvents(startTime: firstPart, endTime: secondPart, date: view!.receivedDate)
-        
         if events.count >= 1 {
-            thisView[0].addSubview(parseString(iconSelected: events[0][EventsDatabase.columns.icon]))  
+            print("Empty string?")
+            print(events[0][EventsDatabase.columns.icon])
+            setConstraintsIcon(icon: parseString(iconSelected: events[0][EventsDatabase.columns.icon]), superview: thisView[0])
 //            if events.count >= 2{
 //                thisView[1].image =  events[1][EventsDatabase.columns.image] == "" ?  defaultImage! : UIImage(named: events[1][EventsDatabase.columns.image])
 //                if events.count > 2 {
@@ -64,13 +65,21 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
 //            }
         }
     }
+    func setConstraintsIcon(icon: IconView, superview: UIView) {
+        superview.addSubview(icon)
+        icon.widthAnchor.constraint(equalTo: superview.widthAnchor, multiplier: 1.0).isActive = true
+        icon.heightAnchor.constraint(equalTo: superview.heightAnchor, multiplier: 1.0).isActive = true
+        icon.centerXAnchor.constraint(equalTo: superview.centerXAnchor).isActive = true
+        icon.centerYAnchor.constraint(equalTo: superview.centerYAnchor).isActive = true
+
+    }
     
     func parseString(iconSelected : String) -> IconView {
         let compArray = iconSelected.components(separatedBy: ":")
         let code = UnicodeScalar(compArray[0])
         let name = compArray[1]
         let icon = Icon(name: name, code: code!)
-        let iconView = IconView(icon: icon, iconFontSize: 25, nameFontSize: 25, frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        let iconView = IconView(icon: icon, iconFontSize: 20, nameFontSize: 15, frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         return iconView
     }
     
@@ -92,6 +101,10 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
         
         selectedRow = indexPath.row
         view?.performSegue(withIdentifier: "toHourlyView", sender: self)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
     }
     
 }

@@ -24,8 +24,10 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
         
-        cell.icon.text = "default"
-        cell.iconeTitle.text = "default"
+        let thisIcon = parseString(iconSelected: events[indexPath.row][EventsDatabase.columns.icon])
+        cell.icon.font = UIFont(name: "FontAwesome5Free-Solid", size: 40)
+        cell.icon.text = String(thisIcon.code)
+        cell.iconeTitle.text = thisIcon.name
         let startTime = events[indexPath.row][EventsDatabase.columns.startTime]
         let endTime = events[indexPath.row][EventsDatabase.columns.endTime]
         
@@ -35,6 +37,18 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         
         return cell
         
+    }
+    
+    func parseString(iconSelected : String) -> Icon {
+        let compArray = iconSelected.components(separatedBy: ":")
+        let code = UnicodeScalar(compArray[0])
+        let name = compArray[1]
+        let icon = Icon(name: name, code: code!)
+        return icon
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
     
  

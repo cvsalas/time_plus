@@ -6,6 +6,10 @@
 //  Copyright © 2019 LibLabs-Mac. All rights reserved.
 //
 
+//TODO: Fix UI in adding times for the new events
+// Fix constraints for the detailed day view
+// Debug icon adding (BIG ONE)
+
 import UIKit
 
 @UIApplicationMain

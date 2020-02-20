@@ -30,14 +30,18 @@ class IconView: UIView {
     }
     
     func setup(icon: Icon, iconFontSize: CGFloat, nameFontSize: CGFloat){
+        self.translatesAutoresizingMaskIntoConstraints = false
+
         iconLabel.translatesAutoresizingMaskIntoConstraints = false
         iconLabel.font = UIFont(name: "FontAwesome5Free-Solid", size: iconFontSize)
         iconLabel.text = String(icon.code)
+        iconLabel.textAlignment = .center
         addSubview(iconLabel)
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.font = UIFont(name: "FontAwesome5Free-Solid", size: nameFontSize)
         nameLabel.text = icon.name
+        nameLabel.textAlignment = .center
         addSubview(nameLabel)
         
         iconLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 2).isActive = true
@@ -45,7 +49,7 @@ class IconView: UIView {
         iconLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.4).isActive = true
         iconLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         
-        nameLabel.topAnchor.constraint(equalTo: iconLabel.bottomAnchor, constant: 2).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: iconLabel.bottomAnchor, constant: 1).isActive = true
         nameLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9).isActive = true
         nameLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.4).isActive = true
         nameLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true

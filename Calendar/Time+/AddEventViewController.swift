@@ -17,6 +17,10 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     fileprivate enum VisualKind {
         case Primary, Secondary
     }
+    
+    @IBAction func iconSelectionButton(_ sender: Any) {
+        performSegue(withIdentifier: "toIconsView", sender: self)
+    }
 
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
@@ -55,9 +59,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         if let start = startTime, let end = endTime{
             EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: currentDay, iconPath: primaryVisual.entry, imagePath: "")
         }
-        
         navigationController?.popViewController(animated: true)
-
     }
     
     
@@ -187,7 +189,4 @@ extension AddEventViewController : UICollectionViewDelegate, UICollectionViewDat
          return 1
      }
    
-    @IBAction func iconSelectionButton(_ sender: Any) {
-        performSegue(withIdentifier: "toIconsView", sender: self)
-    }
 }
