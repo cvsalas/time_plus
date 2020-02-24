@@ -30,13 +30,26 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         cell.iconeTitle.text = thisIcon.name
         let startTime = events[indexPath.row][EventsDatabase.columns.startTime]
         let endTime = events[indexPath.row][EventsDatabase.columns.endTime]
+        print(events[indexPath.row][EventsDatabase.columns.image])
         
-        
+        let imageName = events[indexPath.row][EventsDatabase.columns.image]
+        let fullPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+        let imageView = UIImageView(image: UIImage(contentsOfFile: fullPath)!)
+        setConstraintsImage(image: imageView, superview: cell.detailedInfo)
         cell.startTimeLabel.text = dateFormatter.string(from: startTime)
         cell.endTimeLabel.text = dateFormatter.string(from: endTime)
         
         return cell
         
+    }
+    
+    func setConstraintsImage(image: UIImageView, superview: UIView) {
+        superview.addSubview(image)
+        image.widthAnchor.constraint(equalTo: superview.widthAnchor, multiplier: 1.0).isActive = true
+        image.heightAnchor.constraint(equalTo: superview.heightAnchor, multiplier: 1.0).isActive = true
+        image.centerXAnchor.constraint(equalTo: superview.centerXAnchor).isActive = true
+        image.centerYAnchor.constraint(equalTo: superview.centerYAnchor).isActive = true
+
     }
     
     func parseString(iconSelected : String) -> Icon {

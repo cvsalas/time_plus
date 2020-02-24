@@ -27,6 +27,15 @@ class DatePickerWithDone: UIView {
         }
     }
     
+    var minuteInterval: Int{
+        set{
+            datePicker.minuteInterval = newValue
+        }
+        get {
+            datePicker.minuteInterval
+        }
+    }
+    
     var datePickerMode : UIDatePicker.Mode{
         set{
             datePicker.datePickerMode = newValue

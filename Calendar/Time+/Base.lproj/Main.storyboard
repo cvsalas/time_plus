@@ -588,13 +588,14 @@
                         <viewLayoutGuide key="safeArea" id="B6l-kR-TiH"/>
                     </view>
                     <navigationItem key="navigationItem" id="gaZ-nl-tO5">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="6aA-Yl-Fgt">
+                        <barButtonItem key="rightBarButtonItem" systemItem="redo" id="6aA-Yl-Fgt">
                             <connections>
                                 <action selector="DoneButtonPressed:" destination="6ri-1w-Vc6" id="hEO-A7-bos"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ButtonItem" destination="6aA-Yl-Fgt" id="h6S-p0-VwQ"/>
                         <outlet property="defaultIconsCollectionView" destination="ERM-DU-a2W" id="Dr3-df-eBq"/>
                         <outlet property="endTimeLabel" destination="3aF-tf-zQW" id="2cO-rJ-HAv"/>
                         <outlet property="repeateSegment" destination="xWY-lZ-BTc" id="wKx-uA-Nn1"/>

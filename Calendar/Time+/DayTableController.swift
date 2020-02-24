@@ -53,8 +53,6 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
         let secondPart: Date = dateFormatter.date(from: "\(numberFormatter.string(from: NSNumber(value: row))!):\(endMinute)")!
         let events = EventsDatabase.sharedInstance.getEvents(startTime: firstPart, endTime: secondPart, date: view!.receivedDate)
         if events.count >= 1 {
-            print("Empty string?")
-            print(events[0][EventsDatabase.columns.icon])
             setConstraintsIcon(icon: parseString(iconSelected: events[0][EventsDatabase.columns.icon]), superview: thisView[0])
 //            if events.count >= 2{
 //                thisView[1].image =  events[1][EventsDatabase.columns.image] == "" ?  defaultImage! : UIImage(named: events[1][EventsDatabase.columns.image])

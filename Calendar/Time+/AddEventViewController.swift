@@ -5,6 +5,8 @@
 //  Created by user165037 on 2/3/20.
 //  Copyright © 2020 LibLabs-Mac. All rights reserved.
 //
+//TODO: Maintainince storage issue, user keeps fetching from gallery will blow up
+// Data managment issue TBD
 
 import UIKit
 
@@ -21,11 +23,13 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     @IBAction func iconSelectionButton(_ sender: Any) {
         performSegue(withIdentifier: "toIconsView", sender: self)
     }
-
+    
+    @IBOutlet weak var ButtonItem: UIBarButtonItem!
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
     @IBOutlet weak var repeateSegment: UISegmentedControl!
     @IBOutlet weak var defaultIconsCollectionView: UICollectionView!
+    
     
     
     var primaryVisual : EventsDataBaseStringEntry!
@@ -40,7 +44,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     let dateFormatter = DateFormatter()
     
     var imagePickerController : UIImagePickerController!
-    var imageTaken: UIImage!
+    var imageName: String!
     
     let datePickerTag = 0xDEADBEEF
     
@@ -51,13 +55,13 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         
         defaultIconsCollectionView.dataSource = self
         defaultIconsCollectionView.delegate = self
+        //if(repeateSegment.left.
         //setRepeatControlAppearance()
         // Do any additional setup after loading the view.
     }
-    
     @IBAction func DoneButtonPressed(_ sender: Any) {
-        if let start = startTime, let end = endTime{
-            EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: currentDay, iconPath: primaryVisual.entry, imagePath: "")
+        if let start = startTime, let end = endTime{ //add checks here
+            EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: currentDay, iconPath: primaryVisual.entry, imagePath: imageName)
         }
         navigationController?.popViewController(animated: true)
     }
@@ -89,13 +93,14 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
 
         let height = self.view.frame.size.height/2
         let datePicker = DatePickerWithDone(frame: CGRect(x: 0, y: self.view.frame.size.height - height, width: self.view.frame.size.width, height: height))
-        
         datePicker.datePickerMode = .time
+        datePicker.minuteInterval = 30
         datePicker.delegate = self
         datePicker.tag = datePickerTag
         self.view.addSubview(datePicker)
     }
     
+    //TODO: Only enable when the start and end times have been selected, if nil don't allow calling of this function (no alert, just no option) 
     func doneTapped(picker: DatePickerWithDone) {
         setTimes(picker: picker)
         picker.removeFromSuperview()
@@ -116,6 +121,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         }
     }
     
+    //Takes the selected icon from the IconsView controller and declare's its components to iconView var
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "toIconsView"){
             if(visualSelected == .Primary){
@@ -136,40 +142,77 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
 extension AddEventViewController : UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     //CAMERA CODE FROM HERE ON DOWN -- @RAF & TEAM
 
-       @IBAction func cameraButton(_ sender: Any) {
-           imagePickerController = UIImagePickerController()
-           imagePickerController.delegate = self
-           imagePickerController.sourceType = .camera
-           
-           // If you were to create a custom overlay, need new view from a xib?
-           //imagePickerController.showsCameraControls = false
-           
-          // present(imagePickerController, animated: true, completion: nil)
-           performSegue(withIdentifier: "toIconsView", sender: self)
-       }
+    @IBAction func cameraButton(_ sender: Any) {
+        imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .camera
+        
+        // If you were to create a custom overlay, need new view from a xib?
+        //imagePickerController.showsCameraControls = false
+        
+        present(imagePickerController, animated: true, completion: nil)
+        //performSegue(withIdentifier: "toIconsView", sender: self)
+    }
        
-       //Called after taking a picture
-       internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-           imagePickerController.dismiss(animated: true, completion: nil)
-           imageTaken = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-           saveImage(imageName: "test.png")
-       }
-       
-       func saveImage(imageName: String){
-          //create an instance of the FileManager
-          let fileManager = FileManager.default
-          //get the image path
-          let imagePath = (NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
-           print(imagePath)
-          //get the image we took with camera
-           let image = imageTaken
-          //get the PNG data for this image
-           let data = image!.pngData()
-          //store it in the document directory
-           fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
-       }
-}
+    func currentTimeInMilliSeconds()-> Int
+    {
+        let currentDate = Date()
+        let since1970 = currentDate.timeIntervalSince1970
+        return Int(since1970 * 1000)
+    }
+    
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
 
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage!
+    }
+    
+    //Called after taking a picture
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imagePickerController.dismiss(animated: true, completion: nil)
+        let imageTaken = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        imageName = String(currentTimeInMilliSeconds())
+        saveImage(imageName: imageName, imageTaken: imageTaken!)
+    }
+       
+    func saveImage(imageName: String, imageTaken: UIImage){
+        //create an instance of the FileManager
+        let fileManager = FileManager.default
+        let fullPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+        //get the image we took with camera
+        let image = resizeImage(image: imageTaken, targetSize: CGSize(width: 200, height: 200))
+        //get the PNG data for this image
+        let data = image.pngData()
+        //store it in the document directory
+        fileManager.createFile(atPath: fullPath as String, contents: data, attributes: nil)
+        
+        if fileManager.fileExists(atPath: fullPath){
+           print("IT GOT STORED!")
+        }else{
+           print("Panic! No Image!")
+        }
+    }
+}
 
 extension AddEventViewController : UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
