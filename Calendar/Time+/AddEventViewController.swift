@@ -48,6 +48,9 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     
     let datePickerTag = 0xDEADBEEF
     
+    var startFlag: Bool = false
+    var endFlag: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dateFormatter.dateStyle = .none
@@ -55,15 +58,27 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         
         defaultIconsCollectionView.dataSource = self
         defaultIconsCollectionView.delegate = self
-        //if(repeateSegment.left.
         //setRepeatControlAppearance()
         // Do any additional setup after loading the view.
+        ButtonItem.isEnabled = false
+        ButtonItem.tintColor = UIColor.clear
     }
     @IBAction func DoneButtonPressed(_ sender: Any) {
         if let start = startTime, let end = endTime{ //add checks here
             EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: currentDay, iconPath: primaryVisual.entry, imagePath: imageName)
         }
         navigationController?.popViewController(animated: true)
+    }
+    
+    //Only check times are complete for now, no support for icons or images
+    //TODO: Above ^ plus check if times are correct (reversed?)
+    func checkFieldComplete(){
+        if(startFlag && endFlag){
+            if(endTime > startTime){
+                ButtonItem.isEnabled = true
+                ButtonItem.tintColor = UIColor.systemBlue
+            }
+        }
     }
     
     
@@ -83,6 +98,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         displayPickere()
         buttonPressed = .End
     }
+    
     @IBAction func startTimeButtonPressed(_ sender: Any) {
         displayPickere()
         buttonPressed = .Start
@@ -94,13 +110,13 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         let height = self.view.frame.size.height/2
         let datePicker = DatePickerWithDone(frame: CGRect(x: 0, y: self.view.frame.size.height - height, width: self.view.frame.size.width, height: height))
         datePicker.datePickerMode = .time
-        datePicker.minuteInterval = 30
+        //Broken, TODO!
+        //datePicker.minuteInterval = 30
         datePicker.delegate = self
         datePicker.tag = datePickerTag
         self.view.addSubview(datePicker)
     }
     
-    //TODO: Only enable when the start and end times have been selected, if nil don't allow calling of this function (no alert, just no option) 
     func doneTapped(picker: DatePickerWithDone) {
         setTimes(picker: picker)
         picker.removeFromSuperview()
@@ -108,16 +124,19 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     
     func pickerDisappeared(picker: DatePickerWithDone) {
         setTimes(picker: picker)
+        checkFieldComplete()
     }
     
     func setTimes(picker: DatePickerWithDone){
         if(buttonPressed == .Start){
             self.startTime = picker.date
             self.startTimeLabel.text = self.dateFormatter.string(from: self.startTime)
+            self.startFlag = true
         }
         else{
             self.endTime = picker.date
             self.endTimeLabel.text = self.dateFormatter.string(from: self.endTime)
+            self.endFlag = true
         }
     }
     

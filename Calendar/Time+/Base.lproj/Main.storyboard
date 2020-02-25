@@ -588,7 +588,8 @@
                         <viewLayoutGuide key="safeArea" id="B6l-kR-TiH"/>
                     </view>
                     <navigationItem key="navigationItem" id="gaZ-nl-tO5">
-                        <barButtonItem key="rightBarButtonItem" systemItem="redo" id="6aA-Yl-Fgt">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="6aA-Yl-Fgt">
+                            <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="DoneButtonPressed:" destination="6ri-1w-Vc6" id="hEO-A7-bos"/>
                             </connections>

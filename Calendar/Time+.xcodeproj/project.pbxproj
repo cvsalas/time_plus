@@ -94,7 +94,7 @@
 		CD38CB06BBF8FD9AD433BF27 /* Pods-Time+Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time+Tests.release.xcconfig"; path = "Target Support Files/Pods-Time+Tests/Pods-Time+Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D271B737CDB037311D6F19D8 /* Pods-Time+Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time+Tests.debug.xcconfig"; path = "Target Support Files/Pods-Time+Tests/Pods-Time+Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F1D51DBA239214F400C411C7 /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
-		F1E545E02390A2150046525A /* Time+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1E545E02390A2150046525A /* TimePlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimePlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E545E32390A2150046525A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1E545E52390A2150046525A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F1E545E72390A2150046525A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 		F1E545E12390A2150046525A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F1E545E02390A2150046525A /* Time+.app */,
+				F1E545E02390A2150046525A /* TimePlus.app */,
 				F1E545F62390A2170046525A /* Time+Tests.xctest */,
 				F1E546012390A2180046525A /* Time+UITests.xctest */,
 			);
@@ -267,7 +267,7 @@
 			);
 			name = "Time+";
 			productName = "Time+";
-			productReference = F1E545E02390A2150046525A /* Time+.app */;
+			productReference = F1E545E02390A2150046525A /* TimePlus.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F1E545F52390A2170046525A /* Time+Tests */ = {
@@ -619,14 +619,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2PLXSBA7GR;
 				INFOPLIST_FILE = "Time+/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "Time-.Time-";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TimePlus;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -638,14 +640,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2PLXSBA7GR;
 				INFOPLIST_FILE = "Time+/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "Time-.Time-";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TimePlus;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
