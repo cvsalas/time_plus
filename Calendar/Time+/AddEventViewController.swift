@@ -44,12 +44,13 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     let dateFormatter = DateFormatter()
     
     var imagePickerController : UIImagePickerController!
-    var imageName: String!
+    var imageName: String! = ""
     
     let datePickerTag = 0xDEADBEEF
     
     var startFlag: Bool = false
     var endFlag: Bool = false
+    var iconSelectedFlag: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,24 +64,33 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         ButtonItem.isEnabled = false
         ButtonItem.tintColor = UIColor.clear
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        checkFieldComplete()
+    }
+    
     @IBAction func DoneButtonPressed(_ sender: Any) {
-        if let start = startTime, let end = endTime{ //add checks here
-            EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: currentDay, iconPath: primaryVisual.entry, imagePath: imageName)
+        if(imageName != ""){
+            if let start = startTime, let end = endTime{ //add checks here
+                EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: currentDay, iconPath: primaryVisual.entry, imagePath: imageName)
+            }
+        } else {
+            if let start = startTime, let end = endTime{ //add checks here
+                  EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: currentDay, iconPath: primaryVisual.entry, imagePath: "")
+              }
         }
         navigationController?.popViewController(animated: true)
     }
     
-    //Only check times are complete for now, no support for icons or images
-    //TODO: Above ^ plus check if times are correct (reversed?)
+   //Add support for checking if primary icon selected!
     func checkFieldComplete(){
-        if(startFlag && endFlag){
+        if(startFlag && endFlag && iconSelectedFlag){
             if(endTime > startTime){
                 ButtonItem.isEnabled = true
                 ButtonItem.tintColor = UIColor.systemBlue
             }
         }
     }
-    
     
     func setRepeatControlAppearance(){
         let size = CGSize(width: 117.333,height: 72)
@@ -124,7 +134,6 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     
     func pickerDisappeared(picker: DatePickerWithDone) {
         setTimes(picker: picker)
-        checkFieldComplete()
     }
     
     func setTimes(picker: DatePickerWithDone){
@@ -146,6 +155,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
             if(visualSelected == .Primary){
                 let iconView = segue.destination as! IconsCollectionViewController
                 iconView.iconSelected = {iconCell in self.primaryVisual = Icon(name: iconCell.nameLabel.text!, code: UnicodeScalar(iconCell.iconLabel.text!)!) }
+                self.iconSelectedFlag = true
             }
         }
     }
@@ -170,11 +180,9 @@ extension AddEventViewController : UINavigationControllerDelegate, UIImagePicker
         //imagePickerController.showsCameraControls = false
         
         present(imagePickerController, animated: true, completion: nil)
-        //performSegue(withIdentifier: "toIconsView", sender: self)
     }
        
-    func currentTimeInMilliSeconds()-> Int
-    {
+    func currentTimeInMilliSeconds()-> Int {
         let currentDate = Date()
         let since1970 = currentDate.timeIntervalSince1970
         return Int(since1970 * 1000)

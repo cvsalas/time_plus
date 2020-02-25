@@ -30,12 +30,20 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         cell.iconeTitle.text = thisIcon.name
         let startTime = events[indexPath.row][EventsDatabase.columns.startTime]
         let endTime = events[indexPath.row][EventsDatabase.columns.endTime]
-        print(events[indexPath.row][EventsDatabase.columns.image])
-        
+
         let imageName = events[indexPath.row][EventsDatabase.columns.image]
-        let fullPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
-        let imageView = UIImageView(image: UIImage(contentsOfFile: fullPath)!)
-        setConstraintsImage(image: imageView, superview: cell.detailedInfo)
+        //if(imageName != ""){
+            let fullPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+            let imageView = UIImageView(image: UIImage(contentsOfFile: fullPath)!)
+            setConstraintsImage(image: imageView, superview: cell.detailedInfo)
+//        } else { //Not working..
+//            print("here")
+//            let thisImage = UIImage(named: "transparent_image")
+//            let transparentImage = thisImage?.image(alpha: 0.0)
+//            let imageView = UIImageView(image: transparentImage)
+//            imageView.alpha = 0.0
+//            setConstraintsImage(image: imageView, superview: cell.detailedInfo)
+//        }
         cell.startTimeLabel.text = dateFormatter.string(from: startTime)
         cell.endTimeLabel.text = dateFormatter.string(from: endTime)
         
@@ -66,4 +74,14 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
     
  
 
+}
+
+extension UIImage {
+    func image(alpha: CGFloat) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        draw(at: .zero, blendMode: .normal, alpha: alpha)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
+    }
 }
