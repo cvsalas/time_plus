@@ -16,7 +16,7 @@
         <!--Ib Calendar Data Source-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Time_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TimePlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +34,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dayCell" id="pfB-hB-fAC" customClass="DayCell" customModule="Time_" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dayCell" id="pfB-hB-fAC" customClass="DayCell" customModule="TimePlus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="125" width="65" height="72"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="R2w-Zs-spL">
@@ -60,7 +60,7 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="MonthHeader" id="kQ5-CD-Iyq" customClass="MonthHeaderClass" customModule="Time_" customModuleProvider="target">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="MonthHeader" id="kQ5-CD-Iyq" customClass="MonthHeaderClass" customModule="TimePlus" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="125"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -142,7 +142,7 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrc-tB-rxL" userLabel="FAQButton">
                                 <rect key="frame" x="20" y="840" width="73.5" height="22"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button" image="questionmark.square.fill" catalog="system"/>
+                                <state key="normal" title="Button" image="questionmark.square.fill"/>
                                 <connections>
                                     <action selector="toHelpScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ywd-j6-y1m"/>
                                     <segue destination="6Gv-Jl-76y" kind="presentation" identifier="HelpScreenSegue" id="B6a-AA-5ff"/>
@@ -178,7 +178,7 @@
         <!--Help Screen View Controller-->
         <scene sceneID="KbD-Wa-91R">
             <objects>
-                <viewController id="6Gv-Jl-76y" customClass="helpScreenViewController" customModule="Time_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6Gv-Jl-76y" customClass="helpScreenViewController" customModule="TimePlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u24-Rk-Mmi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -222,7 +222,7 @@
         <!--Daily View Controller-->
         <scene sceneID="oM8-e9-weT">
             <objects>
-                <viewController id="95Q-mE-2Xm" customClass="DailyViewController" customModule="Time_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="95Q-mE-2Xm" customClass="DailyViewController" customModule="TimePlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="saw-Q4-PlH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -240,7 +240,7 @@
                                 <rect key="frame" x="20" y="181" width="378.5" height="681"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hourCell" rowHeight="220" id="UP2-wR-Sxj" customClass="HourCell" customModule="Time_" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hourCell" rowHeight="220" id="UP2-wR-Sxj" customClass="HourCell" customModule="TimePlus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="378.5" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UP2-wR-Sxj" id="rza-Eh-eOz">
@@ -408,7 +408,7 @@
         <!--Add Event View Controller-->
         <scene sceneID="Twb-Kd-OKx">
             <objects>
-                <viewController id="6ri-1w-Vc6" customClass="AddEventViewController" customModule="Time_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6ri-1w-Vc6" customClass="AddEventViewController" customModule="TimePlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dfs-px-XVM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -423,7 +423,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="iconCell" id="F4N-qE-pZg" customClass="IconCollectionViewCell" customModule="Time_" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="iconCell" id="F4N-qE-pZg" customClass="IconCollectionViewCell" customModule="TimePlus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="96" height="93"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rB6-Rc-Jto">
@@ -459,7 +459,7 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="defaultIconsFooter" id="Yei-Dc-I4G" customClass="IconCollectionReusableView" customModule="Time_" customModuleProvider="target">
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="defaultIconsFooter" id="Yei-Dc-I4G" customClass="IconCollectionReusableView" customModule="TimePlus" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="93" width="379" height="85"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -492,18 +492,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHX-1d-LGM">
                                 <rect key="frame" x="19" y="775" width="379" height="87"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKr-Dr-zQ1">
-                                        <rect key="frame" x="164" y="24" width="51" height="39"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="camera.fill" catalog="system"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Oqn-Hv-RsJ">
+                                        <rect key="frame" x="0.0" y="17.5" width="379" height="53"/>
+                                        <segments>
+                                            <segment title="Cancel"/>
+                                            <segment title="Icon"/>
+                                            <segment title="Camera"/>
+                                            <segment title="Gallery"/>
+                                        </segments>
                                         <connections>
-                                            <action selector="cameraButton:" destination="6ri-1w-Vc6" eventType="touchUpInside" id="4jw-5x-sqa"/>
+                                            <action selector="actionBarSelection:" destination="6ri-1w-Vc6" eventType="valueChanged" id="0Z6-z2-SqB"/>
                                         </connections>
-                                    </button>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" red="0.33461155129999998" green="0.51076748699999996" blue="0.29022872799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Oqn-Hv-RsJ" firstAttribute="width" secondItem="pHX-1d-LGM" secondAttribute="width" id="6Wf-39-tHQ"/>
+                                    <constraint firstItem="Oqn-Hv-RsJ" firstAttribute="centerX" secondItem="pHX-1d-LGM" secondAttribute="centerX" id="fRy-c8-RQ1"/>
+                                    <constraint firstItem="Oqn-Hv-RsJ" firstAttribute="height" secondItem="pHX-1d-LGM" secondAttribute="height" multiplier="0.6" id="pnY-Bt-3L0"/>
+                                    <constraint firstItem="Oqn-Hv-RsJ" firstAttribute="centerY" secondItem="pHX-1d-LGM" secondAttribute="centerY" id="zhR-cF-RuL"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9H3-FA-0y9">
                                 <rect key="frame" x="11" y="98" width="392" height="100.5"/>
@@ -565,6 +573,16 @@
                                     <constraint firstItem="5K6-RM-8lD" firstAttribute="top" secondItem="9H3-FA-0y9" secondAttribute="top" constant="17" id="zj7-YX-Huv"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKr-Dr-zQ1">
+                                <rect key="frame" x="183" y="597" width="51" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="camera.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="cameraButton:" destination="6ri-1w-Vc6" eventType="touchUpInside" id="4jw-5x-sqa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -597,6 +615,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ButtonItem" destination="6aA-Yl-Fgt" id="h6S-p0-VwQ"/>
+                        <outlet property="bottomActionBar" destination="Oqn-Hv-RsJ" id="7Mj-Qf-9xd"/>
                         <outlet property="defaultIconsCollectionView" destination="ERM-DU-a2W" id="Dr3-df-eBq"/>
                         <outlet property="endTimeLabel" destination="3aF-tf-zQW" id="2cO-rJ-HAv"/>
                         <outlet property="repeateSegment" destination="xWY-lZ-BTc" id="wKx-uA-Nn1"/>
@@ -611,7 +630,7 @@
         <!--Icons Collection View Controller-->
         <scene sceneID="HRB-B0-9M7">
             <objects>
-                <collectionViewController id="r3K-CY-9Ok" customClass="IconsCollectionViewController" customModule="Time_" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="r3K-CY-9Ok" customClass="IconsCollectionViewController" customModule="TimePlus" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" id="L1V-9J-dWe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -623,7 +642,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="iconCell" id="UAC-Qf-7yT" customClass="IconCollectionViewCell" customModule="Time_" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="iconCell" id="UAC-Qf-7yT" customClass="IconCollectionViewCell" customModule="TimePlus" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="105" width="119" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="W22-IH-pjy">
@@ -662,7 +681,7 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="catHeader" id="OsT-l9-4EC" customClass="IconCollectionReusableView" customModule="Time_" customModuleProvider="target">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="catHeader" id="OsT-l9-4EC" customClass="IconCollectionReusableView" customModule="TimePlus" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
@@ -706,7 +725,7 @@
         <!--Detailed View Controller-->
         <scene sceneID="dvF-Wq-OTX">
             <objects>
-                <viewController id="Bol-Gx-5PA" customClass="detailedViewController" customModule="Time_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Bol-Gx-5PA" customClass="detailedViewController" customModule="TimePlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YyG-RP-D9z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -716,7 +735,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailedCell" rowHeight="244" id="WXH-dY-W4i" customClass="DetailedCell" customModule="Time_" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailedCell" rowHeight="244" id="WXH-dY-W4i" customClass="DetailedCell" customModule="TimePlus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="244"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WXH-dY-W4i" id="dvP-eF-4pZ">
@@ -849,7 +868,7 @@
         <image name="gear" catalog="system" width="64" height="58"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="minus" catalog="system" width="64" height="12"/>
-        <image name="questionmark.square.fill" catalog="system" width="64" height="56"/>
+        <image name="questionmark.square.fill" width="64" height="56"/>
         <image name="rightArrow" width="512" height="512"/>
         <image name="startImage" width="600" height="600"/>
         <image name="stopImage" width="512" height="512"/>

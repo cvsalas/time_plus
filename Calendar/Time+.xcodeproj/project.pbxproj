@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3EF0318467D919D6A189A19E /* libPods-Time+Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B96B26C7DDF4AC41CC497D95 /* libPods-Time+Tests.a */; };
-		63F511FEA1FE2ED4DE333CE5 /* libPods-Time+.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C3782E37E3B81F5855C592 /* libPods-Time+.a */; };
 		720118E323CFA37A00A3A227 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720118E223CFA37A00A3A227 /* LaunchScreen.storyboard */; };
 		7216AECA23E1146100962A0F /* HourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7216AEC923E1146100962A0F /* HourCell.swift */; };
 		7216AECC23E121E600962A0F /* DayTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7216AECB23E121E600962A0F /* DayTableController.swift */; };
@@ -33,6 +31,8 @@
 		8FD1005923E8E90A004FA125 /* helpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD1005823E8E90A004FA125 /* helpScreenViewController.swift */; };
 		8FFEEDEB23FA210A0025C3C6 /* libJTAppleCalendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFEEDE723FA210A0025C3C6 /* libJTAppleCalendar.a */; };
 		8FFEEDEE23FA210A0025C3C6 /* libSQLite.swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFEEDEA23FA210A0025C3C6 /* libSQLite.swift.a */; };
+		92056B4A1440CAD4D86DC3EB /* libPods-Time+.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1DC6BD10654C85F2667B13 /* libPods-Time+.a */; };
+		D8FCFA9CB09AF9D2AEF03CD5 /* libPods-Time+Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8267A9A2A6A7A70365AC116 /* libPods-Time+Tests.a */; };
 		F1D51DBB239214F400C411C7 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D51DBA239214F400C411C7 /* DayCell.swift */; };
 		F1E545E42390A2150046525A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E545E32390A2150046525A /* AppDelegate.swift */; };
 		F1E545E62390A2150046525A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E545E52390A2150046525A /* SceneDelegate.swift */; };
@@ -61,13 +61,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		12C3782E37E3B81F5855C592 /* libPods-Time+.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Time+.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		227D01999687894E10F03A71 /* Pods-Time+.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time+.release.xcconfig"; path = "Target Support Files/Pods-Time+/Pods-Time+.release.xcconfig"; sourceTree = "<group>"; };
+		1EA82EBFD5DDF03DB11030EA /* Pods-Time+Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time+Tests.debug.xcconfig"; path = "Target Support Files/Pods-Time+Tests/Pods-Time+Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		1F33CEAEB8D84A39CDFE7EAB /* Pods-Time+.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time+.debug.xcconfig"; path = "Target Support Files/Pods-Time+/Pods-Time+.debug.xcconfig"; sourceTree = "<group>"; };
+		3F1DC6BD10654C85F2667B13 /* libPods-Time+.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Time+.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		720118E223CFA37A00A3A227 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7216AEC923E1146100962A0F /* HourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCell.swift; sourceTree = "<group>"; };
 		7216AECB23E121E600962A0F /* DayTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableController.swift; sourceTree = "<group>"; };
 		7269234E23DBC5E20033B63B /* EventsDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDatabase.swift; sourceTree = "<group>"; };
 		7269235D23DBFF7F0033B63B /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		755D12375EDEF3B6AC45E329 /* Pods-Time+Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time+Tests.release.xcconfig"; path = "Target Support Files/Pods-Time+Tests/Pods-Time+Tests.release.xcconfig"; sourceTree = "<group>"; };
 		810DBDF023FC5FCA00FB60B6 /* Resource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resource; sourceTree = "<group>"; };
 		810F6DD723E944120083224F /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		811521C523CD1FAB0055F6F9 /* MonthHeaderClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeaderClass.swift; sourceTree = "<group>"; };
@@ -84,15 +86,14 @@
 		81E4A2BB23FCE4F9001C00AD /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		81E89EC623FDD00C0016BE46 /* IconCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionReusableView.swift; sourceTree = "<group>"; };
 		81FD006123E69DBB00CB094A /* DatePickerWithDone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerWithDone.swift; sourceTree = "<group>"; };
+		86302A99EB5898DC7E2E5293 /* Pods-Time+.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time+.release.xcconfig"; path = "Target Support Files/Pods-Time+/Pods-Time+.release.xcconfig"; sourceTree = "<group>"; };
 		8F46DF0323FDD62300E76541 /* IconsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconsCollectionViewController.swift; sourceTree = "<group>"; };
 		8FD1005823E8E90A004FA125 /* helpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpScreenViewController.swift; sourceTree = "<group>"; };
 		8FFEEDDD23F9D0790025C3C6 /* libJTAppleCalendar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libJTAppleCalendar.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FFEEDDF23F9D0790025C3C6 /* libSQLite.swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSQLite.swift.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FFEEDE723FA210A0025C3C6 /* libJTAppleCalendar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libJTAppleCalendar.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FFEEDEA23FA210A0025C3C6 /* libSQLite.swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSQLite.swift.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B96B26C7DDF4AC41CC497D95 /* libPods-Time+Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Time+Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD38CB06BBF8FD9AD433BF27 /* Pods-Time+Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time+Tests.release.xcconfig"; path = "Target Support Files/Pods-Time+Tests/Pods-Time+Tests.release.xcconfig"; sourceTree = "<group>"; };
-		D271B737CDB037311D6F19D8 /* Pods-Time+Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time+Tests.debug.xcconfig"; path = "Target Support Files/Pods-Time+Tests/Pods-Time+Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		D8267A9A2A6A7A70365AC116 /* libPods-Time+Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Time+Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D51DBA239214F400C411C7 /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		F1E545E02390A2150046525A /* TimePlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimePlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E545E32390A2150046525A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,7 +108,6 @@
 		F1E546012390A2180046525A /* Time+UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Time+UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E546052390A2180046525A /* Time_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_UITests.swift; sourceTree = "<group>"; };
 		F1E546072390A2180046525A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F5E4A9574A9493A7D5C16938 /* Pods-Time+.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time+.debug.xcconfig"; path = "Target Support Files/Pods-Time+/Pods-Time+.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +117,7 @@
 			files = (
 				8FFEEDEB23FA210A0025C3C6 /* libJTAppleCalendar.a in Frameworks */,
 				8FFEEDEE23FA210A0025C3C6 /* libSQLite.swift.a in Frameworks */,
-				63F511FEA1FE2ED4DE333CE5 /* libPods-Time+.a in Frameworks */,
+				92056B4A1440CAD4D86DC3EB /* libPods-Time+.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7269235E23DBFF7F0033B63B /* SQLite.framework in Frameworks */,
-				3EF0318467D919D6A189A19E /* libPods-Time+Tests.a in Frameworks */,
+				D8FCFA9CB09AF9D2AEF03CD5 /* libPods-Time+Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,10 +150,10 @@
 		F13DB5E062806C2D64B6145F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F5E4A9574A9493A7D5C16938 /* Pods-Time+.debug.xcconfig */,
-				227D01999687894E10F03A71 /* Pods-Time+.release.xcconfig */,
-				D271B737CDB037311D6F19D8 /* Pods-Time+Tests.debug.xcconfig */,
-				CD38CB06BBF8FD9AD433BF27 /* Pods-Time+Tests.release.xcconfig */,
+				1F33CEAEB8D84A39CDFE7EAB /* Pods-Time+.debug.xcconfig */,
+				86302A99EB5898DC7E2E5293 /* Pods-Time+.release.xcconfig */,
+				1EA82EBFD5DDF03DB11030EA /* Pods-Time+Tests.debug.xcconfig */,
+				755D12375EDEF3B6AC45E329 /* Pods-Time+Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -243,8 +243,8 @@
 				8FFEEDDD23F9D0790025C3C6 /* libJTAppleCalendar.a */,
 				8FFEEDDF23F9D0790025C3C6 /* libSQLite.swift.a */,
 				7269235D23DBFF7F0033B63B /* SQLite.framework */,
-				12C3782E37E3B81F5855C592 /* libPods-Time+.a */,
-				B96B26C7DDF4AC41CC497D95 /* libPods-Time+Tests.a */,
+				3F1DC6BD10654C85F2667B13 /* libPods-Time+.a */,
+				D8267A9A2A6A7A70365AC116 /* libPods-Time+Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -256,7 +256,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1E5460A2390A2180046525A /* Build configuration list for PBXNativeTarget "Time+" */;
 			buildPhases = (
-				F341B7C2A17C28FCDF6AF6BF /* [CP] Check Pods Manifest.lock */,
+				A5C67495F5DD3D5FD1CF3A06 /* [CP] Check Pods Manifest.lock */,
 				F1E545DC2390A2150046525A /* Sources */,
 				F1E545DD2390A2150046525A /* Frameworks */,
 				F1E545DE2390A2150046525A /* Resources */,
@@ -274,7 +274,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1E5460D2390A2180046525A /* Build configuration list for PBXNativeTarget "Time+Tests" */;
 			buildPhases = (
-				8B2BE8CEE6AC5ACF1AA44351 /* [CP] Check Pods Manifest.lock */,
+				55CBCDC91C37C0DF74A27192 /* [CP] Check Pods Manifest.lock */,
 				F1E545F22390A2170046525A /* Sources */,
 				F1E545F32390A2170046525A /* Frameworks */,
 				F1E545F42390A2170046525A /* Resources */,
@@ -382,7 +382,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8B2BE8CEE6AC5ACF1AA44351 /* [CP] Check Pods Manifest.lock */ = {
+		55CBCDC91C37C0DF74A27192 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -404,7 +404,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F341B7C2A17C28FCDF6AF6BF /* [CP] Check Pods Manifest.lock */ = {
+		A5C67495F5DD3D5FD1CF3A06 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -615,7 +615,7 @@
 		};
 		F1E5460B2390A2180046525A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5E4A9574A9493A7D5C16938 /* Pods-Time+.debug.xcconfig */;
+			baseConfigurationReference = 1F33CEAEB8D84A39CDFE7EAB /* Pods-Time+.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -636,7 +636,7 @@
 		};
 		F1E5460C2390A2180046525A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 227D01999687894E10F03A71 /* Pods-Time+.release.xcconfig */;
+			baseConfigurationReference = 86302A99EB5898DC7E2E5293 /* Pods-Time+.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -657,7 +657,7 @@
 		};
 		F1E5460E2390A2180046525A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D271B737CDB037311D6F19D8 /* Pods-Time+Tests.debug.xcconfig */;
+			baseConfigurationReference = 1EA82EBFD5DDF03DB11030EA /* Pods-Time+Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -679,7 +679,7 @@
 		};
 		F1E5460F2390A2180046525A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD38CB06BBF8FD9AD433BF27 /* Pods-Time+Tests.release.xcconfig */;
+			baseConfigurationReference = 755D12375EDEF3B6AC45E329 /* Pods-Time+Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

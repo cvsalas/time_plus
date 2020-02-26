@@ -21,7 +21,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>To take pictures for events </string>
+	<string>Take pictures for events</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Use images for events</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>fa-regular-400.ttf</string>

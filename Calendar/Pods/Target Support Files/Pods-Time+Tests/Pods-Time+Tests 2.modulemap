@@ -1,6 +1,0 @@
-module Pods_Time_Tests {
-  umbrella header "Pods-Time+Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}

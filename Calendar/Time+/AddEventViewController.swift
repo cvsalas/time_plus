@@ -29,7 +29,8 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     @IBOutlet weak var endTimeLabel: UILabel!
     @IBOutlet weak var repeateSegment: UISegmentedControl!
     @IBOutlet weak var defaultIconsCollectionView: UICollectionView!
-    
+    @IBOutlet weak var bottomActionBar: UISegmentedControl!
+
     
     
     var primaryVisual : EventsDataBaseStringEntry!
@@ -63,6 +64,8 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         // Do any additional setup after loading the view.
         ButtonItem.isEnabled = false
         ButtonItem.tintColor = UIColor.clear
+        
+        setTitlesActionBar(actionBar: bottomActionBar)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,7 +85,27 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         navigationController?.popViewController(animated: true)
     }
     
-   //Add support for checking if primary icon selected!
+ 
+    @IBAction func actionBarSelection(_ sender: Any) {
+        let segment = bottomActionBar.selectedSegmentIndex
+        if (segment == 0){ //nothing?
+            print("Nothing?")
+        } else if(segment == 1){ //icon
+            performSegue(withIdentifier: "toIconsView", sender: self)
+        } else if (segment == 2){ //photo
+            imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.sourceType = .camera
+            present(imagePickerController, animated: true, completion: nil)
+        } else if (segment == 3){ //gallery
+            imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.sourceType = .photoLibrary
+            present(imagePickerController, animated: true, completion: nil)
+        }
+    }
+    
+    //Add support for checking if primary icon selected!
     func checkFieldComplete(){
         if(startFlag && endFlag && iconSelectedFlag){
             if(endTime > startTime){
@@ -100,9 +123,17 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         let rect = CGRect(origin: .zero, size: size)
         UIBezierPath(roundedRect: rect, cornerRadius: size.height/2).fill()
         let image = UIGraphicsGetImageFromCurrentImageContext()?.withRenderingMode(.alwaysTemplate)
-        
         repeateSegment.setBackgroundImage(image, for: .normal, barMetrics: .default)
     }
+    
+    func setTitlesActionBar(actionBar: UISegmentedControl){
+        let stringAttributes = [
+            NSAttributedString.Key.font : UIFont(name: "FontAwesome5Free-Solid",
+                                                 size: 17.0)!]
+        actionBar.setTitleTextAttributes(stringAttributes, for: .normal)
+        actionBar.setTitle("f05e", forSegmentAt: 0)
+    }
+    
     
     @IBAction func endTimeButtonPressed(_ sender: Any) {
         displayPickere()
@@ -165,6 +196,8 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         self.visualSelected = .Primary
         performSegue(withIdentifier: "toIconsView", sender: self)
     }
+    
+    
 }
 
 
