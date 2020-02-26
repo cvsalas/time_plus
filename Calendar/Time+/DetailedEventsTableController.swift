@@ -34,8 +34,8 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         let imageName = events[indexPath.row][EventsDatabase.columns.image]
         //if(imageName != ""){
             let fullPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
-            let imageView = UIImageView(image: UIImage(contentsOfFile: fullPath)!)
-            setConstraintsImage(image: imageView, superview: cell.detailedInfo)
+//            let imageView = UIImageView(image: UIImage(contentsOfFile: fullPath)!)
+            setConstraintsImage(image: UIImage(contentsOfFile: fullPath)!, superview: cell.detailedInfo)
 //        } else { //Not working..
 //            print("here")
 //            let thisImage = UIImage(named: "transparent_image")
@@ -51,12 +51,14 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         
     }
     
-    func setConstraintsImage(image: UIImageView, superview: UIView) {
-        superview.addSubview(image)
-        image.widthAnchor.constraint(equalTo: superview.widthAnchor, multiplier: 1.0).isActive = true
-        image.heightAnchor.constraint(equalTo: superview.heightAnchor, multiplier: 1.0).isActive = true
-        image.centerXAnchor.constraint(equalTo: superview.centerXAnchor).isActive = true
-        image.centerYAnchor.constraint(equalTo: superview.centerYAnchor).isActive = true
+    func setConstraintsImage(image: UIImage, superview: UIView) {
+        let imageView: UIImageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        superview.contentMode = .scaleAspectFill
+        imageView.autoresizingMask = .FlexibleBottomMargin | .FlexibleHeight | .FlexibleRightMargin | .FlexibleLeftMargin | .FlexibleTopMargin | .FlexibleWidth
+        superview.autoresizingMask = .FlexibleBottomMargin | .FlexibleHeight | .FlexibleRightMargin | .FlexibleLeftMargin | .FlexibleTopMargin | .FlexibleWidth
+        imageView.image = image
+        superview.addSubview(imageView)
 
     }
     

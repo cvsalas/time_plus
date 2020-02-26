@@ -49,10 +49,6 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     
     let datePickerTag = 0xDEADBEEF
     
-    var startFlag: Bool = false
-    var endFlag: Bool = false
-    var iconSelectedFlag: Bool = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         dateFormatter.dateStyle = .none
@@ -107,7 +103,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     
     //Add support for checking if primary icon selected!
     func checkFieldComplete(){
-        if(startFlag && endFlag && iconSelectedFlag){
+        if(startTime != nil && endTime != nil && primaryVisual != nil){
             if(endTime > startTime){
                 ButtonItem.isEnabled = true
                 ButtonItem.tintColor = UIColor.systemBlue
@@ -147,7 +143,6 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     
     func displayPickere(){
         self.view.viewWithTag(datePickerTag)?.removeFromSuperview()
-
         let height = self.view.frame.size.height/2
         let datePicker = DatePickerWithDone(frame: CGRect(x: 0, y: self.view.frame.size.height - height, width: self.view.frame.size.width, height: height))
         datePicker.datePickerMode = .time
@@ -165,18 +160,17 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     
     func pickerDisappeared(picker: DatePickerWithDone) {
         setTimes(picker: picker)
+        checkFieldComplete()
     }
     
     func setTimes(picker: DatePickerWithDone){
         if(buttonPressed == .Start){
             self.startTime = picker.date
             self.startTimeLabel.text = self.dateFormatter.string(from: self.startTime)
-            self.startFlag = true
         }
         else{
             self.endTime = picker.date
             self.endTimeLabel.text = self.dateFormatter.string(from: self.endTime)
-            self.endFlag = true
         }
     }
     
@@ -186,7 +180,6 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
             if(visualSelected == .Primary){
                 let iconView = segue.destination as! IconsCollectionViewController
                 iconView.iconSelected = {iconCell in self.primaryVisual = Icon(name: iconCell.nameLabel.text!, code: UnicodeScalar(iconCell.iconLabel.text!)!) }
-                self.iconSelectedFlag = true
             }
         }
     }
