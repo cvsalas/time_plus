@@ -30,7 +30,27 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     @IBOutlet weak var repeateSegment: UISegmentedControl!
     @IBOutlet weak var defaultIconsCollectionView: UICollectionView!
     @IBOutlet weak var bottomActionBar: UISegmentedControl!
-
+    @IBOutlet weak var endButtonOutlet: UIButton!
+    @IBOutlet weak var startButtonOutlet: UIButton!
+    
+    @IBAction func iconButtonAction(_ sender: Any) {
+        performSegue(withIdentifier: "toIconsView", sender: self)
+    }
+    @IBOutlet weak var iconButtonOutlet: UIButton!
+    @IBAction func cameraButtonAction(_ sender: Any) {
+        imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .camera
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    @IBOutlet weak var cameraButtonOutlet: UIButton!
+    @IBAction func galleryButtonAction(_ sender: Any) {
+        imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    @IBOutlet weak var galleryButtonAction: UIButton!
     
     
     var primaryVisual : EventsDataBaseStringEntry!
@@ -53,19 +73,28 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         super.viewDidLoad()
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
-        
         defaultIconsCollectionView.dataSource = self
         defaultIconsCollectionView.delegate = self
-        //setRepeatControlAppearance()
-        // Do any additional setup after loading the view.
         ButtonItem.isEnabled = false
         ButtonItem.tintColor = UIColor.clear
-        
-        setTitlesActionBar(actionBar: bottomActionBar)
+        setupButtonIcons()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         checkFieldComplete()
+    }
+    
+    func setupButtonIcons(){
+        startButtonOutlet.titleLabel?.font = UIFont(name: "FontAwesome5Free-Solid", size: 60)!
+        startButtonOutlet.setTitle("\u{f144}", for: .normal)
+        endButtonOutlet.titleLabel?.font = UIFont(name: "FontAwesome5Free-Solid", size: 60)!
+        endButtonOutlet.setTitle("\u{f28d}", for: .normal)
+        iconButtonOutlet.titleLabel?.font = UIFont(name: "FontAwesome5Free-Solid", size: 40)!
+        iconButtonOutlet.setTitle("\u{f141}", for: .normal)
+        cameraButtonOutlet.titleLabel?.font = UIFont(name: "FontAwesome5Free-Solid", size: 40)!
+        cameraButtonOutlet.setTitle("\u{f030}", for: .normal)
+        galleryButtonAction.titleLabel?.font = UIFont(name: "FontAwesome5Free-Solid", size: 40)!
+        galleryButtonAction.setTitle("\u{f03e}", for: .normal)
     }
     
     @IBAction func DoneButtonPressed(_ sender: Any) {
@@ -79,26 +108,6 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
               }
         }
         navigationController?.popViewController(animated: true)
-    }
-    
- 
-    @IBAction func actionBarSelection(_ sender: Any) {
-        let segment = bottomActionBar.selectedSegmentIndex
-        if (segment == 0){ //nothing?
-            print("Nothing?")
-        } else if(segment == 1){ //icon
-            performSegue(withIdentifier: "toIconsView", sender: self)
-        } else if (segment == 2){ //photo
-            imagePickerController = UIImagePickerController()
-            imagePickerController.delegate = self
-            imagePickerController.sourceType = .camera
-            present(imagePickerController, animated: true, completion: nil)
-        } else if (segment == 3){ //gallery
-            imagePickerController = UIImagePickerController()
-            imagePickerController.delegate = self
-            imagePickerController.sourceType = .photoLibrary
-            present(imagePickerController, animated: true, completion: nil)
-        }
     }
     
     //Add support for checking if primary icon selected!
@@ -184,29 +193,16 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         }
     }
     
-    
     @IBAction func ellipsisPressed(_ sender: Any) {
         self.visualSelected = .Primary
         performSegue(withIdentifier: "toIconsView", sender: self)
     }
-    
     
 }
 
 
 extension AddEventViewController : UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     //CAMERA CODE FROM HERE ON DOWN -- @RAF & TEAM
-
-    @IBAction func cameraButton(_ sender: Any) {
-        imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.sourceType = .camera
-        
-        // If you were to create a custom overlay, need new view from a xib?
-        //imagePickerController.showsCameraControls = false
-        
-        present(imagePickerController, animated: true, completion: nil)
-    }
        
     func currentTimeInMilliSeconds()-> Int {
         let currentDate = Date()

@@ -189,7 +189,6 @@
 				F1E545E52390A2150046525A /* SceneDelegate.swift */,
 				F1E545E72390A2150046525A /* ViewController.swift */,
 				F1E545E92390A2150046525A /* Main.storyboard */,
-				81B786B723FBC5A500F4CECA /* IconCollectionViewCell.swift */,
 				8FD1005823E8E90A004FA125 /* helpScreenViewController.swift */,
 				811521C523CD1FAB0055F6F9 /* MonthHeaderClass.swift */,
 				F1E545EC2390A2170046525A /* Assets.xcassets */,
@@ -206,6 +205,7 @@
 				81A1BCE323EFEEAD001724DB /* DetailedCell.swift */,
 				81A1BCE523EFF857001724DB /* DetailedEventsTableController.swift */,
 				81E4A2B923FCDF68001C00AD /* EventsDataBaseStringEntry.swift */,
+				81B786B723FBC5A500F4CECA /* IconCollectionViewCell.swift */,
 				81E4A2BB23FCE4F9001C00AD /* IconView.swift */,
 				81E89EC623FDD00C0016BE46 /* IconCollectionReusableView.swift */,
 			);
