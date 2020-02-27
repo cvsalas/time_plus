@@ -1,49 +1,22 @@
 # Time+
 > An aphasia based calendar app
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
-
 An open-source, iOS-based calendar application for individuals with aphasia
 
 ![](header.png)
 
 ## Installation
 
-OS X & Linux:
-
-```sh
-npm install my-crazy-module --save
-```
-
-Windows:
-
-```sh
-edit autoexec.bat
-```
-
-## Usage example
-
-The code in this repository is used on the iOS application "Time_Plus".
-
-## Development setup
-
-Run the provided code in xCode
-
-```sh
-make install
-npm test
-```
+Find us on the iOS App Store! 
 
 ## Release History
 
-* 0.0.1
+* 1.0.0
     * Work in progress inital release
 
 ## Meta
 
-Created by Abdulhalim Rafeik and Roee Landesman for the "Time+" iOS
+Developed by Abdulhalim Rafeik, Roee Landesman, Amber Jaitrong, and Chase Earhart for the "Time+" iOS
 Calendar application. Funded by the Cal Poly, SLO Computer Engineering
 department and QL+, requested by the US Department of Veteran Affairs.
 
@@ -57,10 +30,6 @@ This repository is open-source. See ``LICENSE`` for more information.
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
 
-<!-- Markdown link & img dfn's -->
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/datadog-metrics
-[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
-[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-[wiki]: https://github.com/yourname/yourproject/wiki
+## Open-Source Libraries Used
+1. Calendar-extension [JTAppleCalendar](https://github.com/patchthecode/JTAppleCalendar/)
+2. Swift database wrapper [SQLite.swift](https://github.com/stephencelis/SQLite.swift)
