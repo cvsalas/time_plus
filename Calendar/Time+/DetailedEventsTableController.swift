@@ -19,7 +19,7 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "detailedCell") as! DetailedCell
-        
+        resetCell(cell: cell)
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
@@ -32,18 +32,8 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         let endTime = events[indexPath.row][EventsDatabase.columns.endTime]
 
         let imageName = events[indexPath.row][EventsDatabase.columns.image]
-        //if(imageName != ""){
             let fullPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
-//            let imageView = UIImageView(image: UIImage(contentsOfFile: fullPath)!)
-            setConstraintsImage(image: UIImage(contentsOfFile: fullPath)!, superview: cell.detailedInfo)
-//        } else { //Not working..
-//            print("here")
-//            let thisImage = UIImage(named: "transparent_image")
-//            let transparentImage = thisImage?.image(alpha: 0.0)
-//            let imageView = UIImageView(image: transparentImage)
-//            imageView.alpha = 0.0
-//            setConstraintsImage(image: imageView, superview: cell.detailedInfo)
-//        }
+        setConstraintsImage(image: UIImage(contentsOfFile: fullPath)!, superview: cell.detailedInfo)
         cell.startTimeLabel.text = dateFormatter.string(from: startTime)
         cell.endTimeLabel.text = dateFormatter.string(from: endTime)
         
@@ -51,15 +41,23 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         
     }
     
+    func resetCell(cell: DetailedCell){
+        while let subview = cell.detailedInfo.subviews.last {
+            subview.removeFromSuperview()
+        }
+    }
+    
+    // DOCUMENTATION: THE CENTERING OF THE IMAGES IS NOT GOOD, WE GIVE UP!!
     func setConstraintsImage(image: UIImage, superview: UIView) {
         let imageView: UIImageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        superview.contentMode = .scaleAspectFill
-        imageView.autoresizingMask = .FlexibleBottomMargin | .FlexibleHeight | .FlexibleRightMargin | .FlexibleLeftMargin | .FlexibleTopMargin | .FlexibleWidth
-        superview.autoresizingMask = .FlexibleBottomMargin | .FlexibleHeight | .FlexibleRightMargin | .FlexibleLeftMargin | .FlexibleTopMargin | .FlexibleWidth
         imageView.image = image
+        let heightRatio = superview.frame.height / image.size.height
+        let widthRatio = superview.frame.width / image.size.width
+        let scale = min(heightRatio, widthRatio)
+        imageView.frame.size = CGSize(width: image.size.width * scale, height: image.size.height * scale)
+        imageView.center = CGPoint(x: superview.bounds.midX,
+                                   y: superview.bounds.midY)
         superview.addSubview(imageView)
-
     }
     
     func parseString(iconSelected : String) -> Icon {

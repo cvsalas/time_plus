@@ -21,6 +21,16 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
         calendarView.scrollingMode = .stopAtEachCalendarFrame
         calendarView.scrollDirection = .horizontal
         // Do any additional setup after loading the view.
+        setupFAQ()
+    }
+    
+    @IBAction func sendToFAQ(_ sender: Any) {
+        performSegue(withIdentifier: "toFAQ", sender: self)
+    }
+    @IBOutlet weak var FAQ_Outlet: UIButton!
+    func setupFAQ(){
+        FAQ_Outlet.titleLabel?.font = UIFont(name: "FontAwesome5Free-Solid", size: 30)!
+        FAQ_Outlet.setTitle("\u{f059}", for: .normal)
     }
     
     func calendar(_ calendar: JTACMonthView, willDisplay cell: JTACDayCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
@@ -56,8 +66,7 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
         return ConfigurationParameters(startDate: startDate, endDate: endDate!)
         
     }
-    
-    
+        
     func configureCell(jtCell: JTACDayCell, state: CellState, date: Date){
         let cell = jtCell as! DayCell
         let calendar = Calendar.current
@@ -68,10 +77,7 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
         
         if state.dateBelongsTo == .thisMonth{
             if calendar.isDate(date, equalTo: Date(), toGranularity: .day){
-                cell.dayLabel.textColor = .red
-            }
-            else{
-                cell.dayLabel.textColor = .black;
+                cell.contentView.backgroundColor = .lightGray
             }
         }
         else{
@@ -86,20 +92,11 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
         
     }
     
-    @IBAction func toHelpScreen(_ sender: Any) {
-        performSegue(withIdentifier: "HelpScreenSegue", sender: self)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "firstLink"){
             let dayView = segue.destination as! DailyViewController
             dayView.receivedDate = selectedDate
-            
-        } else if (segue.identifier == "HelpScreenSegue"){
-            //Nothing here for now
         }
-        
-        
     }
     
 }
