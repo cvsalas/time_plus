@@ -1,0 +1,6 @@
+module SemiModalViewController {
+  umbrella header "SemiModalViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}

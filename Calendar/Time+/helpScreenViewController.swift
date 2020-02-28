@@ -8,20 +8,34 @@
 
 import UIKit
 
-class helpScreenViewController: UIViewController {
-
-    @IBAction func returnHomeSegue(_ sender: Any) {
-       dismiss(animated: true, completion: nil)
+class helpScreenViewController: UIViewController, UICollectionViewDataSource{
+    
+    @IBOutlet weak var CollectionViewOutlet: UICollectionView!
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 7
     }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "faqCell", for: indexPath) as! FAQCollectionViewCell
+        let iconTitles: [String] = ["\u{f00d}","\u{f00d}","\u{f00d}","\u{f00d}","\u{f00d}","\u{f00d}","\u{f00d}"]
+        cell.iconLabel.text = iconTitles[indexPath.row]
+        cell.iconLabel.font = UIFont(name: "FontAwesome5Free-Solid", size: 30)!
+        return cell
+    }
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let size = CGSize(width: 100, height: 100)
-        preferredContentSize = size
-        // Do any additional setup after loading the view.
+        dismissLogo.titleLabel?.font = UIFont(name: "FontAwesome5Free-Solid", size: 30)!
+        dismissLogo.setTitle("\u{f00d}", for: .normal)
+    }
+    @IBAction func dismissModal(_ sender: Any) {
+        dismissSemiModalView()
     }
     
-
+    @IBOutlet weak var dismissLogo: UIButton!
+    
     /*
     // MARK: - Navigation
 

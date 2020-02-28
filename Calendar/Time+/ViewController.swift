@@ -8,6 +8,7 @@
 
 import UIKit
 import JTAppleCalendar
+import SemiModalViewController
 
 class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewDataSource {
     
@@ -24,9 +25,26 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
         setupFAQ()
     }
     
-    @IBAction func sendToFAQ(_ sender: Any) {
-        performSegue(withIdentifier: "toFAQ", sender: self)
+    @IBAction func FAQButton(_ sender: Any) {
+        let options = [
+            SemiModalOption.pushParentBack: false,
+            SemiModalOption.shadowOpacity: 0.5
+            ] as [SemiModalOption : Any]
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let identifier = String(describing: helpScreenViewController.self)
+        let controller = storyboard.instantiateViewController(withIdentifier: identifier)
+        
+        controller.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width * 0.5, height: self.view.frame.height * 0.5)
+        controller.view.backgroundColor = UIColor.lightGray
+        
+        presentSemiViewController(controller, options: options, completion: {
+            print("Completed!")
+        }, dismissBlock: {
+            print("Dismissed!")
+        })
     }
+    
     @IBOutlet weak var FAQ_Outlet: UIButton!
     func setupFAQ(){
         FAQ_Outlet.titleLabel?.font = UIFont(name: "FontAwesome5Free-Solid", size: 30)!
@@ -97,7 +115,7 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
             let dayView = segue.destination as! DailyViewController
             dayView.receivedDate = selectedDate
         }
+        
     }
-    
 }
 

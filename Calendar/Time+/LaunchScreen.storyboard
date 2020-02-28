@@ -17,15 +17,21 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="hjv-2d-SpT">
                                 <rect key="frame" x="20" y="44" width="374" height="818"/>
-                                <color key="backgroundColor" red="0.33461155129999998" green="0.51076748699999996" blue="0.29022872799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.2380410731" green="0.47268468139999997" blue="0.38264608379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <color key="backgroundColor" red="0.2380410731" green="0.47268468139999997" blue="0.38264608379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hjv-2d-SpT" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" constant="-34" id="3yJ-DZ-OW1"/>
                             <constraint firstItem="hjv-2d-SpT" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="Awf-aR-zxH"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="hjv-2d-SpT" secondAttribute="trailing" constant="20" id="LsR-Ne-lYQ"/>
+                            <constraint firstItem="hjv-2d-SpT" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="LvX-gs-GCw"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="hjv-2d-SpT" secondAttribute="bottom" id="UdC-cT-Rhx"/>
                             <constraint firstItem="hjv-2d-SpT" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="c3G-AF-Oqb"/>
+                            <constraint firstItem="hjv-2d-SpT" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="20" id="hry-Q0-72Z"/>
+                            <constraint firstItem="hjv-2d-SpT" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" id="kDN-Ji-lgB"/>
                             <constraint firstItem="hjv-2d-SpT" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="44" id="kxb-dS-GVK"/>
+                            <constraint firstItem="hjv-2d-SpT" firstAttribute="centerY" secondItem="Bcu-3y-fUS" secondAttribute="centerY" id="sNW-7c-rNI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                     </view>

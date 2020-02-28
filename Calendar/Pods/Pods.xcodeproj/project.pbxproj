@@ -7,71 +7,95 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05F06B509BF2BBD7F3B8811AEA78FEB3 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B56D1F15133497E1DFF5051EC48D7 /* Operators.swift */; };
-		063D35B22E11F04B4841E782DA9E8BB7 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED086535C9301EF765BEB3ABAEA3984B /* Query.swift */; };
+		012B2913E7187178DFE060C92276101F /* SemiModalViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 82F40EAB1D76F1F3516BCD84325B9381 /* SemiModalViewController-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		05F06B509BF2BBD7F3B8811AEA78FEB3 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B22BD42F7EF4B6BDBC34816B155F3D /* Operators.swift */; };
+		063D35B22E11F04B4841E782DA9E8BB7 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6081D2F068EC5C1443C124275B809F85 /* Query.swift */; };
 		089CF7E0E39C65DF808941C7B86A4AF7 /* Pods-Time+Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A8F44154C08F3C3E25A9FF802FA5BE3C /* Pods-Time+Tests-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		0BD12E9078D1159E6E1032D39C95E7FE /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54059A9E0DFBE7CA6B0C57F86099B47B /* Statement.swift */; };
-		1005FF60269AF756D2973FC318A6664F /* JTACScrollViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B8AA8539C1BBA0F1BB3882578134A0 /* JTACScrollViewDelegates.swift */; };
-		10ADB63B97558480A890EB234840B5F7 /* JTACCollectionYearViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2554F2CFCE80C8EDE4BA988CCFD2F17B /* JTACCollectionYearViewDelegates.swift */; };
-		161631C3CD840C5A08843A8F631CE616 /* JTACMonthLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891EB92A728163638ECD2A24D7C3ECE /* JTACMonthLayout.swift */; };
-		1FFB28D21A0D19841A5B802D25D5CBA9 /* SQLite.swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DA860B1C58FC67881355EBBA49BB2E /* SQLite.swift-dummy.m */; };
-		229D2196F198B62DC28CB97999B479F3 /* JTAppleCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE313CE8B061C886CFF8BD994DA4BBEF /* JTAppleCalendar-dummy.m */; };
-		27F078EBAB1A44ACCB75ED506B789706 /* JTACYearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74B27D24084C637868FDD1D916A65AA /* JTACYearView.swift */; };
-		2AD3C6DE9778DB2972EEB9C40191D4A1 /* CustomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3E6ED15DF1DB07FE17F78A6D66F5D /* CustomFunctions.swift */; };
-		31AF5AEBD5B1E7D9BA13C33DA9CAC6EF /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0E337BEAF38EB52519FCD7A6A57CE /* Helpers.swift */; };
-		38D38A1A8FF5F6D69E0B0392A81349AA /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B5ECA4ABF6D6E335D0B1FFF6D152C /* Setter.swift */; };
-		391512EAF0E5324171CDABDDE341960B /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA320CA6BA0A7792C7D02AEEE47349B /* Connection.swift */; };
-		3E24F37289624C75C60EE7102102EF70 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F70F0DD943861C7FAC70869392958A /* Errors.swift */; };
-		410C96CB85174D5671D21B72BDD7A5F6 /* JTACMonthLayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2434F56A2E3405962CD0901E5A821277 /* JTACMonthLayoutProtocol.swift */; };
-		4341191758FEDD8CE8B240AA62CD28A7 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089780E4C3360AF765D31B0105E582FC /* Expression.swift */; };
-		53FC36EC0AE4FE36F7703E34DEF51E36 /* AggregateFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F08E12A1A52AB35522DFDD27F7A6D0 /* AggregateFunctions.swift */; };
-		5405D125C64322B5C60058DCC9580248 /* Collation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B05D10876175DDEDD97AE45605368CA /* Collation.swift */; };
-		559E62F2838AB3C9AFEB8E45F3EC6602 /* CalendarEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057856B85BCEE52A3B3B5F12D37BA5B8 /* CalendarEnums.swift */; };
-		58670BDA59BC1476ECD1AE42A65DEDB4 /* SQLiteObjc.h in Headers */ = {isa = PBXBuildFile; fileRef = DFDCDE5ECE6390E16548AF787A87CAC2 /* SQLiteObjc.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5CF54375E414548000AFBB6F4ED8BB8B /* JTACInteractionMonthFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BAB1DEF970AA539D6E675CC68C741 /* JTACInteractionMonthFunctions.swift */; };
-		644F825572298EE83319F4787C1FAFAF /* JTACMonthReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70E7C3CC44B4390F9D33EA54595C693 /* JTACMonthReusableView.swift */; };
-		64A38DB5CD3B36D901C6971987AA9FF1 /* JTACDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB45420B6B2E614606DFC1A58DECAD48 /* JTACDayCell.swift */; };
-		66DD1A11867D8EAA01E70DC735F8801E /* FTS5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A5383D55C9F2176F9C45298152A04F /* FTS5.swift */; };
-		68700803C1AEC5459420EBF8E92BB2AB /* Pods-Time+-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 12A79F9FEA8C044157946A1D50C33A23 /* Pods-Time+-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		70E5212EF78F94B26953126C512C966E /* JTACMonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5E1FB920DD0E768E24E2A19BF94430 /* JTACMonthCell.swift */; };
-		7366AF2575354E1D2C5BF4491F5F9417 /* Blob.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3323D1D51BD7E207E9E0521D016EEC5 /* Blob.swift */; };
-		7C223CCCA8FDA2AFC24233CF2C80D507 /* fts3_tokenizer.h in Headers */ = {isa = PBXBuildFile; fileRef = F6F396C530EDE88D7DE78E60BEA42B98 /* fts3_tokenizer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7C8125947E5CAE3EA105B60D31DFD5BC /* JTACMonthActionFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C53EEF2C180D11C56BC844E7884B2E /* JTACMonthActionFunctions.swift */; };
-		7E1C937AB38B176550973B6DD4550FE1 /* JTACMonthQueryFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2F114BAE370F6379303C7A5751D4DE /* JTACMonthQueryFunctions.swift */; };
-		7F9143F46F9E7896DEB46693296F7345 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF20F172CCD384A038AF16A6407DEBFF /* Value.swift */; };
-		80162EA028342B04D653D4E1C7471DAB /* Pods-Time+-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C749B81CD279422E3F82E12E455B8809 /* Pods-Time+-dummy.m */; };
-		8BE5D78D592FF07F4962B70D2013C31F /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA338697C90382C04E3F7D0F248E4A /* Foundation.swift */; };
-		9725BFA1609C5AF939284ABB4B1A6728 /* JTAppleCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0070103C9A5012C252F85B3A7A56B6BC /* JTAppleCalendar-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9A9596F5E4AA454390A98D6217A4D71A /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26F3E2A2C94058DB62D29A81DA0296 /* Schema.swift */; };
-		9E627DD9FB0352876EEDECC2A163F785 /* SQLiteObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C765445DC7FA916BF1A447EA92FECC2 /* SQLiteObjc.m */; };
-		A29996FABAB80AC396D7366DECB08F44 /* GlobalFunctionsAndExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C16716940FF6AFFAED2B9004B7010BC /* GlobalFunctionsAndExtensions.swift */; };
-		B1AA337CF5C4DCA4E9B1CB66B7CE63E3 /* JTACYearViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBE7A2475B823B2E410107684CD6C4 /* JTACYearViewProtocols.swift */; };
-		B416A8E299446B94EE80482777E444EB /* DateAndTimeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4622527B0BFF3ABF8A263CDE86210D2 /* DateAndTimeFunctions.swift */; };
-		B69EA6264044412D6729801B01D713C7 /* FTS4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C6803F2AA94A3680AD51E8615FB0FE /* FTS4.swift */; };
-		BCEA40A2CCD92173C2D319E55EB2390A /* JTACCollectionMonthViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B5E4A2811CD851BF36497CEF0CCE9F /* JTACCollectionMonthViewDelegates.swift */; };
-		BE9024F3A8CA896C401B185171EF002F /* JTACMonthViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ED68DBC054A983B471553AE8E0CEEE /* JTACMonthViewProtocols.swift */; };
-		BFF536B78DC4850A4A285C1D03F56057 /* SQLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 9944F66382A067A527B30BE894E6062A /* SQLite.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C64E6FF7CA352F934D1D68089FADABF7 /* JTACVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C884BE9D9C4EB4B6370CA8719FC2EF /* JTACVariables.swift */; };
-		CA68858C8C75996C3D81FAC135943055 /* JTACMonthLayoutHorizontalCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA10FD7CFD659E6B30ABC934352C97 /* JTACMonthLayoutHorizontalCalendar.swift */; };
-		CB0E7E0835E7E26C8558DC0EDDE0E57D /* CoreFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1395DED7B72E20C098A6A19A08FE4C /* CoreFunctions.swift */; };
-		CB97FD7BB7E14D263084D158303E60A9 /* CalendarStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11EE03EB22A8F15D3056A0B46304740 /* CalendarStructs.swift */; };
-		CF028D4146B0DD677C3393340AD6448A /* RTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57442131C434595897314F24B17F96F /* RTree.swift */; };
-		CFA35EA84C57D64FF7E7BD6855039DAF /* JTACMonthDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED33C2B851D5422A3D1EF2846AF5E21 /* JTACMonthDelegateProtocol.swift */; };
-		D306FD0D22D41AB51FC25692714BC0E9 /* JTACMonthLayoutVerticalCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE969B4E113E27E87D1B44322AC9A9E9 /* JTACMonthLayoutVerticalCalendar.swift */; };
-		D67EABB789AC1ECF1708B09F5D723B0E /* JTACInteractionYearFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963E977D7E2335B86C9106E9385DC580 /* JTACInteractionYearFunctions.swift */; };
-		D8F6B32F6E761A560319B19086DD3C29 /* Coding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04818363CBB24502907CB546FCBE6C /* Coding.swift */; };
-		DB5891014AF5583F4CE70D67063FEBF4 /* SQLite.swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 285965113911DDFD9AC0F6F3DBF8A44F /* SQLite.swift-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0BD12E9078D1159E6E1032D39C95E7FE /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC73CF072EE75A74249C1195B5638BB6 /* Statement.swift */; };
+		1005FF60269AF756D2973FC318A6664F /* JTACScrollViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E958A743F428CFC78459855F769C42 /* JTACScrollViewDelegates.swift */; };
+		10ADB63B97558480A890EB234840B5F7 /* JTACCollectionYearViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5926EEC35C861024E4A1A2FF72D842C /* JTACCollectionYearViewDelegates.swift */; };
+		11D2A7EA01FC1796D65A351A8AEEE916 /* SemiModalViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3746A5B1399E078F235CBB6F4DB97A /* SemiModalViewController-dummy.m */; };
+		161631C3CD840C5A08843A8F631CE616 /* JTACMonthLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7561137705CEF4891B4815E252C4ABF9 /* JTACMonthLayout.swift */; };
+		1FFB28D21A0D19841A5B802D25D5CBA9 /* SQLite.swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD7201857C0CA75A536CDEFDACEAE20 /* SQLite.swift-dummy.m */; };
+		229D2196F198B62DC28CB97999B479F3 /* JTAppleCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E18989811AE9D88D864C8D98A9BBE756 /* JTAppleCalendar-dummy.m */; };
+		27F078EBAB1A44ACCB75ED506B789706 /* JTACYearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213D154773A7251597F5C8E745B219B7 /* JTACYearView.swift */; };
+		2AD3C6DE9778DB2972EEB9C40191D4A1 /* CustomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E7BFF9ED20ECA0C593419846B228F5 /* CustomFunctions.swift */; };
+		31AF5AEBD5B1E7D9BA13C33DA9CAC6EF /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E80C0A0B1521FD13F242934421A5B5 /* Helpers.swift */; };
+		370B201CF6E94B8104E5BED9FED83024 /* Pods-Time+-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 12A79F9FEA8C044157946A1D50C33A23 /* Pods-Time+-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		38D38A1A8FF5F6D69E0B0392A81349AA /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C880577354EF9D28B15ED30109D530 /* Setter.swift */; };
+		391512EAF0E5324171CDABDDE341960B /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C039C5FE5E0FA04A8CEBA5770C2D600E /* Connection.swift */; };
+		3E24F37289624C75C60EE7102102EF70 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652042244AB8DDF2E770AC91E92B477F /* Errors.swift */; };
+		410C96CB85174D5671D21B72BDD7A5F6 /* JTACMonthLayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE68B860E82EB7D070D86F3000EA23D /* JTACMonthLayoutProtocol.swift */; };
+		4341191758FEDD8CE8B240AA62CD28A7 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15B6B2656BC66542409AB2094A84D6 /* Expression.swift */; };
+		53FC36EC0AE4FE36F7703E34DEF51E36 /* AggregateFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A213545B8C8CA764E0C0E535DC313BDA /* AggregateFunctions.swift */; };
+		5405D125C64322B5C60058DCC9580248 /* Collation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E9FF77BAA5344D5BF23150A17436FB /* Collation.swift */; };
+		559E62F2838AB3C9AFEB8E45F3EC6602 /* CalendarEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0DBC0CD7783D3DC4F56CFF5CBE1EC /* CalendarEnums.swift */; };
+		58670BDA59BC1476ECD1AE42A65DEDB4 /* SQLiteObjc.h in Headers */ = {isa = PBXBuildFile; fileRef = E84A4DB9CBD223AFDCA7A6BC1A32A189 /* SQLiteObjc.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5CF54375E414548000AFBB6F4ED8BB8B /* JTACInteractionMonthFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83C7CD4CC1B968EDA49BD5E98A2BC42 /* JTACInteractionMonthFunctions.swift */; };
+		644F825572298EE83319F4787C1FAFAF /* JTACMonthReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD18B5D71D11009ED372C12E3AC9BE55 /* JTACMonthReusableView.swift */; };
+		64A38DB5CD3B36D901C6971987AA9FF1 /* JTACDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975E4E8DC3FAD8DDBCD6870FA9B87A4 /* JTACDayCell.swift */; };
+		66DD1A11867D8EAA01E70DC735F8801E /* FTS5.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52FECF68A73B543265CE4D5B5B8B93D /* FTS5.swift */; };
+		67A03628B2F2FD72D7941EF16C2F9A3C /* PushBackAnimationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4B14D05B6CD90A0BF6DE2618A65B55 /* PushBackAnimationGroup.swift */; };
+		70E5212EF78F94B26953126C512C966E /* JTACMonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23AF562D0022B10F10909DBB3601005 /* JTACMonthCell.swift */; };
+		7366AF2575354E1D2C5BF4491F5F9417 /* Blob.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE34A2E564394A46A0B74AA70FFCC37 /* Blob.swift */; };
+		7C223CCCA8FDA2AFC24233CF2C80D507 /* fts3_tokenizer.h in Headers */ = {isa = PBXBuildFile; fileRef = E15607B2E459D55714EAFDE73CADF113 /* fts3_tokenizer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7C8125947E5CAE3EA105B60D31DFD5BC /* JTACMonthActionFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C35E93956699B8BDEB4A8662628475D /* JTACMonthActionFunctions.swift */; };
+		7E1C937AB38B176550973B6DD4550FE1 /* JTACMonthQueryFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526842755A19550F1E401DB1151446C /* JTACMonthQueryFunctions.swift */; };
+		7F9143F46F9E7896DEB46693296F7345 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A545FF23AD9DE5ABA79BCED4646B23B /* Value.swift */; };
+		8BE5D78D592FF07F4962B70D2013C31F /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B56AC5D8C889DE6DD7A684972224B1C /* Foundation.swift */; };
+		9725BFA1609C5AF939284ABB4B1A6728 /* JTAppleCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3171490D0D9466DE35F423146BE9B385 /* JTAppleCalendar-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9A9596F5E4AA454390A98D6217A4D71A /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2A1273369861922A264EE18C236132 /* Schema.swift */; };
+		9E627DD9FB0352876EEDECC2A163F785 /* SQLiteObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 66711E745F52A75EE099AE93151DC365 /* SQLiteObjc.m */; };
+		A17714AB6007883E98A6BF1BD9AE6552 /* UIView+SemiModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F39A5CD4C20EBC68B7772B4B9BDFBF /* UIView+SemiModalViewController.swift */; };
+		A29996FABAB80AC396D7366DECB08F44 /* GlobalFunctionsAndExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BA2392342A0D99DADB9CCBEC9F8EC2 /* GlobalFunctionsAndExtensions.swift */; };
+		A80B7CB3EAF62319F2F807FC02DA294C /* UIView+Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21DA6E2313E9E513D9D2C0B8849A785 /* UIView+Kit.swift */; };
+		B0F971B44C40AD4E9C23200ACF26D912 /* UIView+FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B109232238C7BDEDC29EC70E7B203C76 /* UIView+FindViewController.swift */; };
+		B1512F464BF7355AE4113204C512B1B2 /* UIDevice+SemiModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75283B90BE57F05DF45564CF6A473561 /* UIDevice+SemiModalViewController.swift */; };
+		B1AA337CF5C4DCA4E9B1CB66B7CE63E3 /* JTACYearViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9354B23377E8CE9700949D5FADEA1EC /* JTACYearViewProtocols.swift */; };
+		B416A8E299446B94EE80482777E444EB /* DateAndTimeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7ADA6DB186E85039A0DF4B93F78498 /* DateAndTimeFunctions.swift */; };
+		B69EA6264044412D6729801B01D713C7 /* FTS4.swift in Sources */ = {isa = PBXBuildFile; fileRef = C302F9DB9BF91490CB7C25A4832A30D7 /* FTS4.swift */; };
+		BCEA40A2CCD92173C2D319E55EB2390A /* JTACCollectionMonthViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A6EB4DDEA96E38A59D81F113BE98A /* JTACCollectionMonthViewDelegates.swift */; };
+		BE9024F3A8CA896C401B185171EF002F /* JTACMonthViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E5DB2393784C43E8E757E66B1E89A0 /* JTACMonthViewProtocols.swift */; };
+		BFF536B78DC4850A4A285C1D03F56057 /* SQLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 937CD936FB6F4EFC8AB283768216A0D4 /* SQLite.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C64E6FF7CA352F934D1D68089FADABF7 /* JTACVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E31F8E53A7393875A2F605471EE231 /* JTACVariables.swift */; };
+		CA68858C8C75996C3D81FAC135943055 /* JTACMonthLayoutHorizontalCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53A4854C0EDF32F7F625A9C7B4AA6CC /* JTACMonthLayoutHorizontalCalendar.swift */; };
+		CB0E7E0835E7E26C8558DC0EDDE0E57D /* CoreFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47018BF750895F47C92E797A4B6F03CD /* CoreFunctions.swift */; };
+		CB97FD7BB7E14D263084D158303E60A9 /* CalendarStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05DD8D9745820F35D1A29E88FE63745 /* CalendarStructs.swift */; };
+		CD1F63D64F3F6D463FF6BBC95DE33A47 /* UIViewController+SemiModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E72C5E4F189CC064EF752CA58074CA /* UIViewController+SemiModalViewController.swift */; };
+		CF028D4146B0DD677C3393340AD6448A /* RTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD0CFEF1148F9CEB30A40C500BA717 /* RTree.swift */; };
+		CFA35EA84C57D64FF7E7BD6855039DAF /* JTACMonthDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598A2B4BAC2204BFCB8856F24AE5CAB0 /* JTACMonthDelegateProtocol.swift */; };
+		D306FD0D22D41AB51FC25692714BC0E9 /* JTACMonthLayoutVerticalCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1573FE84A8FE514D715CADDB569E626 /* JTACMonthLayoutVerticalCalendar.swift */; };
+		D67EABB789AC1ECF1708B09F5D723B0E /* JTACInteractionYearFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E9138F52BB081E736B89DF5D8A7D1 /* JTACInteractionYearFunctions.swift */; };
+		D8F6B32F6E761A560319B19086DD3C29 /* Coding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5473FE6D4113639C78779D03480BB89C /* Coding.swift */; };
+		DB5891014AF5583F4CE70D67063FEBF4 /* SQLite.swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E653AD520FB41DAA1F78A4613D74061 /* SQLite.swift-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DFC5FA74FB18B4C0370700A3CF0FF918 /* Pods-Time+-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C749B81CD279422E3F82E12E455B8809 /* Pods-Time+-dummy.m */; };
 		E463B878AF100056A369EB5CBDD5C788 /* Pods-Time+Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD6B93E10B0DA00D90C9E9DD1DCF94 /* Pods-Time+Tests-dummy.m */; };
-		E4EC386D964E8F3A95F3B8A1209F2D0E /* JTACMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88E9DFE6AA0BCB585592F00E464FAAC /* JTACMonthView.swift */; };
+		E4EC386D964E8F3A95F3B8A1209F2D0E /* JTACMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1019F39F66B3D13115330010487FB /* JTACMonthView.swift */; };
+		ED248B6C0C19633A6328B497619158B0 /* UIViewController+Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C75DD307BED705E2C525391AA08C88 /* UIViewController+Options.swift */; };
+		EE4F0A6A9BA5449C802A53E38CB82A2C /* ClosureWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA0D7F247F17927C6E9240FDA1A2D9 /* ClosureWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C019B93289CA61A09D89E67CDDAED168 /* PBXContainerItemProxy */ = {
+		17EB85A9F52B55E8DF80669622DFCB89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC13C779FC797D3AB3836221EC56AE1D;
+			remoteInfo = SemiModalViewController;
+		};
+		7D04D4C4CDCD497E6960542581BDD741 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 421B6ABF460857FE6CA2905EFB5A4F74;
 			remoteInfo = JTAppleCalendar;
+		};
+		974E1DA3A67E92CD2460D6F3AA17D616 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F2C1776D90B62B156DB52C41A5C419C;
+			remoteInfo = SQLite.swift;
 		};
 		D24A8E56008EDD575CF0AA0CC2140F20 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -87,96 +111,110 @@
 			remoteGlobalIDString = 3F2C1776D90B62B156DB52C41A5C419C;
 			remoteInfo = SQLite.swift;
 		};
-		FA9F656778A55F5C1F496B9326134344 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3F2C1776D90B62B156DB52C41A5C419C;
-			remoteInfo = SQLite.swift;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0070103C9A5012C252F85B3A7A56B6BC /* JTAppleCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JTAppleCalendar-umbrella.h"; sourceTree = "<group>"; };
-		057856B85BCEE52A3B3B5F12D37BA5B8 /* CalendarEnums.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarEnums.swift; path = Sources/JTAppleCalendar/CalendarEnums.swift; sourceTree = "<group>"; };
+		0259D789A36386076561B4AE8A286C2E /* SQLite.swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SQLite.swift.modulemap; sourceTree = "<group>"; };
+		06C75DD307BED705E2C525391AA08C88 /* UIViewController+Options.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Options.swift"; path = "Source/UIViewController+Options.swift"; sourceTree = "<group>"; };
 		079A3B29B69325AFBBD4DB08F78EE4C5 /* Pods-Time+Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Time+Tests.modulemap"; sourceTree = "<group>"; };
-		089780E4C3360AF765D31B0105E582FC /* Expression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Sources/SQLite/Typed/Expression.swift; sourceTree = "<group>"; };
-		0AC3C93B57C73B436D88F04B5745B864 /* JTAppleCalendar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JTAppleCalendar.xcconfig; sourceTree = "<group>"; };
+		0D2A1273369861922A264EE18C236132 /* Schema.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Schema.swift; path = Sources/SQLite/Typed/Schema.swift; sourceTree = "<group>"; };
+		0ECD8A67D5BEC27BA76FA611BB06E6C8 /* JTAppleCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JTAppleCalendar.modulemap; sourceTree = "<group>"; };
 		1049CA5D65712AAA2E4EFC2B06FE2A96 /* Pods-Time+Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Time+Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		12A79F9FEA8C044157946A1D50C33A23 /* Pods-Time+-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Time+-umbrella.h"; sourceTree = "<group>"; };
-		1C16716940FF6AFFAED2B9004B7010BC /* GlobalFunctionsAndExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlobalFunctionsAndExtensions.swift; path = Sources/JTAppleCalendar/GlobalFunctionsAndExtensions.swift; sourceTree = "<group>"; };
-		2434F56A2E3405962CD0901E5A821277 /* JTACMonthLayoutProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthLayoutProtocol.swift; path = Sources/JTAppleCalendar/JTACMonthLayoutProtocol.swift; sourceTree = "<group>"; };
-		2554F2CFCE80C8EDE4BA988CCFD2F17B /* JTACCollectionYearViewDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACCollectionYearViewDelegates.swift; path = Sources/JTAppleCalendar/JTACCollectionYearViewDelegates.swift; sourceTree = "<group>"; };
+		13C880577354EF9D28B15ED30109D530 /* Setter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Setter.swift; path = Sources/SQLite/Typed/Setter.swift; sourceTree = "<group>"; };
+		1B56AC5D8C889DE6DD7A684972224B1C /* Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Foundation.swift; path = Sources/SQLite/Foundation.swift; sourceTree = "<group>"; };
+		213D154773A7251597F5C8E745B219B7 /* JTACYearView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACYearView.swift; path = Sources/JTAppleCalendar/JTACYearView.swift; sourceTree = "<group>"; };
 		2623261F9F6AC3796B6CF7AA774AC908 /* Pods-Time+-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Time+-acknowledgements.markdown"; sourceTree = "<group>"; };
-		285965113911DDFD9AC0F6F3DBF8A44F /* SQLite.swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SQLite.swift-umbrella.h"; sourceTree = "<group>"; };
-		296B56D1F15133497E1DFF5051EC48D7 /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/SQLite/Typed/Operators.swift; sourceTree = "<group>"; };
-		32B8AA8539C1BBA0F1BB3882578134A0 /* JTACScrollViewDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACScrollViewDelegates.swift; path = Sources/JTAppleCalendar/JTACScrollViewDelegates.swift; sourceTree = "<group>"; };
+		29E7BFF9ED20ECA0C593419846B228F5 /* CustomFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomFunctions.swift; path = Sources/SQLite/Typed/CustomFunctions.swift; sourceTree = "<group>"; };
+		3171490D0D9466DE35F423146BE9B385 /* JTAppleCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JTAppleCalendar-umbrella.h"; sourceTree = "<group>"; };
 		3568B5244322E73F8261333EF057138F /* libPods-Time+Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Time+Tests.a"; path = "libPods-Time+Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38A01E85CA7A728BD03B75E4A63CC6AF /* Pods-Time+Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Time+Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		39F39A5CD4C20EBC68B7772B4B9BDFBF /* UIView+SemiModalViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+SemiModalViewController.swift"; path = "Source/UIView+SemiModalViewController.swift"; sourceTree = "<group>"; };
+		3C35E93956699B8BDEB4A8662628475D /* JTACMonthActionFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthActionFunctions.swift; path = Sources/JTAppleCalendar/JTACMonthActionFunctions.swift; sourceTree = "<group>"; };
 		3EF7B3B9D52BC746AFC223242F615A2C /* Pods-Time+Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Time+Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3F7ADA6DB186E85039A0DF4B93F78498 /* DateAndTimeFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateAndTimeFunctions.swift; path = Sources/SQLite/Typed/DateAndTimeFunctions.swift; sourceTree = "<group>"; };
 		3FF0D31710FFE26799455AAC1F2483B2 /* Pods-Time+Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Time+Tests.release.xcconfig"; sourceTree = "<group>"; };
-		47ED68DBC054A983B471553AE8E0CEEE /* JTACMonthViewProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthViewProtocols.swift; path = Sources/JTAppleCalendar/JTACMonthViewProtocols.swift; sourceTree = "<group>"; };
+		4617F7364C8F8D69C7E2276884D94DE4 /* JTAppleCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JTAppleCalendar-prefix.pch"; sourceTree = "<group>"; };
+		47018BF750895F47C92E797A4B6F03CD /* CoreFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoreFunctions.swift; path = Sources/SQLite/Typed/CoreFunctions.swift; sourceTree = "<group>"; };
+		4975E4E8DC3FAD8DDBCD6870FA9B87A4 /* JTACDayCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACDayCell.swift; path = Sources/JTAppleCalendar/JTACDayCell.swift; sourceTree = "<group>"; };
 		4C6B17884FF3BE238A0BF1551052A02D /* Pods-Time+.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Time+.release.xcconfig"; sourceTree = "<group>"; };
-		54059A9E0DFBE7CA6B0C57F86099B47B /* Statement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Statement.swift; path = Sources/SQLite/Core/Statement.swift; sourceTree = "<group>"; };
-		5B05D10876175DDEDD97AE45605368CA /* Collation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Collation.swift; path = Sources/SQLite/Typed/Collation.swift; sourceTree = "<group>"; };
-		68A5383D55C9F2176F9C45298152A04F /* FTS5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FTS5.swift; path = Sources/SQLite/Extensions/FTS5.swift; sourceTree = "<group>"; };
-		6A26F3E2A2C94058DB62D29A81DA0296 /* Schema.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Schema.swift; path = Sources/SQLite/Typed/Schema.swift; sourceTree = "<group>"; };
-		6C765445DC7FA916BF1A447EA92FECC2 /* SQLiteObjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SQLiteObjc.m; path = Sources/SQLiteObjc/SQLiteObjc.m; sourceTree = "<group>"; };
-		73AA10FD7CFD659E6B30ABC934352C97 /* JTACMonthLayoutHorizontalCalendar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthLayoutHorizontalCalendar.swift; path = Sources/JTAppleCalendar/JTACMonthLayoutHorizontalCalendar.swift; sourceTree = "<group>"; };
+		4F304E4585E79F0F7E9B70D45D577EFB /* libSemiModalViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSemiModalViewController.a; path = libSemiModalViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5473FE6D4113639C78779D03480BB89C /* Coding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Coding.swift; path = Sources/SQLite/Typed/Coding.swift; sourceTree = "<group>"; };
+		5526842755A19550F1E401DB1151446C /* JTACMonthQueryFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthQueryFunctions.swift; path = Sources/JTAppleCalendar/JTACMonthQueryFunctions.swift; sourceTree = "<group>"; };
+		58E9FF77BAA5344D5BF23150A17436FB /* Collation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Collation.swift; path = Sources/SQLite/Typed/Collation.swift; sourceTree = "<group>"; };
+		598A2B4BAC2204BFCB8856F24AE5CAB0 /* JTACMonthDelegateProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthDelegateProtocol.swift; path = Sources/JTAppleCalendar/JTACMonthDelegateProtocol.swift; sourceTree = "<group>"; };
+		5A4B14D05B6CD90A0BF6DE2618A65B55 /* PushBackAnimationGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PushBackAnimationGroup.swift; path = Source/PushBackAnimationGroup.swift; sourceTree = "<group>"; };
+		5DA256C302CB22D2DEF515FC9087B2B0 /* SemiModalViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SemiModalViewController.xcconfig; sourceTree = "<group>"; };
+		6081D2F068EC5C1443C124275B809F85 /* Query.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Query.swift; path = Sources/SQLite/Typed/Query.swift; sourceTree = "<group>"; };
+		652042244AB8DDF2E770AC91E92B477F /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Sources/SQLite/Core/Errors.swift; sourceTree = "<group>"; };
+		66711E745F52A75EE099AE93151DC365 /* SQLiteObjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SQLiteObjc.m; path = Sources/SQLiteObjc/SQLiteObjc.m; sourceTree = "<group>"; };
+		75283B90BE57F05DF45564CF6A473561 /* UIDevice+SemiModalViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIDevice+SemiModalViewController.swift"; path = "Source/UIDevice+SemiModalViewController.swift"; sourceTree = "<group>"; };
+		7561137705CEF4891B4815E252C4ABF9 /* JTACMonthLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthLayout.swift; path = Sources/JTAppleCalendar/JTACMonthLayout.swift; sourceTree = "<group>"; };
+		75E72C5E4F189CC064EF752CA58074CA /* UIViewController+SemiModalViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+SemiModalViewController.swift"; path = "Source/UIViewController+SemiModalViewController.swift"; sourceTree = "<group>"; };
 		7829AC37B194F3C7999D289E116035E7 /* Pods-Time+.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Time+.modulemap"; sourceTree = "<group>"; };
 		79661C8A1E2A7B9A60723B2A14293ECB /* Pods-Time+.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Time+.debug.xcconfig"; sourceTree = "<group>"; };
-		82EBE7A2475B823B2E410107684CD6C4 /* JTACYearViewProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACYearViewProtocols.swift; path = Sources/JTAppleCalendar/JTACYearViewProtocols.swift; sourceTree = "<group>"; };
-		83C6803F2AA94A3680AD51E8615FB0FE /* FTS4.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FTS4.swift; path = Sources/SQLite/Extensions/FTS4.swift; sourceTree = "<group>"; };
-		940F65EDEEE25DF69C3195C79DDAA28B /* SQLite.swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SQLite.swift-prefix.pch"; sourceTree = "<group>"; };
+		7E653AD520FB41DAA1F78A4613D74061 /* SQLite.swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SQLite.swift-umbrella.h"; sourceTree = "<group>"; };
+		7F15B6B2656BC66542409AB2094A84D6 /* Expression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Sources/SQLite/Typed/Expression.swift; sourceTree = "<group>"; };
+		81D7B91D2F35F0EFAC12FAA537826F10 /* SemiModalViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SemiModalViewController-prefix.pch"; sourceTree = "<group>"; };
+		81E958A743F428CFC78459855F769C42 /* JTACScrollViewDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACScrollViewDelegates.swift; path = Sources/JTAppleCalendar/JTACScrollViewDelegates.swift; sourceTree = "<group>"; };
+		81FD0CFEF1148F9CEB30A40C500BA717 /* RTree.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RTree.swift; path = Sources/SQLite/Extensions/RTree.swift; sourceTree = "<group>"; };
+		82B22BD42F7EF4B6BDBC34816B155F3D /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/SQLite/Typed/Operators.swift; sourceTree = "<group>"; };
+		82F40EAB1D76F1F3516BCD84325B9381 /* SemiModalViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SemiModalViewController-umbrella.h"; sourceTree = "<group>"; };
+		84D0DBC0CD7783D3DC4F56CFF5CBE1EC /* CalendarEnums.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarEnums.swift; path = Sources/JTAppleCalendar/CalendarEnums.swift; sourceTree = "<group>"; };
+		937CD936FB6F4EFC8AB283768216A0D4 /* SQLite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SQLite.h; path = Sources/SQLite/SQLite.h; sourceTree = "<group>"; };
+		93E80C0A0B1521FD13F242934421A5B5 /* Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Helpers.swift; path = Sources/SQLite/Helpers.swift; sourceTree = "<group>"; };
 		95ED1DB27CC3B0B4EA8DF38D92EE4B2F /* Pods-Time+-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Time+-acknowledgements.plist"; sourceTree = "<group>"; };
-		963E977D7E2335B86C9106E9385DC580 /* JTACInteractionYearFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACInteractionYearFunctions.swift; path = Sources/JTAppleCalendar/JTACInteractionYearFunctions.swift; sourceTree = "<group>"; };
-		96C53EEF2C180D11C56BC844E7884B2E /* JTACMonthActionFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthActionFunctions.swift; path = Sources/JTAppleCalendar/JTACMonthActionFunctions.swift; sourceTree = "<group>"; };
-		96DA860B1C58FC67881355EBBA49BB2E /* SQLite.swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SQLite.swift-dummy.m"; sourceTree = "<group>"; };
-		9944F66382A067A527B30BE894E6062A /* SQLite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SQLite.h; path = Sources/SQLite/SQLite.h; sourceTree = "<group>"; };
+		9A545FF23AD9DE5ABA79BCED4646B23B /* Value.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Value.swift; path = Sources/SQLite/Core/Value.swift; sourceTree = "<group>"; };
 		9CAD6B93E10B0DA00D90C9E9DD1DCF94 /* Pods-Time+Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Time+Tests-dummy.m"; sourceTree = "<group>"; };
-		9D34D98BEACB2453B41E6920572512A4 /* JTAppleCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JTAppleCalendar.modulemap; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9DCA338697C90382C04E3F7D0F248E4A /* Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Foundation.swift; path = Sources/SQLite/Foundation.swift; sourceTree = "<group>"; };
+		9DFA0D7F247F17927C6E9240FDA1A2D9 /* ClosureWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClosureWrapper.swift; path = Source/ClosureWrapper.swift; sourceTree = "<group>"; };
 		A0C8E428D980D3C9293A3C2BF740F0CD /* libJTAppleCalendar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libJTAppleCalendar.a; path = libJTAppleCalendar.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A11EE03EB22A8F15D3056A0B46304740 /* CalendarStructs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarStructs.swift; path = Sources/JTAppleCalendar/CalendarStructs.swift; sourceTree = "<group>"; };
-		A4B5E4A2811CD851BF36497CEF0CCE9F /* JTACCollectionMonthViewDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACCollectionMonthViewDelegates.swift; path = Sources/JTAppleCalendar/JTACCollectionMonthViewDelegates.swift; sourceTree = "<group>"; };
-		A74B27D24084C637868FDD1D916A65AA /* JTACYearView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACYearView.swift; path = Sources/JTAppleCalendar/JTACYearView.swift; sourceTree = "<group>"; };
+		A213545B8C8CA764E0C0E535DC313BDA /* AggregateFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AggregateFunctions.swift; path = Sources/SQLite/Typed/AggregateFunctions.swift; sourceTree = "<group>"; };
 		A8F44154C08F3C3E25A9FF802FA5BE3C /* Pods-Time+Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Time+Tests-umbrella.h"; sourceTree = "<group>"; };
-		ACD3E6ED15DF1DB07FE17F78A6D66F5D /* CustomFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomFunctions.swift; path = Sources/SQLite/Typed/CustomFunctions.swift; sourceTree = "<group>"; };
-		AF5B5ECA4ABF6D6E335D0B1FFF6D152C /* Setter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Setter.swift; path = Sources/SQLite/Typed/Setter.swift; sourceTree = "<group>"; };
-		B4622527B0BFF3ABF8A263CDE86210D2 /* DateAndTimeFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateAndTimeFunctions.swift; path = Sources/SQLite/Typed/DateAndTimeFunctions.swift; sourceTree = "<group>"; };
-		B70E7C3CC44B4390F9D33EA54595C693 /* JTACMonthReusableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthReusableView.swift; path = Sources/JTAppleCalendar/JTACMonthReusableView.swift; sourceTree = "<group>"; };
-		BAC0E337BEAF38EB52519FCD7A6A57CE /* Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Helpers.swift; path = Sources/SQLite/Helpers.swift; sourceTree = "<group>"; };
-		BC5E1FB920DD0E768E24E2A19BF94430 /* JTACMonthCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthCell.swift; path = Sources/JTAppleCalendar/JTACMonthCell.swift; sourceTree = "<group>"; };
-		BE969B4E113E27E87D1B44322AC9A9E9 /* JTACMonthLayoutVerticalCalendar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthLayoutVerticalCalendar.swift; path = Sources/JTAppleCalendar/JTACMonthLayoutVerticalCalendar.swift; sourceTree = "<group>"; };
-		BEA320CA6BA0A7792C7D02AEEE47349B /* Connection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Connection.swift; path = Sources/SQLite/Core/Connection.swift; sourceTree = "<group>"; };
-		BF20F172CCD384A038AF16A6407DEBFF /* Value.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Value.swift; path = Sources/SQLite/Core/Value.swift; sourceTree = "<group>"; };
-		C2C3F9E7BC186A2451673AFDB1B0F347 /* SQLite.swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SQLite.swift.modulemap; sourceTree = "<group>"; };
-		C3323D1D51BD7E207E9E0521D016EEC5 /* Blob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Blob.swift; path = Sources/SQLite/Core/Blob.swift; sourceTree = "<group>"; };
-		C57442131C434595897314F24B17F96F /* RTree.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RTree.swift; path = Sources/SQLite/Extensions/RTree.swift; sourceTree = "<group>"; };
-		C6CA7FDA6FEC9FC13F3BC2B2430FF37E /* SQLite.swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SQLite.swift.xcconfig; sourceTree = "<group>"; };
+		B109232238C7BDEDC29EC70E7B203C76 /* UIView+FindViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+FindViewController.swift"; path = "Source/UIView+FindViewController.swift"; sourceTree = "<group>"; };
+		B7E5DB2393784C43E8E757E66B1E89A0 /* JTACMonthViewProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthViewProtocols.swift; path = Sources/JTAppleCalendar/JTACMonthViewProtocols.swift; sourceTree = "<group>"; };
+		BBD7201857C0CA75A536CDEFDACEAE20 /* SQLite.swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SQLite.swift-dummy.m"; sourceTree = "<group>"; };
+		BC3746A5B1399E078F235CBB6F4DB97A /* SemiModalViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SemiModalViewController-dummy.m"; sourceTree = "<group>"; };
+		C039C5FE5E0FA04A8CEBA5770C2D600E /* Connection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Connection.swift; path = Sources/SQLite/Core/Connection.swift; sourceTree = "<group>"; };
+		C1E31F8E53A7393875A2F605471EE231 /* JTACVariables.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACVariables.swift; path = Sources/JTAppleCalendar/JTACVariables.swift; sourceTree = "<group>"; };
+		C302F9DB9BF91490CB7C25A4832A30D7 /* FTS4.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FTS4.swift; path = Sources/SQLite/Extensions/FTS4.swift; sourceTree = "<group>"; };
 		C749B81CD279422E3F82E12E455B8809 /* Pods-Time+-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Time+-dummy.m"; sourceTree = "<group>"; };
-		C88E9DFE6AA0BCB585592F00E464FAAC /* JTACMonthView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthView.swift; path = Sources/JTAppleCalendar/JTACMonthView.swift; sourceTree = "<group>"; };
+		C83C7CD4CC1B968EDA49BD5E98A2BC42 /* JTACInteractionMonthFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACInteractionMonthFunctions.swift; path = Sources/JTAppleCalendar/JTACInteractionMonthFunctions.swift; sourceTree = "<group>"; };
 		CABB715168FD38FF634F80317B43BB96 /* libPods-Time+.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Time+.a"; path = "libPods-Time+.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE313CE8B061C886CFF8BD994DA4BBEF /* JTAppleCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JTAppleCalendar-dummy.m"; sourceTree = "<group>"; };
-		CED33C2B851D5422A3D1EF2846AF5E21 /* JTACMonthDelegateProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthDelegateProtocol.swift; path = Sources/JTAppleCalendar/JTACMonthDelegateProtocol.swift; sourceTree = "<group>"; };
-		D5C884BE9D9C4EB4B6370CA8719FC2EF /* JTACVariables.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACVariables.swift; path = Sources/JTAppleCalendar/JTACVariables.swift; sourceTree = "<group>"; };
-		DE1395DED7B72E20C098A6A19A08FE4C /* CoreFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoreFunctions.swift; path = Sources/SQLite/Typed/CoreFunctions.swift; sourceTree = "<group>"; };
-		DFDCDE5ECE6390E16548AF787A87CAC2 /* SQLiteObjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SQLiteObjc.h; path = Sources/SQLiteObjc/include/SQLiteObjc.h; sourceTree = "<group>"; };
-		E4F70F0DD943861C7FAC70869392958A /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Sources/SQLite/Core/Errors.swift; sourceTree = "<group>"; };
-		E5F08E12A1A52AB35522DFDD27F7A6D0 /* AggregateFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AggregateFunctions.swift; path = Sources/SQLite/Typed/AggregateFunctions.swift; sourceTree = "<group>"; };
-		E891EB92A728163638ECD2A24D7C3ECE /* JTACMonthLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthLayout.swift; path = Sources/JTAppleCalendar/JTACMonthLayout.swift; sourceTree = "<group>"; };
-		EA04818363CBB24502907CB546FCBE6C /* Coding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Coding.swift; path = Sources/SQLite/Typed/Coding.swift; sourceTree = "<group>"; };
-		ED086535C9301EF765BEB3ABAEA3984B /* Query.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Query.swift; path = Sources/SQLite/Typed/Query.swift; sourceTree = "<group>"; };
-		F08BAB1DEF970AA539D6E675CC68C741 /* JTACInteractionMonthFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACInteractionMonthFunctions.swift; path = Sources/JTAppleCalendar/JTACInteractionMonthFunctions.swift; sourceTree = "<group>"; };
-		F0AEBDBBC50AE9A1EB6CB9E8A4FB8D09 /* JTAppleCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JTAppleCalendar-prefix.pch"; sourceTree = "<group>"; };
+		CC73CF072EE75A74249C1195B5638BB6 /* Statement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Statement.swift; path = Sources/SQLite/Core/Statement.swift; sourceTree = "<group>"; };
+		D1573FE84A8FE514D715CADDB569E626 /* JTACMonthLayoutVerticalCalendar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthLayoutVerticalCalendar.swift; path = Sources/JTAppleCalendar/JTACMonthLayoutVerticalCalendar.swift; sourceTree = "<group>"; };
+		D21DA6E2313E9E513D9D2C0B8849A785 /* UIView+Kit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Kit.swift"; path = "Source/UIView+Kit.swift"; sourceTree = "<group>"; };
+		D23AF562D0022B10F10909DBB3601005 /* JTACMonthCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthCell.swift; path = Sources/JTAppleCalendar/JTACMonthCell.swift; sourceTree = "<group>"; };
+		D53A4854C0EDF32F7F625A9C7B4AA6CC /* JTACMonthLayoutHorizontalCalendar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthLayoutHorizontalCalendar.swift; path = Sources/JTAppleCalendar/JTACMonthLayoutHorizontalCalendar.swift; sourceTree = "<group>"; };
+		D5926EEC35C861024E4A1A2FF72D842C /* JTACCollectionYearViewDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACCollectionYearViewDelegates.swift; path = Sources/JTAppleCalendar/JTACCollectionYearViewDelegates.swift; sourceTree = "<group>"; };
+		D96575B920287488547036CD8C158C68 /* SQLite.swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SQLite.swift.xcconfig; sourceTree = "<group>"; };
+		DD18B5D71D11009ED372C12E3AC9BE55 /* JTACMonthReusableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthReusableView.swift; path = Sources/JTAppleCalendar/JTACMonthReusableView.swift; sourceTree = "<group>"; };
+		DD3A6EB4DDEA96E38A59D81F113BE98A /* JTACCollectionMonthViewDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACCollectionMonthViewDelegates.swift; path = Sources/JTAppleCalendar/JTACCollectionMonthViewDelegates.swift; sourceTree = "<group>"; };
+		DFE68B860E82EB7D070D86F3000EA23D /* JTACMonthLayoutProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthLayoutProtocol.swift; path = Sources/JTAppleCalendar/JTACMonthLayoutProtocol.swift; sourceTree = "<group>"; };
+		E030CFDF25DCB3767AD4FB6BCA40AEA8 /* JTAppleCalendar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JTAppleCalendar.xcconfig; sourceTree = "<group>"; };
+		E15607B2E459D55714EAFDE73CADF113 /* fts3_tokenizer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = fts3_tokenizer.h; path = Sources/SQLiteObjc/fts3_tokenizer.h; sourceTree = "<group>"; };
+		E18989811AE9D88D864C8D98A9BBE756 /* JTAppleCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JTAppleCalendar-dummy.m"; sourceTree = "<group>"; };
+		E4397D24E675D89A610A370677157880 /* SQLite.swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SQLite.swift-prefix.pch"; sourceTree = "<group>"; };
+		E52FECF68A73B543265CE4D5B5B8B93D /* FTS5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FTS5.swift; path = Sources/SQLite/Extensions/FTS5.swift; sourceTree = "<group>"; };
+		E84A4DB9CBD223AFDCA7A6BC1A32A189 /* SQLiteObjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SQLiteObjc.h; path = Sources/SQLiteObjc/include/SQLiteObjc.h; sourceTree = "<group>"; };
+		E9354B23377E8CE9700949D5FADEA1EC /* JTACYearViewProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACYearViewProtocols.swift; path = Sources/JTAppleCalendar/JTACYearViewProtocols.swift; sourceTree = "<group>"; };
+		F05DD8D9745820F35D1A29E88FE63745 /* CalendarStructs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarStructs.swift; path = Sources/JTAppleCalendar/CalendarStructs.swift; sourceTree = "<group>"; };
 		F5FA45A44C42CC2CA3A324A3E914CE19 /* libSQLite.swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSQLite.swift.a; path = libSQLite.swift.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6F396C530EDE88D7DE78E60BEA42B98 /* fts3_tokenizer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = fts3_tokenizer.h; path = Sources/SQLiteObjc/fts3_tokenizer.h; sourceTree = "<group>"; };
-		FB45420B6B2E614606DFC1A58DECAD48 /* JTACDayCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACDayCell.swift; path = Sources/JTAppleCalendar/JTACDayCell.swift; sourceTree = "<group>"; };
-		FC2F114BAE370F6379303C7A5751D4DE /* JTACMonthQueryFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthQueryFunctions.swift; path = Sources/JTAppleCalendar/JTACMonthQueryFunctions.swift; sourceTree = "<group>"; };
+		F630373C343FC4C7237F3784F97EC6C7 /* SemiModalViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SemiModalViewController.modulemap; sourceTree = "<group>"; };
+		F8BA2392342A0D99DADB9CCBEC9F8EC2 /* GlobalFunctionsAndExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlobalFunctionsAndExtensions.swift; path = Sources/JTAppleCalendar/GlobalFunctionsAndExtensions.swift; sourceTree = "<group>"; };
+		FC7E9138F52BB081E736B89DF5D8A7D1 /* JTACInteractionYearFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACInteractionYearFunctions.swift; path = Sources/JTAppleCalendar/JTACInteractionYearFunctions.swift; sourceTree = "<group>"; };
+		FCE34A2E564394A46A0B74AA70FFCC37 /* Blob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Blob.swift; path = Sources/SQLite/Core/Blob.swift; sourceTree = "<group>"; };
+		FDC1019F39F66B3D13115330010487FB /* JTACMonthView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTACMonthView.swift; path = Sources/JTAppleCalendar/JTACMonthView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		622282A82FF66825AF4223849518ECE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		83E6F56551D35482FE1861B7C021F61A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -191,14 +229,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C929098B5A02521A63160E4814BEEF1 /* Frameworks */ = {
+		AB4C8C776914F7701594AD93A05E361C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB4C8C776914F7701594AD93A05E361C /* Frameworks */ = {
+		C7694B19E5757B90DF5C16FD5A3BB703 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -238,49 +276,71 @@
 			path = "Target Support Files/Pods-Time+";
 			sourceTree = "<group>";
 		};
-		4DB605D395C1BE61F58CACB0535272BA /* Support Files */ = {
+		39563AAE1D1135511CE3F378E5E740CC /* SQLite.swift */ = {
 			isa = PBXGroup;
 			children = (
-				C2C3F9E7BC186A2451673AFDB1B0F347 /* SQLite.swift.modulemap */,
-				C6CA7FDA6FEC9FC13F3BC2B2430FF37E /* SQLite.swift.xcconfig */,
-				96DA860B1C58FC67881355EBBA49BB2E /* SQLite.swift-dummy.m */,
-				940F65EDEEE25DF69C3195C79DDAA28B /* SQLite.swift-prefix.pch */,
-				285965113911DDFD9AC0F6F3DBF8A44F /* SQLite.swift-umbrella.h */,
+				5E877A9BBE119CDFBDDEE9B14A1E4FBA /* standard */,
+				E217C5D5BE0F5FFC5AEEBE674D4CB9E3 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SQLite.swift";
+			name = SQLite.swift;
+			path = SQLite.swift;
 			sourceTree = "<group>";
 		};
-		606161A1432251CD17FFDD06D4476623 /* JTAppleCalendar */ = {
+		3ECB6CC8053D034507487300F72D12E2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				057856B85BCEE52A3B3B5F12D37BA5B8 /* CalendarEnums.swift */,
-				A11EE03EB22A8F15D3056A0B46304740 /* CalendarStructs.swift */,
-				1C16716940FF6AFFAED2B9004B7010BC /* GlobalFunctionsAndExtensions.swift */,
-				A4B5E4A2811CD851BF36497CEF0CCE9F /* JTACCollectionMonthViewDelegates.swift */,
-				2554F2CFCE80C8EDE4BA988CCFD2F17B /* JTACCollectionYearViewDelegates.swift */,
-				FB45420B6B2E614606DFC1A58DECAD48 /* JTACDayCell.swift */,
-				F08BAB1DEF970AA539D6E675CC68C741 /* JTACInteractionMonthFunctions.swift */,
-				963E977D7E2335B86C9106E9385DC580 /* JTACInteractionYearFunctions.swift */,
-				96C53EEF2C180D11C56BC844E7884B2E /* JTACMonthActionFunctions.swift */,
-				BC5E1FB920DD0E768E24E2A19BF94430 /* JTACMonthCell.swift */,
-				CED33C2B851D5422A3D1EF2846AF5E21 /* JTACMonthDelegateProtocol.swift */,
-				E891EB92A728163638ECD2A24D7C3ECE /* JTACMonthLayout.swift */,
-				73AA10FD7CFD659E6B30ABC934352C97 /* JTACMonthLayoutHorizontalCalendar.swift */,
-				2434F56A2E3405962CD0901E5A821277 /* JTACMonthLayoutProtocol.swift */,
-				BE969B4E113E27E87D1B44322AC9A9E9 /* JTACMonthLayoutVerticalCalendar.swift */,
-				FC2F114BAE370F6379303C7A5751D4DE /* JTACMonthQueryFunctions.swift */,
-				B70E7C3CC44B4390F9D33EA54595C693 /* JTACMonthReusableView.swift */,
-				C88E9DFE6AA0BCB585592F00E464FAAC /* JTACMonthView.swift */,
-				47ED68DBC054A983B471553AE8E0CEEE /* JTACMonthViewProtocols.swift */,
-				32B8AA8539C1BBA0F1BB3882578134A0 /* JTACScrollViewDelegates.swift */,
-				D5C884BE9D9C4EB4B6370CA8719FC2EF /* JTACVariables.swift */,
-				A74B27D24084C637868FDD1D916A65AA /* JTACYearView.swift */,
-				82EBE7A2475B823B2E410107684CD6C4 /* JTACYearViewProtocols.swift */,
-				98EBCE8C23B9E0249E746246A2E53AD2 /* Support Files */,
+				0ECD8A67D5BEC27BA76FA611BB06E6C8 /* JTAppleCalendar.modulemap */,
+				E030CFDF25DCB3767AD4FB6BCA40AEA8 /* JTAppleCalendar.xcconfig */,
+				E18989811AE9D88D864C8D98A9BBE756 /* JTAppleCalendar-dummy.m */,
+				4617F7364C8F8D69C7E2276884D94DE4 /* JTAppleCalendar-prefix.pch */,
+				3171490D0D9466DE35F423146BE9B385 /* JTAppleCalendar-umbrella.h */,
 			);
-			name = JTAppleCalendar;
-			path = JTAppleCalendar;
+			name = "Support Files";
+			path = "../Target Support Files/JTAppleCalendar";
+			sourceTree = "<group>";
+		};
+		5E877A9BBE119CDFBDDEE9B14A1E4FBA /* standard */ = {
+			isa = PBXGroup;
+			children = (
+				A213545B8C8CA764E0C0E535DC313BDA /* AggregateFunctions.swift */,
+				FCE34A2E564394A46A0B74AA70FFCC37 /* Blob.swift */,
+				5473FE6D4113639C78779D03480BB89C /* Coding.swift */,
+				58E9FF77BAA5344D5BF23150A17436FB /* Collation.swift */,
+				C039C5FE5E0FA04A8CEBA5770C2D600E /* Connection.swift */,
+				47018BF750895F47C92E797A4B6F03CD /* CoreFunctions.swift */,
+				29E7BFF9ED20ECA0C593419846B228F5 /* CustomFunctions.swift */,
+				3F7ADA6DB186E85039A0DF4B93F78498 /* DateAndTimeFunctions.swift */,
+				652042244AB8DDF2E770AC91E92B477F /* Errors.swift */,
+				7F15B6B2656BC66542409AB2094A84D6 /* Expression.swift */,
+				1B56AC5D8C889DE6DD7A684972224B1C /* Foundation.swift */,
+				E15607B2E459D55714EAFDE73CADF113 /* fts3_tokenizer.h */,
+				C302F9DB9BF91490CB7C25A4832A30D7 /* FTS4.swift */,
+				E52FECF68A73B543265CE4D5B5B8B93D /* FTS5.swift */,
+				93E80C0A0B1521FD13F242934421A5B5 /* Helpers.swift */,
+				82B22BD42F7EF4B6BDBC34816B155F3D /* Operators.swift */,
+				6081D2F068EC5C1443C124275B809F85 /* Query.swift */,
+				81FD0CFEF1148F9CEB30A40C500BA717 /* RTree.swift */,
+				0D2A1273369861922A264EE18C236132 /* Schema.swift */,
+				13C880577354EF9D28B15ED30109D530 /* Setter.swift */,
+				937CD936FB6F4EFC8AB283768216A0D4 /* SQLite.h */,
+				E84A4DB9CBD223AFDCA7A6BC1A32A189 /* SQLiteObjc.h */,
+				66711E745F52A75EE099AE93151DC365 /* SQLiteObjc.m */,
+				CC73CF072EE75A74249C1195B5638BB6 /* Statement.swift */,
+				9A545FF23AD9DE5ABA79BCED4646B23B /* Value.swift */,
+			);
+			name = standard;
+			sourceTree = "<group>";
+		};
+		6243B90BA13AB2077512AD8BDC2D21AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A0C8E428D980D3C9293A3C2BF740F0CD /* libJTAppleCalendar.a */,
+				CABB715168FD38FF634F80317B43BB96 /* libPods-Time+.a */,
+				3568B5244322E73F8261333EF057138F /* libPods-Time+Tests.a */,
+				4F304E4585E79F0F7E9B70D45D577EFB /* libSemiModalViewController.a */,
+				F5FA45A44C42CC2CA3A324A3E914CE19 /* libSQLite.swift.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		76EE5ECF83E98910D1D37875138FC352 /* Targets Support Files */ = {
@@ -292,70 +352,76 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		7DB07F8531400DDA4E7A1F424B9C5948 /* SQLite.swift */ = {
+		A2E425D39E1397F18231DAF001805CBD /* JTAppleCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				824C1C16FE016B2F79E893F6B905FD66 /* standard */,
-				4DB605D395C1BE61F58CACB0535272BA /* Support Files */,
+				84D0DBC0CD7783D3DC4F56CFF5CBE1EC /* CalendarEnums.swift */,
+				F05DD8D9745820F35D1A29E88FE63745 /* CalendarStructs.swift */,
+				F8BA2392342A0D99DADB9CCBEC9F8EC2 /* GlobalFunctionsAndExtensions.swift */,
+				DD3A6EB4DDEA96E38A59D81F113BE98A /* JTACCollectionMonthViewDelegates.swift */,
+				D5926EEC35C861024E4A1A2FF72D842C /* JTACCollectionYearViewDelegates.swift */,
+				4975E4E8DC3FAD8DDBCD6870FA9B87A4 /* JTACDayCell.swift */,
+				C83C7CD4CC1B968EDA49BD5E98A2BC42 /* JTACInteractionMonthFunctions.swift */,
+				FC7E9138F52BB081E736B89DF5D8A7D1 /* JTACInteractionYearFunctions.swift */,
+				3C35E93956699B8BDEB4A8662628475D /* JTACMonthActionFunctions.swift */,
+				D23AF562D0022B10F10909DBB3601005 /* JTACMonthCell.swift */,
+				598A2B4BAC2204BFCB8856F24AE5CAB0 /* JTACMonthDelegateProtocol.swift */,
+				7561137705CEF4891B4815E252C4ABF9 /* JTACMonthLayout.swift */,
+				D53A4854C0EDF32F7F625A9C7B4AA6CC /* JTACMonthLayoutHorizontalCalendar.swift */,
+				DFE68B860E82EB7D070D86F3000EA23D /* JTACMonthLayoutProtocol.swift */,
+				D1573FE84A8FE514D715CADDB569E626 /* JTACMonthLayoutVerticalCalendar.swift */,
+				5526842755A19550F1E401DB1151446C /* JTACMonthQueryFunctions.swift */,
+				DD18B5D71D11009ED372C12E3AC9BE55 /* JTACMonthReusableView.swift */,
+				FDC1019F39F66B3D13115330010487FB /* JTACMonthView.swift */,
+				B7E5DB2393784C43E8E757E66B1E89A0 /* JTACMonthViewProtocols.swift */,
+				81E958A743F428CFC78459855F769C42 /* JTACScrollViewDelegates.swift */,
+				C1E31F8E53A7393875A2F605471EE231 /* JTACVariables.swift */,
+				213D154773A7251597F5C8E745B219B7 /* JTACYearView.swift */,
+				E9354B23377E8CE9700949D5FADEA1EC /* JTACYearViewProtocols.swift */,
+				3ECB6CC8053D034507487300F72D12E2 /* Support Files */,
 			);
-			name = SQLite.swift;
-			path = SQLite.swift;
+			name = JTAppleCalendar;
+			path = JTAppleCalendar;
 			sourceTree = "<group>";
 		};
-		824C1C16FE016B2F79E893F6B905FD66 /* standard */ = {
+		B6F8606D1164B289FB87EAC96C371A9F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E5F08E12A1A52AB35522DFDD27F7A6D0 /* AggregateFunctions.swift */,
-				C3323D1D51BD7E207E9E0521D016EEC5 /* Blob.swift */,
-				EA04818363CBB24502907CB546FCBE6C /* Coding.swift */,
-				5B05D10876175DDEDD97AE45605368CA /* Collation.swift */,
-				BEA320CA6BA0A7792C7D02AEEE47349B /* Connection.swift */,
-				DE1395DED7B72E20C098A6A19A08FE4C /* CoreFunctions.swift */,
-				ACD3E6ED15DF1DB07FE17F78A6D66F5D /* CustomFunctions.swift */,
-				B4622527B0BFF3ABF8A263CDE86210D2 /* DateAndTimeFunctions.swift */,
-				E4F70F0DD943861C7FAC70869392958A /* Errors.swift */,
-				089780E4C3360AF765D31B0105E582FC /* Expression.swift */,
-				9DCA338697C90382C04E3F7D0F248E4A /* Foundation.swift */,
-				F6F396C530EDE88D7DE78E60BEA42B98 /* fts3_tokenizer.h */,
-				83C6803F2AA94A3680AD51E8615FB0FE /* FTS4.swift */,
-				68A5383D55C9F2176F9C45298152A04F /* FTS5.swift */,
-				BAC0E337BEAF38EB52519FCD7A6A57CE /* Helpers.swift */,
-				296B56D1F15133497E1DFF5051EC48D7 /* Operators.swift */,
-				ED086535C9301EF765BEB3ABAEA3984B /* Query.swift */,
-				C57442131C434595897314F24B17F96F /* RTree.swift */,
-				6A26F3E2A2C94058DB62D29A81DA0296 /* Schema.swift */,
-				AF5B5ECA4ABF6D6E335D0B1FFF6D152C /* Setter.swift */,
-				9944F66382A067A527B30BE894E6062A /* SQLite.h */,
-				DFDCDE5ECE6390E16548AF787A87CAC2 /* SQLiteObjc.h */,
-				6C765445DC7FA916BF1A447EA92FECC2 /* SQLiteObjc.m */,
-				54059A9E0DFBE7CA6B0C57F86099B47B /* Statement.swift */,
-				BF20F172CCD384A038AF16A6407DEBFF /* Value.swift */,
+				A2E425D39E1397F18231DAF001805CBD /* JTAppleCalendar */,
+				C6094165F5755BA084CEC8D391B9AAF6 /* SemiModalViewController */,
+				39563AAE1D1135511CE3F378E5E740CC /* SQLite.swift */,
 			);
-			name = standard;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		98EBCE8C23B9E0249E746246A2E53AD2 /* Support Files */ = {
+		BB0184824CA91D299535406C104AAB9E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9D34D98BEACB2453B41E6920572512A4 /* JTAppleCalendar.modulemap */,
-				0AC3C93B57C73B436D88F04B5745B864 /* JTAppleCalendar.xcconfig */,
-				CE313CE8B061C886CFF8BD994DA4BBEF /* JTAppleCalendar-dummy.m */,
-				F0AEBDBBC50AE9A1EB6CB9E8A4FB8D09 /* JTAppleCalendar-prefix.pch */,
-				0070103C9A5012C252F85B3A7A56B6BC /* JTAppleCalendar-umbrella.h */,
+				F630373C343FC4C7237F3784F97EC6C7 /* SemiModalViewController.modulemap */,
+				5DA256C302CB22D2DEF515FC9087B2B0 /* SemiModalViewController.xcconfig */,
+				BC3746A5B1399E078F235CBB6F4DB97A /* SemiModalViewController-dummy.m */,
+				81D7B91D2F35F0EFAC12FAA537826F10 /* SemiModalViewController-prefix.pch */,
+				82F40EAB1D76F1F3516BCD84325B9381 /* SemiModalViewController-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/JTAppleCalendar";
+			path = "../Target Support Files/SemiModalViewController";
 			sourceTree = "<group>";
 		};
-		ABFE1051AC1FE282CCCD0DF7840A23E6 /* Products */ = {
+		C6094165F5755BA084CEC8D391B9AAF6 /* SemiModalViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A0C8E428D980D3C9293A3C2BF740F0CD /* libJTAppleCalendar.a */,
-				CABB715168FD38FF634F80317B43BB96 /* libPods-Time+.a */,
-				3568B5244322E73F8261333EF057138F /* libPods-Time+Tests.a */,
-				F5FA45A44C42CC2CA3A324A3E914CE19 /* libSQLite.swift.a */,
+				9DFA0D7F247F17927C6E9240FDA1A2D9 /* ClosureWrapper.swift */,
+				5A4B14D05B6CD90A0BF6DE2618A65B55 /* PushBackAnimationGroup.swift */,
+				75283B90BE57F05DF45564CF6A473561 /* UIDevice+SemiModalViewController.swift */,
+				B109232238C7BDEDC29EC70E7B203C76 /* UIView+FindViewController.swift */,
+				D21DA6E2313E9E513D9D2C0B8849A785 /* UIView+Kit.swift */,
+				39F39A5CD4C20EBC68B7772B4B9BDFBF /* UIView+SemiModalViewController.swift */,
+				06C75DD307BED705E2C525391AA08C88 /* UIViewController+Options.swift */,
+				75E72C5E4F189CC064EF752CA58074CA /* UIViewController+SemiModalViewController.swift */,
+				BB0184824CA91D299535406C104AAB9E /* Support Files */,
 			);
-			name = Products;
+			name = SemiModalViewController;
+			path = SemiModalViewController;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -363,8 +429,8 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
-				F1D167B3916A81AEF246F456F7082CB8 /* Pods */,
-				ABFE1051AC1FE282CCCD0DF7840A23E6 /* Products */,
+				B6F8606D1164B289FB87EAC96C371A9F /* Pods */,
+				6243B90BA13AB2077512AD8BDC2D21AB /* Products */,
 				76EE5ECF83E98910D1D37875138FC352 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -376,18 +442,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F1D167B3916A81AEF246F456F7082CB8 /* Pods */ = {
+		E217C5D5BE0F5FFC5AEEBE674D4CB9E3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				606161A1432251CD17FFDD06D4476623 /* JTAppleCalendar */,
-				7DB07F8531400DDA4E7A1F424B9C5948 /* SQLite.swift */,
+				0259D789A36386076561B4AE8A286C2E /* SQLite.swift.modulemap */,
+				D96575B920287488547036CD8C158C68 /* SQLite.swift.xcconfig */,
+				BBD7201857C0CA75A536CDEFDACEAE20 /* SQLite.swift-dummy.m */,
+				E4397D24E675D89A610A370677157880 /* SQLite.swift-prefix.pch */,
+				7E653AD520FB41DAA1F78A4613D74061 /* SQLite.swift-umbrella.h */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/SQLite.swift";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		09F1A3761080D77198C1C99D658E955E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				370B201CF6E94B8104E5BED9FED83024 /* Pods-Time+-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		26FEE3AACAADB3CFE3F0BA5B43498C93 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -396,19 +474,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A827B838FE64BDB9FAF350001B5E47B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				012B2913E7187178DFE060C92276101F /* SemiModalViewController-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6211C6AA27EFCA0157812B3353A49CDA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9725BFA1609C5AF939284ABB4B1A6728 /* JTAppleCalendar-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AFB7C01B731A30A114905ADC31573747 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				68700803C1AEC5459420EBF8E92BB2AB /* Pods-Time+-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,21 +561,40 @@
 		};
 		6E8B6DFA5E708F52A039D21A63CDBBAF /* Pods-Time+ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D78E675CAC587D892B01A50F6604A557 /* Build configuration list for PBXNativeTarget "Pods-Time+" */;
+			buildConfigurationList = BEE3126726CC2911CB4D61008E7D8743 /* Build configuration list for PBXNativeTarget "Pods-Time+" */;
 			buildPhases = (
-				AFB7C01B731A30A114905ADC31573747 /* Headers */,
-				D6F37790D1B513EBE15A5A2A516C2D9A /* Sources */,
-				9C929098B5A02521A63160E4814BEEF1 /* Frameworks */,
+				09F1A3761080D77198C1C99D658E955E /* Headers */,
+				EB0F706987173BBE5CA97835A0D060EE /* Sources */,
+				C7694B19E5757B90DF5C16FD5A3BB703 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				60C75BEE7C6278428ACD2D3E42F3A612 /* PBXTargetDependency */,
-				695D72BAB78BBEFC87C05FBE5192AB10 /* PBXTargetDependency */,
+				559C1FB3FBB7A93292149F282876AC85 /* PBXTargetDependency */,
+				FDB71FE1B1BF7C555760945D7BBBDCCE /* PBXTargetDependency */,
+				29F52F4D6847ABF04B173B5602BE7BD0 /* PBXTargetDependency */,
 			);
 			name = "Pods-Time+";
 			productName = "Pods-Time+";
 			productReference = CABB715168FD38FF634F80317B43BB96 /* libPods-Time+.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CC13C779FC797D3AB3836221EC56AE1D /* SemiModalViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 982BDFD853592F72533DF6536CAFAF58 /* Build configuration list for PBXNativeTarget "SemiModalViewController" */;
+			buildPhases = (
+				2A827B838FE64BDB9FAF350001B5E47B /* Headers */,
+				75B5ADE8335ABF3D4C08FC106A6EEB3F /* Sources */,
+				622282A82FF66825AF4223849518ECE9 /* Frameworks */,
+				AC77BD267EC3328F9D0A8B4BD7CE5112 /* Copy generated compatibility header */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SemiModalViewController;
+			productName = SemiModalViewController;
+			productReference = 4F304E4585E79F0F7E9B70D45D577EFB /* libSemiModalViewController.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -518,13 +615,14 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = ABFE1051AC1FE282CCCD0DF7840A23E6 /* Products */;
+			productRefGroup = 6243B90BA13AB2077512AD8BDC2D21AB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				421B6ABF460857FE6CA2905EFB5A4F74 /* JTAppleCalendar */,
 				6E8B6DFA5E708F52A039D21A63CDBBAF /* Pods-Time+ */,
 				2366BFFA5D2F55D700191AA84F958487 /* Pods-Time+Tests */,
+				CC13C779FC797D3AB3836221EC56AE1D /* SemiModalViewController */,
 				3F2C1776D90B62B156DB52C41A5C419C /* SQLite.swift */,
 			);
 		};
@@ -554,6 +652,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/JTAppleCalendar/JTAppleCalendar.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/JTAppleCalendar/JTAppleCalendar-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
+		};
+		AC77BD267EC3328F9D0A8B4BD7CE5112 /* Copy generated compatibility header */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
+				"${PODS_ROOT}/Headers/Public/SemiModalViewController/SemiModalViewController.modulemap",
+				"${PODS_ROOT}/Headers/Public/SemiModalViewController/SemiModalViewController-umbrella.h",
+			);
+			name = "Copy generated compatibility header";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
+				"${BUILT_PRODUCTS_DIR}/SemiModalViewController-umbrella.h",
+				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SemiModalViewController/SemiModalViewController.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SemiModalViewController/SemiModalViewController-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
 		};
 		FBDBDFFAD990AD9508B3EFA011AEFC86 /* Copy generated compatibility header */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -612,19 +734,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		75B5ADE8335ABF3D4C08FC106A6EEB3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE4F0A6A9BA5449C802A53E38CB82A2C /* ClosureWrapper.swift in Sources */,
+				67A03628B2F2FD72D7941EF16C2F9A3C /* PushBackAnimationGroup.swift in Sources */,
+				11D2A7EA01FC1796D65A351A8AEEE916 /* SemiModalViewController-dummy.m in Sources */,
+				B1512F464BF7355AE4113204C512B1B2 /* UIDevice+SemiModalViewController.swift in Sources */,
+				B0F971B44C40AD4E9C23200ACF26D912 /* UIView+FindViewController.swift in Sources */,
+				A80B7CB3EAF62319F2F807FC02DA294C /* UIView+Kit.swift in Sources */,
+				A17714AB6007883E98A6BF1BD9AE6552 /* UIView+SemiModalViewController.swift in Sources */,
+				ED248B6C0C19633A6328B497619158B0 /* UIViewController+Options.swift in Sources */,
+				CD1F63D64F3F6D463FF6BBC95DE33A47 /* UIViewController+SemiModalViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BB457DD3A6B47D263E48CD2E05CC9122 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E463B878AF100056A369EB5CBDD5C788 /* Pods-Time+Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6F37790D1B513EBE15A5A2A516C2D9A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				80162EA028342B04D653D4E1C7471DAB /* Pods-Time+-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,26 +789,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EB0F706987173BBE5CA97835A0D060EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFC5FA74FB18B4C0370700A3CF0FF918 /* Pods-Time+-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		29F52F4D6847ABF04B173B5602BE7BD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SemiModalViewController;
+			target = CC13C779FC797D3AB3836221EC56AE1D /* SemiModalViewController */;
+			targetProxy = 17EB85A9F52B55E8DF80669622DFCB89 /* PBXContainerItemProxy */;
+		};
 		308C9C9F633CF0E00CF9A191CB94AC82 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SQLite.swift;
 			target = 3F2C1776D90B62B156DB52C41A5C419C /* SQLite.swift */;
 			targetProxy = D69640F90003AA942F8DE2F75D383459 /* PBXContainerItemProxy */;
 		};
-		60C75BEE7C6278428ACD2D3E42F3A612 /* PBXTargetDependency */ = {
+		559C1FB3FBB7A93292149F282876AC85 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JTAppleCalendar;
 			target = 421B6ABF460857FE6CA2905EFB5A4F74 /* JTAppleCalendar */;
-			targetProxy = C019B93289CA61A09D89E67CDDAED168 /* PBXContainerItemProxy */;
-		};
-		695D72BAB78BBEFC87C05FBE5192AB10 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SQLite.swift;
-			target = 3F2C1776D90B62B156DB52C41A5C419C /* SQLite.swift */;
-			targetProxy = FA9F656778A55F5C1F496B9326134344 /* PBXContainerItemProxy */;
+			targetProxy = 7D04D4C4CDCD497E6960542581BDD741 /* PBXContainerItemProxy */;
 		};
 		DC657CE6CB2C9C5224C39103395D033F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -686,36 +824,43 @@
 			target = 421B6ABF460857FE6CA2905EFB5A4F74 /* JTAppleCalendar */;
 			targetProxy = D24A8E56008EDD575CF0AA0CC2140F20 /* PBXContainerItemProxy */;
 		};
+		FDB71FE1B1BF7C555760945D7BBBDCCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SQLite.swift;
+			target = 3F2C1776D90B62B156DB52C41A5C419C /* SQLite.swift */;
+			targetProxy = 974E1DA3A67E92CD2460D6F3AA17D616 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0BD735817E55473FA5896718997D175D /* Release */ = {
+		1354840C498450261C420DCBAF4577FC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C6B17884FF3BE238A0BF1551052A02D /* Pods-Time+.release.xcconfig */;
+			baseConfigurationReference = 5DA256C302CB22D2DEF515FC9087B2B0 /* SemiModalViewController.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Time+/Pods-Time+.modulemap";
+				GCC_PREFIX_HEADER = "Target Support Files/SemiModalViewController/SemiModalViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MODULEMAP_FILE = Headers/Public/SemiModalViewController/SemiModalViewController.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SemiModalViewController;
+				PRODUCT_NAME = SemiModalViewController;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
 		3EFB03A13FEFEF724BFE78C5C76AAEDD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6CA7FDA6FEC9FC13F3BC2B2430FF37E /* SQLite.swift.xcconfig */;
+			baseConfigurationReference = D96575B920287488547036CD8C158C68 /* SQLite.swift.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -741,7 +886,7 @@
 		};
 		58FEB2A6D19AE55D75B488545845DBA2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AC3C93B57C73B436D88F04B5745B864 /* JTAppleCalendar.xcconfig */;
+			baseConfigurationReference = E030CFDF25DCB3767AD4FB6BCA40AEA8 /* JTAppleCalendar.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -765,6 +910,29 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
+		};
+		6D2E737C003260834D9AD157D698EE61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79661C8A1E2A7B9A60723B2A14293ECB /* Pods-Time+.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Time+/Pods-Time+.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
 		};
 		7B74D5A0F0028D595A7450D3235FEB79 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -792,7 +960,7 @@
 		};
 		8259216F0A8B58B7D5CF3E15799258F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6CA7FDA6FEC9FC13F3BC2B2430FF37E /* SQLite.swift.xcconfig */;
+			baseConfigurationReference = D96575B920287488547036CD8C158C68 /* SQLite.swift.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -811,29 +979,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		915707E812EF2E06F302294A783CA210 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79661C8A1E2A7B9A60723B2A14293ECB /* Pods-Time+.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Time+/Pods-Time+.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -927,7 +1072,7 @@
 		};
 		A15242ECF40E36563C4F71B7B686024B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AC3C93B57C73B436D88F04B5745B864 /* JTAppleCalendar.xcconfig */;
+			baseConfigurationReference = E030CFDF25DCB3767AD4FB6BCA40AEA8 /* JTAppleCalendar.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -950,6 +1095,56 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
+		};
+		BA5E09A9B9CD24596EC096E424D2AED1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C6B17884FF3BE238A0BF1551052A02D /* Pods-Time+.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Time+/Pods-Time+.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EBB7EFDD40DDDE50F3871137389629F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DA256C302CB22D2DEF515FC9087B2B0 /* SemiModalViewController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SemiModalViewController/SemiModalViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MODULEMAP_FILE = Headers/Public/SemiModalViewController/SemiModalViewController.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SemiModalViewController;
+				PRODUCT_NAME = SemiModalViewController;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
 		};
 		ECB437504DF805BD96CAABF97400B526 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1041,11 +1236,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D78E675CAC587D892B01A50F6604A557 /* Build configuration list for PBXNativeTarget "Pods-Time+" */ = {
+		982BDFD853592F72533DF6536CAFAF58 /* Build configuration list for PBXNativeTarget "SemiModalViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				915707E812EF2E06F302294A783CA210 /* Debug */,
-				0BD735817E55473FA5896718997D175D /* Release */,
+				1354840C498450261C420DCBAF4577FC /* Debug */,
+				EBB7EFDD40DDDE50F3871137389629F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEE3126726CC2911CB4D61008E7D8743 /* Build configuration list for PBXNativeTarget "Pods-Time+" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D2E737C003260834D9AD157D698EE61 /* Debug */,
+				BA5E09A9B9CD24596EC096E424D2AED1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

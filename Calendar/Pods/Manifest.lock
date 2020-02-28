@@ -1,22 +1,26 @@
 PODS:
   - JTAppleCalendar (8.0.3)
+  - SemiModalViewController (1.0.1)
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
 
 DEPENDENCIES:
   - JTAppleCalendar
+  - SemiModalViewController
   - SQLite.swift (~> 0.12.2)
 
 SPEC REPOS:
   trunk:
     - JTAppleCalendar
+    - SemiModalViewController
     - SQLite.swift
 
 SPEC CHECKSUMS:
   JTAppleCalendar: 932cadea40b1051beab10f67843451d48ba16c99
+  SemiModalViewController: 13fe8b991b501c7cd6a9ec7c782ed7a5c72c12e6
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
 
-PODFILE CHECKSUM: 3b21b1b5c05f5a2c415d189daede6b703013b792
+PODFILE CHECKSUM: 61dda607b807dea430c6bb9b097cadfa89fb2042
 
 COCOAPODS: 1.8.4
