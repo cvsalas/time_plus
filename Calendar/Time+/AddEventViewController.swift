@@ -51,7 +51,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         present(imagePickerController, animated: true, completion: nil)
     }
     @IBOutlet weak var galleryButtonAction: UIButton!
-    
+    @IBOutlet var viewOutlet: UIView!
     
     var primaryVisual : EventsDataBaseStringEntry!
     var secondaryVisual : EventsDataBaseStringEntry!
@@ -71,6 +71,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
         defaultIconsCollectionView.dataSource = self
@@ -78,6 +79,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         ButtonItem.isEnabled = false
         ButtonItem.tintColor = UIColor.clear
         setupButtonIcons()
+        viewOutlet.backgroundColor = UIColor(red:0.81, green:0.89, blue:0.79, alpha:1.0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
