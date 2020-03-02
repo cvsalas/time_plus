@@ -32,8 +32,10 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         let endTime = events[indexPath.row][EventsDatabase.columns.endTime]
 
         let imageName = events[indexPath.row][EventsDatabase.columns.image]
-            let fullPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
-        setConstraintsImage(image: UIImage(contentsOfFile: fullPath)!, superview: cell.detailedInfo)
+        if(!imageName.isEmpty){
+                let fullPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+            setConstraintsImage(image: UIImage(contentsOfFile: fullPath)!, superview: cell.detailedInfo)
+        }
         cell.startTimeLabel.text = dateFormatter.string(from: startTime)
         cell.endTimeLabel.text = dateFormatter.string(from: endTime)
         

@@ -26,10 +26,13 @@ class DailyViewController: UIViewController {
         hourlyTable.delegate = tableController
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "EEE, MMM dd "
+        formatter.dateFormat = "EEEE, MMMM dd "
         let dateElements = formatter.string(from: receivedDate).components(separatedBy: ",")
         weekDayLabel.text = dateElements[0]
+        print(dateElements[0])
         dateLabel.text = dateElements[1]
+        weekDayLabel.sizeToFit()
+        dateLabel.sizeToFit()
         // Do any additional setup after loading the view.
     }
     

@@ -27,8 +27,6 @@ class DayCell: JTACDayCell {
 
         layer.borderWidth = 1.0
         layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 255).cgColor
-        
-        
        
         for i in 1...Int(ceil(Double(numEvents)/Double(dotsPerRow))){
             for j  in 0...getNumOfCol(i, totalElems: numEvents, dotsPerRow: dotsPerRow) - 1{
