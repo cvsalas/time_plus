@@ -22,6 +22,7 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
         calendarView.scrollingMode = .stopAtEachCalendarFrame
         calendarView.scrollDirection = .horizontal
         // Do any additional setup after loading the view.
+
         setupFAQ()
     }
     
@@ -95,7 +96,8 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
         
         if state.dateBelongsTo == .thisMonth{
             if calendar.isDate(date, equalTo: Date(), toGranularity: .day){
-                cell.contentView.backgroundColor = .lightGray
+                cell.contentView.backgroundColor = UIColor(red:0.24, green:0.51, blue:0.98, alpha:1.0)
+
             }
         }
         else{

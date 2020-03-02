@@ -13,6 +13,7 @@ private let headerReuseIdentifier = "catHeader"
 
 class IconsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout{
     
+    @IBOutlet var collectionOutlet: UICollectionView!
     typealias Section = (catIcon: Icon, icons: [Icon])
     
     var sections : [Section] = []
@@ -23,6 +24,8 @@ class IconsCollectionViewController: UICollectionViewController, UICollectionVie
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         loadIcons()
+        collectionOutlet.backgroundColor = UIColor(red:0.81, green:0.89, blue:0.79, alpha:1.0)
+
         
         // Do any additional setup after loading the view.
     }

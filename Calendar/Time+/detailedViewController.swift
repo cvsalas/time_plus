@@ -10,9 +10,12 @@ import UIKit
 
 class detailedViewController: UIViewController {
 
+    @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var viewStartTime: UILabel!
     @IBOutlet weak var viewEndTime: UILabel!
     @IBOutlet weak var eventsTable: UITableView!
+    @IBOutlet weak var TableViewOutlet: UITableView!
+    
     
     
     var sender : DayTableController!
@@ -22,7 +25,8 @@ class detailedViewController: UIViewController {
         super.viewDidLoad()
         eventsTable.dataSource = eventsTableController
         eventsTable.delegate = eventsTableController
-        
+        backgroundView.backgroundColor = UIColor(red:0.81, green:0.89, blue:0.79, alpha:1.0)
+        TableViewOutlet.backgroundColor = UIColor(red:0.81, green:0.89, blue:0.79, alpha:1.0)
         // Do any additional setup after loading the view.
     }
     
