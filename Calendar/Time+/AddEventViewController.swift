@@ -69,6 +69,8 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     
     let datePickerTag = 0xDEADBEEF
     
+    let primaryIcons = MainIconsDataBase.sharedInstance.get()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dateFormatter.dateStyle = .none
@@ -104,8 +106,8 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
             }
         } else {
             if let start = startTime, let end = endTime{ //add checks here
-                  EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: currentDay, iconPath: primaryVisual.entry, imagePath: "")
-              }
+                EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: currentDay, iconPath: primaryVisual.entry, imagePath: "")
+            }
         }
         navigationController?.popViewController(animated: true)
     }
@@ -203,7 +205,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
 
 extension AddEventViewController : UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     //CAMERA CODE FROM HERE ON DOWN -- @RAF & TEAM
-       
+    
     func currentTimeInMilliSeconds()-> Int {
         let currentDate = Date()
         let since1970 = currentDate.timeIntervalSince1970
@@ -212,10 +214,10 @@ extension AddEventViewController : UINavigationControllerDelegate, UIImagePicker
     
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
-
+        
         let widthRatio  = targetSize.width  / size.width
         let heightRatio = targetSize.height / size.height
-
+        
         // Figure out what our orientation is, and use that to form the rectangle
         var newSize: CGSize
         if(widthRatio > heightRatio) {
@@ -223,16 +225,16 @@ extension AddEventViewController : UINavigationControllerDelegate, UIImagePicker
         } else {
             newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
         }
-
+        
         // This is the rect that we've calculated out and this is what is actually used below
         let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
-
+        
         // Actually do the resizing to the rect using the ImageContext stuff
         UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
         image.draw(in: rect)
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-
+        
         return newImage!
     }
     
@@ -243,7 +245,7 @@ extension AddEventViewController : UINavigationControllerDelegate, UIImagePicker
         imageName = String(currentTimeInMilliSeconds())
         saveImage(imageName: imageName, imageTaken: imageTaken!)
     }
-       
+    
     func saveImage(imageName: String, imageTaken: UIImage){
         //create an instance of the FileManager
         let fileManager = FileManager.default
@@ -256,29 +258,44 @@ extension AddEventViewController : UINavigationControllerDelegate, UIImagePicker
         fileManager.createFile(atPath: fullPath as String, contents: data, attributes: nil)
         
         if fileManager.fileExists(atPath: fullPath){
-           print("IT GOT STORED!")
+            print("IT GOT STORED!")
         }else{
-           print("Panic! No Image!")
+            print("Panic! No Image!")
         }
     }
 }
 
-extension AddEventViewController : UICollectionViewDelegate, UICollectionViewDataSource{
+extension AddEventViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return primaryIcons.count
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "defaultIconsFooter", for: indexPath)
     }
     
-    internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "iconCell", for: indexPath)
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "iconCell", for: indexPath) as! IconCollectionViewCell
+        let iconCode = String(UnicodeScalar(Int(primaryIcons[indexPath.row][MainIconsDataBase.columns.icon]))!)
+        let color =  UIColor(rgba: primaryIcons[indexPath.row][MainIconsDataBase.columns.color])
+        
+        cell.iconLabel.text = iconCode
+        cell.backgroundColor = color
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellsAcross: CGFloat = 3
+        let spaceBetweenCells: CGFloat = 1
+        let dim = (collectionView.bounds.width - (cellsAcross - 1) * spaceBetweenCells) / cellsAcross
+        return CGSize(width: dim, height: dim)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-         // #warning Incomplete implementation, return the number of sections
-         return 1
-     }
-   
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
 }

@@ -15,6 +15,8 @@
 		810F6DD823E944120083224F /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F6DD723E944120083224F /* AddEventViewController.swift */; };
 		811521C623CD1FAB0055F6F9 /* MonthHeaderClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811521C523CD1FAB0055F6F9 /* MonthHeaderClass.swift */; };
 		811521C823CD272C0055F6F9 /* DailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811521C723CD272C0055F6F9 /* DailyViewController.swift */; };
+		8174E8D1240C9C6C0080BFE1 /* MainIconsDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174E8D0240C9C6C0080BFE1 /* MainIconsDataBase.swift */; };
+		8174E8D5240CE71F0080BFE1 /* DefaultPrimaryIcons.csv in Resources */ = {isa = PBXBuildFile; fileRef = 8174E8D4240CE71F0080BFE1 /* DefaultPrimaryIcons.csv */; };
 		81A1BCE223EFE8CB001724DB /* detailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1BCE123EFE8CB001724DB /* detailedViewController.swift */; };
 		81A1BCE423EFEEAD001724DB /* DetailedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1BCE323EFEEAD001724DB /* DetailedCell.swift */; };
 		81A1BCE623EFF857001724DB /* DetailedEventsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1BCE523EFF857001724DB /* DetailedEventsTableController.swift */; };
@@ -73,6 +75,8 @@
 		810F6DD723E944120083224F /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		811521C523CD1FAB0055F6F9 /* MonthHeaderClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeaderClass.swift; sourceTree = "<group>"; };
 		811521C723CD272C0055F6F9 /* DailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
+		8174E8D0240C9C6C0080BFE1 /* MainIconsDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIconsDataBase.swift; sourceTree = "<group>"; };
+		8174E8D4240CE71F0080BFE1 /* DefaultPrimaryIcons.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = DefaultPrimaryIcons.csv; sourceTree = "<group>"; };
 		81A1BCE123EFE8CB001724DB /* detailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailedViewController.swift; sourceTree = "<group>"; };
 		81A1BCE323EFEEAD001724DB /* DetailedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCell.swift; sourceTree = "<group>"; };
 		81A1BCE523EFF857001724DB /* DetailedEventsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedEventsTableController.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 				81D841AE23FC7931003FB1BF /* fa-regular-400.ttf */,
 				81D841AF23FC7931003FB1BF /* fa-solid-900.ttf */,
 				81D841A823FC6D0E003FB1BF /* Icons.csv */,
+				8174E8D4240CE71F0080BFE1 /* DefaultPrimaryIcons.csv */,
 				F1E545E32390A2150046525A /* AppDelegate.swift */,
 				8F46DF0323FDD62300E76541 /* IconsCollectionViewController.swift */,
 				F1E545E52390A2150046525A /* SceneDelegate.swift */,
@@ -211,6 +216,7 @@
 				81B786B723FBC5A500F4CECA /* IconCollectionViewCell.swift */,
 				81E4A2BB23FCE4F9001C00AD /* IconView.swift */,
 				81E89EC623FDD00C0016BE46 /* IconCollectionReusableView.swift */,
+				8174E8D0240C9C6C0080BFE1 /* MainIconsDataBase.swift */,
 			);
 			path = "Time+";
 			sourceTree = "<group>";
@@ -356,6 +362,7 @@
 				81D841A923FC6D1E003FB1BF /* Icons.csv in Resources */,
 				81D841B123FC7941003FB1BF /* fa-solid-900.ttf in Resources */,
 				720118E323CFA37A00A3A227 /* LaunchScreen.storyboard in Resources */,
+				8174E8D5240CE71F0080BFE1 /* DefaultPrimaryIcons.csv in Resources */,
 				81D841B023FC793D003FB1BF /* fa-regular-400.ttf in Resources */,
 				F1E545ED2390A2170046525A /* Assets.xcassets in Resources */,
 				F1E545EB2390A2150046525A /* Main.storyboard in Resources */,
@@ -430,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8174E8D1240C9C6C0080BFE1 /* MainIconsDataBase.swift in Sources */,
 				81E89EC723FDD00C0016BE46 /* IconCollectionReusableView.swift in Sources */,
 				F1E545E82390A2150046525A /* ViewController.swift in Sources */,
 				810F6DD823E944120083224F /* AddEventViewController.swift in Sources */,
