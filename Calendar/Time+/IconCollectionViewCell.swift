@@ -12,4 +12,17 @@ class IconCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var iconLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    
+     override var isSelected: Bool {
+        didSet{
+            if self.isSelected {
+                self.layer.borderWidth = 10
+            }
+            else {
+                self.layer.borderWidth = 0
+            }
+        }
+    }
+    
 }
+

@@ -23,6 +23,5 @@ struct Icon : EventsDataBaseStringEntry{
 
 struct ImagePath : EventsDataBaseStringEntry{
     let path : String
-    
     var entry: String {return path}
 }

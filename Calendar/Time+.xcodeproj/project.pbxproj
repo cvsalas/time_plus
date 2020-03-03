@@ -30,6 +30,7 @@
 		81FD006223E69DBB00CB094A /* DatePickerWithDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD006123E69DBB00CB094A /* DatePickerWithDone.swift */; };
 		8F217FF8240989380081CD41 /* FAQCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F217FF7240989380081CD41 /* FAQCollectionViewCell.swift */; };
 		8F46DF0423FDD62300E76541 /* IconsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F46DF0323FDD62300E76541 /* IconsCollectionViewController.swift */; };
+		8F5ED0AA240DCA2C00679781 /* AddEventCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5ED0A9240DCA2C00679781 /* AddEventCollectionReusableView.swift */; };
 		8FD1005923E8E90A004FA125 /* helpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD1005823E8E90A004FA125 /* helpScreenViewController.swift */; };
 		8FFEEDEB23FA210A0025C3C6 /* libJTAppleCalendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFEEDE723FA210A0025C3C6 /* libJTAppleCalendar.a */; };
 		8FFEEDEE23FA210A0025C3C6 /* libSQLite.swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFEEDEA23FA210A0025C3C6 /* libSQLite.swift.a */; };
@@ -91,6 +92,7 @@
 		86302A99EB5898DC7E2E5293 /* Pods-Time+.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time+.release.xcconfig"; path = "Target Support Files/Pods-Time+/Pods-Time+.release.xcconfig"; sourceTree = "<group>"; };
 		8F217FF7240989380081CD41 /* FAQCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCollectionViewCell.swift; sourceTree = "<group>"; };
 		8F46DF0323FDD62300E76541 /* IconsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconsCollectionViewController.swift; sourceTree = "<group>"; };
+		8F5ED0A9240DCA2C00679781 /* AddEventCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventCollectionReusableView.swift; sourceTree = "<group>"; };
 		8FD1005823E8E90A004FA125 /* helpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpScreenViewController.swift; sourceTree = "<group>"; };
 		8FFEEDDD23F9D0790025C3C6 /* libJTAppleCalendar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libJTAppleCalendar.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FFEEDDF23F9D0790025C3C6 /* libSQLite.swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSQLite.swift.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +218,7 @@
 				81B786B723FBC5A500F4CECA /* IconCollectionViewCell.swift */,
 				81E4A2BB23FCE4F9001C00AD /* IconView.swift */,
 				81E89EC623FDD00C0016BE46 /* IconCollectionReusableView.swift */,
+				8F5ED0A9240DCA2C00679781 /* AddEventCollectionReusableView.swift */,
 				8174E8D0240C9C6C0080BFE1 /* MainIconsDataBase.swift */,
 			);
 			path = "Time+";
@@ -447,6 +450,7 @@
 				F1E545E42390A2150046525A /* AppDelegate.swift in Sources */,
 				7216AECA23E1146100962A0F /* HourCell.swift in Sources */,
 				8F217FF8240989380081CD41 /* FAQCollectionViewCell.swift in Sources */,
+				8F5ED0AA240DCA2C00679781 /* AddEventCollectionReusableView.swift in Sources */,
 				F1D51DBB239214F400C411C7 /* DayCell.swift in Sources */,
 				81B786B823FBC5A500F4CECA /* IconCollectionViewCell.swift in Sources */,
 				81A1BCE223EFE8CB001724DB /* detailedViewController.swift in Sources */,

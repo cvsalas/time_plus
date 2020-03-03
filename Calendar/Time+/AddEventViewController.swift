@@ -21,6 +21,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     }
     
     @IBAction func iconSelectionButton(_ sender: Any) {
+        self.visualSelected = .Primary
         performSegue(withIdentifier: "toIconsView", sender: self)
     }
     
@@ -32,6 +33,8 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     @IBOutlet weak var bottomActionBar: UISegmentedControl!
     @IBOutlet weak var endButtonOutlet: UIButton!
     @IBOutlet weak var startButtonOutlet: UIButton!
+    @IBOutlet weak var miscButton: UIButton!
+    
     
     @IBAction func iconButtonAction(_ sender: Any) {
         performSegue(withIdentifier: "toIconsView", sender: self)
@@ -63,9 +66,8 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     
     var currentDay: Date!
     let dateFormatter = DateFormatter()
-    
+        
     var imagePickerController : UIImagePickerController!
-    var imageName: String! = ""
     
     let datePickerTag = 0xDEADBEEF
     
@@ -82,6 +84,9 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         ButtonItem.tintColor = UIColor.clear
         setupButtonIcons()
         viewOutlet.backgroundColor = UIColor(red:0.81, green:0.89, blue:0.79, alpha:1.0)
+        miscButton.setTitleColor(.white, for: .normal)
+        miscButton.titleLabel?.font = UIFont(name: "FontAwesome5Free-Solid", size: 40)
+        miscButton.setTitle("\u{f141}", for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,14 +107,8 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     }
     
     @IBAction func DoneButtonPressed(_ sender: Any) {
-        if(imageName != ""){
-            if let start = startTime, let end = endTime{ //add checks here
-                EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: currentDay, iconPath: primaryVisual.entry, imagePath: imageName)
-            }
-        } else {
-            if let start = startTime, let end = endTime{ //add checks here
-                EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: currentDay, iconPath: primaryVisual.entry, imagePath: "")
-            }
+        if let start = startTime, let end = endTime{ //add checks here
+            EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: currentDay, iconPath: primaryVisual.entry, imagePath: secondaryVisual.entry)
         }
         navigationController?.popViewController(animated: true)
     }
@@ -196,12 +195,6 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
             }
         }
     }
-    
-    @IBAction func ellipsisPressed(_ sender: Any) {
-        self.visualSelected = .Primary
-        performSegue(withIdentifier: "toIconsView", sender: self)
-    }
-    
 }
 
 
@@ -244,8 +237,9 @@ extension AddEventViewController : UINavigationControllerDelegate, UIImagePicker
     internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imagePickerController.dismiss(animated: true, completion: nil)
         let imageTaken = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-        imageName = String(currentTimeInMilliSeconds())
-        saveImage(imageName: imageName, imageTaken: imageTaken!)
+        let imagePath = String(currentTimeInMilliSeconds())
+        secondaryVisual = ImagePath(path: imagePath)
+        saveImage(imageName: imagePath, imageTaken: imageTaken!)
     }
     
     func saveImage(imageName: String, imageTaken: UIImage){
@@ -272,27 +266,52 @@ extension AddEventViewController : UICollectionViewDelegate, UICollectionViewDat
         return primaryIcons.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "defaultIconsFooter", for: indexPath)
-    }
-    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "iconCell", for: indexPath) as! IconCollectionViewCell
         let iconCode = String(UnicodeScalar(Int(primaryIcons[indexPath.row][MainIconsDataBase.columns.icon]))!)
         let color =  UIColor(rgba: primaryIcons[indexPath.row][MainIconsDataBase.columns.color])
-        
         cell.iconLabel.text = iconCode
         cell.backgroundColor = color
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "iconCell", for: indexPath) as! IconCollectionViewCell
+        var code: UInt64 = 0
+        Scanner(string: cell.iconLabel.text!).scanHexInt64(&code)
+        let convertedString = convertName(iconCode: code)
+        secondaryVisual = Icon(name: convertedString, code: UnicodeScalar(Int(code))!)
+        self.visualSelected = .Primary
+    }
+    
+    func convertName(iconCode: UInt64) -> String{
+        switch iconCode{
+        case 0xf486:
+            return "medicine"
+        case 0xf70c:
+            return "excercise"
+        case 0xf0f1:
+            return "doctor"
+        case 0xf26c:
+            return "TV"
+        case 0xf500:
+            return "social"
+        case 0xf2e7:
+            return "eating"
+        default:
+            return "None"
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellsAcross: CGFloat = 3
+        let cellsAbove: CGFloat = 2
         let spaceBetweenCells: CGFloat = 1
-        let dim = (collectionView.bounds.width - (cellsAcross - 1) * spaceBetweenCells) / cellsAcross
-        return CGSize(width: dim, height: dim)
+        let width = (collectionView.bounds.width - (cellsAcross - 1) * spaceBetweenCells) / cellsAcross
+        let height = (collectionView.bounds.height - (cellsAbove - 1) * spaceBetweenCells) / cellsAbove
+        return CGSize(width: width, height: height)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
