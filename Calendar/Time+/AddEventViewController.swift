@@ -255,7 +255,7 @@ extension AddEventViewController : UINavigationControllerDelegate, UIImagePicker
         
         if fileManager.fileExists(atPath: fullPath){
             print("IT GOT STORED!")
-        }else{
+        } else{
             print("Panic! No Image!")
         }
     }
