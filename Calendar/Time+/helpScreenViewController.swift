@@ -26,19 +26,10 @@ class helpScreenViewController: UIViewController, UICollectionViewDataSource, UI
     
     @IBOutlet weak var dismissLogo: UIButton!
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return primaryIcons.count
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "iconCell", for: indexPath) as! IconCollectionViewCell
@@ -54,5 +45,13 @@ class helpScreenViewController: UIViewController, UICollectionViewDataSource, UI
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-        
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellsAcross: CGFloat = 3
+        let cellsAbove: CGFloat = 2
+        let spaceBetweenCells: CGFloat = 1
+        let width = (collectionView.bounds.width - (cellsAcross - 1) * spaceBetweenCells) / cellsAcross
+        let height = (collectionView.bounds.height - (cellsAbove - 1) * spaceBetweenCells) / cellsAbove
+        return CGSize(width: width, height: height)
+    }
 }

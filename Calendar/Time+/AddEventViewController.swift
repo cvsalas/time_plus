@@ -308,7 +308,7 @@ extension AddEventViewController : UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellsAcross: CGFloat = 3
         let cellsAbove: CGFloat = 2
-        let spaceBetweenCells: CGFloat = 1
+        let spaceBetweenCells: CGFloat = 10
         let width = (collectionView.bounds.width - (cellsAcross - 1) * spaceBetweenCells) / cellsAcross
         let height = (collectionView.bounds.height - (cellsAbove - 1) * spaceBetweenCells) / cellsAbove
         return CGSize(width: width, height: height)
