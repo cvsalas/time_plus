@@ -24,5 +24,7 @@ class IconCollectionViewCell: UICollectionViewCell {
         }
     }
     
+
+    
 }
 

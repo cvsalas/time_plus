@@ -35,8 +35,6 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
         populateHourPart(thisView: &cell.BottomHalfViews, row: indexPath.row, begMinute: "30", endMinute: "59")
         
         return cell
-        
-        
     }
     
     func populateHourPart(thisView: inout [UIView], row: Int, begMinute: String, endMinute: String){
@@ -54,13 +52,13 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
         let events = EventsDatabase.sharedInstance.getEvents(startTime: firstPart, endTime: secondPart, date: view!.receivedDate)
         if events.count >= 1 {
             setConstraintsIcon(icon: parseString(iconSelected: events[0][EventsDatabase.columns.icon]), superview: thisView[0])
-//            if events.count >= 2{
-//                thisView[1].image =  events[1][EventsDatabase.columns.image] == "" ?  defaultImage! : UIImage(named: events[1][EventsDatabase.columns.image])
-//                if events.count > 2 {
-//                    let extensionImage = defaultImage
-//                    thisView[2].image = extensionImage
-//                }
-//            }
+            if events.count >= 2{
+                setConstraintsIcon(icon: parseString(iconSelected: events[1][EventsDatabase.columns.icon]), superview: thisView[1])
+                if events.count > 2 {
+                    setConstraintsIcon(icon: parseString(iconSelected: events[2][EventsDatabase.columns.icon]), superview: thisView[2])
+                    
+                }
+            }
         }
     }
     func setConstraintsIcon(icon: IconView, superview: UIView) {
@@ -69,7 +67,7 @@ class DayTableController: NSObject, UITableViewDelegate, UITableViewDataSource {
         icon.heightAnchor.constraint(equalTo: superview.heightAnchor, multiplier: 1.0).isActive = true
         icon.centerXAnchor.constraint(equalTo: superview.centerXAnchor).isActive = true
         icon.centerYAnchor.constraint(equalTo: superview.centerYAnchor).isActive = true
-
+        
     }
     
     func parseString(iconSelected : String) -> IconView {

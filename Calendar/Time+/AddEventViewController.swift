@@ -288,15 +288,16 @@ extension AddEventViewController : UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "iconCell", for: indexPath) as! IconCollectionViewCell
-        var code: UInt64 = 0
-        Scanner(string: cell.iconLabel.text!).scanHexInt64(&code)
+        let cell = collectionView.cellForItem(at: indexPath) as! IconCollectionViewCell
+        let labelText = cell.iconLabel.text!
+        let code = Int(labelText.utf16[labelText.utf16.startIndex])
         let convertedString = convertName(iconCode: code)
+        print(code)
         primaryVisual = Icon(name: convertedString, code: UnicodeScalar(Int(code))!)
         checkFieldComplete()
     }
     
-    func convertName(iconCode: UInt64) -> String{
+    func convertName(iconCode: Int) -> String{
         switch iconCode{
         case 0xf486:
             return "medicine"
