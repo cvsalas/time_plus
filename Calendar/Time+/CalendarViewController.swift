@@ -22,7 +22,7 @@ class CalendarViewController: UIViewController, JTACMonthViewDelegate, JTACMonth
         calendarView.scrollingMode = .stopAtEachCalendarFrame
         calendarView.scrollDirection = .horizontal
         // Do any additional setup after loading the view.
-
+        
         setupFAQ()
     }
     
@@ -91,7 +91,7 @@ class CalendarViewController: UIViewController, JTACMonthViewDelegate, JTACMonth
         return ConfigurationParameters(startDate: startDate, endDate: endDate!)
         
     }
-        
+    
     func configureCell(jtCell: JTACDayCell, state: CellState, date: Date){
         let cell = jtCell as! DayCell
         resetCell(cell: cell)
@@ -99,18 +99,20 @@ class CalendarViewController: UIViewController, JTACMonthViewDelegate, JTACMonth
         
         cell.dayLabel.text = state.text
         let eventsForDate = EventsDatabase.sharedInstance.getEvents(date: date)
-        cell.drawEventDots(events: eventsForDate)
         
         
         if state.dateBelongsTo == .thisMonth{
             if calendar.isDate(date, equalTo: Date(), toGranularity: .day){
                 cell.contentView.backgroundColor = UIColor(red:0.24, green:0.51, blue:0.98, alpha:1.0)
-
+                
             }
         }
         else{
             cell.dayLabel.textColor = .gray;
         }
+        cell.events = eventsForDate
+        cell.drawEventDots()
+        
         
     }
     
