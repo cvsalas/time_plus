@@ -19,11 +19,11 @@ extension EventRepeate : Value{
     static var declaredDatatype: String {
         return "INTEGER"
     }
-
+    
     static func fromDatatypeValue(_ datatypeValue: Int64) -> EventRepeate{
         return EventRepeate(rawValue: datatypeValue)!
     }
-
+    
     var datatypeValue: Datatype {
         return self.rawValue
     }
@@ -35,13 +35,13 @@ class EventsDatabase {
     let db : Connection
     let eventsTable = Table("events")
     static let columns = (id: Expression<Int64>("id"),
-                   startTime: Expression<Date>("startTime"),
-                   endTime: Expression<Date>("endTime"),
-                   date: Expression<Date>("date"),
-                   repeate: Expression<EventRepeate>("repeate"),
-                   icon: Expression<String>("icon"),
-                   image: Expression<String>("image"),
-                   notification: Expression<Int64>("notification"))
+                          startTime: Expression<Date>("startTime"),
+                          endTime: Expression<Date>("endTime"),
+                          date: Expression<Date>("date"),
+                          repeate: Expression<EventRepeate>("repeate"),
+                          icon: Expression<String>("icon"),
+                          image: Expression<String>("image"),
+                          notification: Expression<Int64>("notification"))
     
     
     
@@ -168,7 +168,7 @@ class EventsDatabase {
     }
     
     func getEvents(startTime: String, endTime: String, date: String, timeFormat: String = EventsDatabase.defaultTimeFormat, dateFormat: String = EventsDatabase.defaultTimeFormat) -> [Row]{
-    
+        
         timeFormatter.dateFormat = timeFormat
         dateFormatter.dateFormat = dateFormat
         
@@ -178,11 +178,23 @@ class EventsDatabase {
         
     }
     
+    func getEvents(date: Date) -> [Row]{
+        let query = eventsTable.filter(EventsDatabase.columns.date == stripTime(date))
+        do{
+            return Array(try db.prepare(query))
+            
+        } catch{
+            fatalError("could not getEvents")
+            
+        }
+        
+    }
+    
     func getEvents(startTime: Date, endTime: Date, date: Date) -> [Row]{
         let query = eventsTable.filter(
             !((EventsDatabase.columns.startTime < stripDate(startTime) && EventsDatabase.columns.endTime < stripDate(startTime)) ||
                 (EventsDatabase.columns.startTime > stripDate(endTime) && EventsDatabase.columns.endTime > stripDate(endTime)))
-            && EventsDatabase.columns.date == stripTime(date))
+                && EventsDatabase.columns.date == stripTime(date))
         do{
             return Array(try db.prepare(query))
             

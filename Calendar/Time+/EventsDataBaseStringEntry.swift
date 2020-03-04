@@ -11,6 +11,7 @@ import Foundation
 
 protocol EventsDataBaseStringEntry{
     var entry : String {get}
+    init?(dataBaseString: String)
     
 }
 
@@ -19,9 +20,27 @@ struct Icon : EventsDataBaseStringEntry{
     let code : UnicodeScalar
     
     var entry :String {return "\(code):\(name)"}
+    
+    init?(dataBaseString: String){
+        let compArray = dataBaseString.components(separatedBy: ":")
+        let code = UnicodeScalar(compArray[0])!
+        let name = compArray[1]
+        self.init(name: name, code: code)
+    }
+    
+    init(name: String, code: UnicodeScalar){
+        self.name = name
+        self.code = code
+    }
+    
 }
 
 struct ImagePath : EventsDataBaseStringEntry{
     let path : String
     var entry: String {return path}
+    init?(dataBaseString: String){
+        path = dataBaseString
+    }
+
+    
 }

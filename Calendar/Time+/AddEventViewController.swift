@@ -20,25 +20,22 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         case Primary, Secondary
     }
     
-    @IBAction func iconSelectionButton(_ sender: Any) {
-        self.visualSelected = .Primary
-        performSegue(withIdentifier: "toIconsView", sender: self)
-    }
     
     @IBOutlet weak var ButtonItem: UIBarButtonItem!
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
     @IBOutlet weak var repeateSegment: UISegmentedControl!
     @IBOutlet weak var defaultIconsCollectionView: UICollectionView!
-    @IBOutlet weak var bottomActionBar: UISegmentedControl!
     @IBOutlet weak var endButtonOutlet: UIButton!
     @IBOutlet weak var startButtonOutlet: UIButton!
     @IBOutlet weak var miscButton: UIButton!
     
     
     @IBAction func iconButtonAction(_ sender: Any) {
+        visualSelected = .Secondary
         performSegue(withIdentifier: "toIconsView", sender: self)
     }
+    
     @IBOutlet weak var iconButtonOutlet: UIButton!
     @IBAction func cameraButtonAction(_ sender: Any) {
         imagePickerController = UIImagePickerController()
@@ -66,7 +63,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     
     var currentDay: Date!
     let dateFormatter = DateFormatter()
-        
+    
     var imagePickerController : UIImagePickerController!
     
     let datePickerTag = 0xDEADBEEF
@@ -106,10 +103,17 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         galleryButtonAction.setTitle("\u{f03e}", for: .normal)
     }
     
+    
+    @IBAction func iconSelectionButton(_ sender: Any) {
+        self.visualSelected = .Primary
+        performSegue(withIdentifier: "toIconsView", sender: self)
+    }
+    
+    
     @IBAction func DoneButtonPressed(_ sender: Any) {
-        if let start = startTime, let end = endTime{ //add checks here
-            EventsDatabase.sharedInstance.enterEvent(startTime: start, endTime: end, date: currentDay, iconPath: primaryVisual.entry, imagePath: secondaryVisual.entry)
-        }
+        
+        EventsDatabase.sharedInstance.enterEvent(startTime: startTime, endTime: endTime, date: currentDay, iconPath: primaryVisual.entry, imagePath: secondaryVisual != nil ? secondaryVisual.entry : "")
+        
         navigationController?.popViewController(animated: true)
     }
     
@@ -193,6 +197,12 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
                 let iconView = segue.destination as! IconsCollectionViewController
                 iconView.iconSelected = {iconCell in self.primaryVisual = Icon(name: iconCell.nameLabel.text!, code: UnicodeScalar(iconCell.iconLabel.text!)!) }
             }
+                
+            else{
+                let iconView = segue.destination as! IconsCollectionViewController
+                iconView.iconSelected = {iconCell in self.secondaryVisual = Icon(name: iconCell.nameLabel.text!, code: UnicodeScalar(iconCell.iconLabel.text!)!) }
+                
+            }
         }
     }
 }
@@ -238,7 +248,7 @@ extension AddEventViewController : UINavigationControllerDelegate, UIImagePicker
         imagePickerController.dismiss(animated: true, completion: nil)
         let imageTaken = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         let imagePath = String(currentTimeInMilliSeconds())
-        secondaryVisual = ImagePath(path: imagePath)
+        secondaryVisual = ImagePath(dataBaseString: imagePath)
         saveImage(imageName: imagePath, imageTaken: imageTaken!)
     }
     
@@ -282,8 +292,8 @@ extension AddEventViewController : UICollectionViewDelegate, UICollectionViewDat
         var code: UInt64 = 0
         Scanner(string: cell.iconLabel.text!).scanHexInt64(&code)
         let convertedString = convertName(iconCode: code)
-        secondaryVisual = Icon(name: convertedString, code: UnicodeScalar(Int(code))!)
-        self.visualSelected = .Primary
+        primaryVisual = Icon(name: convertedString, code: UnicodeScalar(Int(code))!)
+        checkFieldComplete()
     }
     
     func convertName(iconCode: UInt64) -> String{

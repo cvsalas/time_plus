@@ -38,7 +38,7 @@
 		F1D51DBB239214F400C411C7 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D51DBA239214F400C411C7 /* DayCell.swift */; };
 		F1E545E42390A2150046525A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E545E32390A2150046525A /* AppDelegate.swift */; };
 		F1E545E62390A2150046525A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E545E52390A2150046525A /* SceneDelegate.swift */; };
-		F1E545E82390A2150046525A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E545E72390A2150046525A /* ViewController.swift */; };
+		F1E545E82390A2150046525A /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E545E72390A2150046525A /* CalendarViewController.swift */; };
 		F1E545EB2390A2150046525A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1E545E92390A2150046525A /* Main.storyboard */; };
 		F1E545ED2390A2170046525A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1E545EC2390A2170046525A /* Assets.xcassets */; };
 		F1E545FB2390A2180046525A /* Time_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E545FA2390A2180046525A /* Time_Tests.swift */; };
@@ -101,7 +101,7 @@
 		F1E545E02390A2150046525A /* TimePlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimePlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E545E32390A2150046525A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1E545E52390A2150046525A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F1E545E72390A2150046525A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F1E545E72390A2150046525A /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		F1E545EA2390A2150046525A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1E545EC2390A2170046525A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1E545F12390A2170046525A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 				F1E545E32390A2150046525A /* AppDelegate.swift */,
 				8F46DF0323FDD62300E76541 /* IconsCollectionViewController.swift */,
 				F1E545E52390A2150046525A /* SceneDelegate.swift */,
-				F1E545E72390A2150046525A /* ViewController.swift */,
+				F1E545E72390A2150046525A /* CalendarViewController.swift */,
 				F1E545E92390A2150046525A /* Main.storyboard */,
 				8FD1005823E8E90A004FA125 /* helpScreenViewController.swift */,
 				811521C523CD1FAB0055F6F9 /* MonthHeaderClass.swift */,
@@ -439,7 +439,7 @@
 			files = (
 				8174E8D1240C9C6C0080BFE1 /* MainIconsDataBase.swift in Sources */,
 				81E89EC723FDD00C0016BE46 /* IconCollectionReusableView.swift in Sources */,
-				F1E545E82390A2150046525A /* ViewController.swift in Sources */,
+				F1E545E82390A2150046525A /* CalendarViewController.swift in Sources */,
 				810F6DD823E944120083224F /* AddEventViewController.swift in Sources */,
 				8FD1005923E8E90A004FA125 /* helpScreenViewController.swift in Sources */,
 				81E4A2BC23FCE4F9001C00AD /* IconView.swift in Sources */,

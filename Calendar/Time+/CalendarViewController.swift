@@ -10,9 +10,9 @@ import UIKit
 import JTAppleCalendar
 import SemiModalViewController
 
-class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewDataSource {
+class CalendarViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewDataSource {
     
-    @IBOutlet weak var calendarView: JTACMonthView!
+    @IBOutlet var calendarView: JTACMonthView!
     
     fileprivate var selectedDate = Date()
     fileprivate let formatter  = DateFormatter()
@@ -24,6 +24,12 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
         // Do any additional setup after loading the view.
 
         setupFAQ()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        calendarView.reloadData()
+        
     }
     
     @IBAction func FAQButton(_ sender: Any) {
@@ -88,10 +94,12 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
         
     func configureCell(jtCell: JTACDayCell, state: CellState, date: Date){
         let cell = jtCell as! DayCell
+        resetCell(cell: cell)
         let calendar = Calendar.current
         
         cell.dayLabel.text = state.text
-        cell.drawEventDots(5)
+        let eventsForDate = EventsDatabase.sharedInstance.getEvents(date: date)
+        cell.drawEventDots(events: eventsForDate)
         
         
         if state.dateBelongsTo == .thisMonth{
@@ -104,6 +112,12 @@ class ViewController: UIViewController, JTACMonthViewDelegate, JTACMonthViewData
             cell.dayLabel.textColor = .gray;
         }
         
+    }
+    
+    func resetCell(cell: DayCell){
+        cell.contentView.backgroundColor = .white
+        cell.dayLabel.textColor = .black
+        cell.clearDots()
     }
     
     func calendar(_ calendar: JTACMonthView, didSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath){
