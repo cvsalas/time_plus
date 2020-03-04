@@ -25,17 +25,7 @@ class DayCell: JTACDayCell {
         return remElements > 3 ? 3 : remElements
     }
     
-    func getColorValue(event: Row) -> UIColor{
-        let icon = Icon(dataBaseString: event[EventsDatabase.columns.icon])!
-        let iconFromDatabase =  MainIconsDataBase.sharedInstance.get(icon: Int64(icon.code.value))
-        if (iconFromDatabase.isEmpty){
-            return UIColor.black
-        }
-        else{
-            let colorValue = iconFromDatabase.first![MainIconsDataBase.columns.color]
-            return UIColor(rgba: colorValue)
-        }
-    }
+   
     
     func drawEventDots() -> Void{
         
@@ -118,7 +108,21 @@ class DotCollectionViewController: NSObject, UICollectionViewDelegate, UICollect
         
         view.layer.cornerRadius = 5
         view.layer.masksToBounds = true
-        view.backgroundColor = .red
+        
+        view.backgroundColor = getColorValue(event: events[eventIndex])
     }
+    
+    
+    func getColorValue(event: Row) -> UIColor{
+           let icon = Icon(dataBaseString: event[EventsDatabase.columns.icon])!
+           let iconFromDatabase =  MainIconsDataBase.sharedInstance.get(icon: Int64(icon.code.value))
+           if (iconFromDatabase.isEmpty){
+               return UIColor.black
+           }
+           else{
+               let colorValue = iconFromDatabase.first![MainIconsDataBase.columns.color]
+               return UIColor(rgba: colorValue)
+           }
+       }
     
 }
