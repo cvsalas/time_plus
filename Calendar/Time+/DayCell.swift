@@ -19,7 +19,7 @@ class DayCell: JTACDayCell {
     var events: [Row]!
     var dotsCollectionViewDelegate : DotCollectionViewController!
     var dotsCollectionView : UICollectionView!
-    
+ 
     func getNumOfCol(_ row:Int, totalElems: Int, dotsPerRow: Int) -> Int{
         let remElements = totalElems - (row)*dotsPerRow ;
         return remElements > 3 ? 3 : remElements
@@ -40,8 +40,8 @@ class DayCell: JTACDayCell {
         dotsCollectionView.translatesAutoresizingMaskIntoConstraints = false
         dotsCollectionView.topAnchor.constraint(equalTo: dayLabel.bottomAnchor, constant: 5).isActive = true
         dotsCollectionView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor, constant: 0).isActive = true
-        dotsCollectionView.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.65).isActive = true
-        dotsCollectionView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.65).isActive = true
+        dotsCollectionView.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.9).isActive = true
+        dotsCollectionView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.7).isActive = true
         dotsCollectionView.reloadData()
         
     }
@@ -104,10 +104,10 @@ class DotCollectionViewController: NSObject, UICollectionViewDelegate, UICollect
         
         view.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
         view.centerXAnchor.constraint(equalTo: cell.contentView.centerXAnchor).isActive = true
-        view.widthAnchor.constraint(equalTo: cell.contentView.widthAnchor, multiplier: 0.7).isActive = true
+        view.widthAnchor.constraint(equalTo: cell.contentView.widthAnchor, multiplier: 0.9).isActive = true
         
-        view.layer.cornerRadius = 5
-        view.layer.masksToBounds = true
+        cell.contentView.layoutIfNeeded()
+        view.layer.cornerRadius = view.bounds.height / 2
         
         view.backgroundColor = getColorValue(event: events[eventIndex])
     }

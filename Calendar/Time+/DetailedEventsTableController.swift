@@ -55,11 +55,22 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         imageView.image = image
         let heightRatio = superview.frame.height / image.size.height
         let widthRatio = superview.frame.width / image.size.width
-        let scale = min(heightRatio, widthRatio)
-        imageView.frame.size = CGSize(width: image.size.width * scale, height: image.size.height * scale)
-        imageView.center = CGPoint(x: superview.bounds.midX,
-                                   y: superview.bounds.midY)
         superview.addSubview(imageView)
+
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.centerXAnchor.constraint(equalTo: superview.centerXAnchor).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: superview.centerYAnchor).isActive = true
+
+        if(heightRatio < widthRatio){
+            imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: 1).isActive = true
+            imageView.heightAnchor.constraint(equalTo: superview.heightAnchor, multiplier: 1).isActive = true
+        }
+        else{
+            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 1).isActive = true
+            imageView.widthAnchor.constraint(equalTo: superview.widthAnchor, multiplier: 1).isActive = true
+
+        }
+
     }
     
     func parseString(iconSelected : String) -> Icon {
