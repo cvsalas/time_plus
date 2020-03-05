@@ -41,7 +41,6 @@ class DayCell: JTACDayCell {
             dotsCollectionView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor, constant: 0).isActive = true
             dotsCollectionView.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.6).isActive = true
             dotsCollectionView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.7).isActive = true
-            dotsCollectionView.reloadData()
         } else {
             let eventLabel = UILabel()
             self.contentView.addSubview(eventLabel)
@@ -58,11 +57,8 @@ class DayCell: JTACDayCell {
             eventLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor, constant: 0).isActive = true
             eventLabel.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.25).isActive = true
             eventLabel.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.4).isActive = true
-            
-            // Why does this fix the bug where it colors other cells?
-            // @Raf I cant get the color to work, help pleaseeee
-            dotsCollectionView.reloadData()
         }
+        dotsCollectionView.reloadData()
     }
     
     private func attachDotsCollectionView() -> UICollectionView{

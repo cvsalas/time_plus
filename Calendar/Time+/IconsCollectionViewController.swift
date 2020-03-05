@@ -21,11 +21,8 @@ class IconsCollectionViewController: UICollectionViewController, UICollectionVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
         loadIcons()
         collectionOutlet.backgroundColor = UIColor(red:0.81, green:0.89, blue:0.79, alpha:1.0)
-        // Do any additional setup after loading the view.
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -97,13 +94,8 @@ class IconsCollectionViewController: UICollectionViewController, UICollectionVie
         let iconIndx = indexPath.row
         let hexCode = section.icons[iconIndx].code
         let name = section.icons[iconIndx].name
-        
         cell.iconLabel.text = String(hexCode)
-
         cell.nameLabel.text = name
-        
-        // Configure the cell
-        
         return cell
     }
     
