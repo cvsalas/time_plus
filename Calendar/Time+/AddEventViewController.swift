@@ -20,6 +20,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         case Primary, Secondary
     }
     
+    var savedPath: IndexPath = []
     
     @IBOutlet weak var ButtonItem: UIBarButtonItem!
     @IBOutlet weak var startTimeLabel: UILabel!
@@ -34,23 +35,38 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     @IBAction func iconButtonAction(_ sender: Any) {
         visualSelected = .Secondary
         performSegue(withIdentifier: "toIconsView", sender: self)
+        iconView.layer.borderColor = UIColor(red:0.83, green:1.00, blue:0.91, alpha:0.8).cgColor
+        iconView.layer.borderWidth = 5
+        setViewBorderZero(view1: cameraView, view2: galleryView)
     }
-    
+    @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var iconButtonOutlet: UIButton!
+    
     @IBAction func cameraButtonAction(_ sender: Any) {
         imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = .camera
         present(imagePickerController, animated: true, completion: nil)
+        cameraView.layer.borderColor = UIColor(red:0.83, green:1.00, blue:0.91, alpha:0.8).cgColor
+        cameraView.layer.borderWidth = 5
+        setViewBorderZero(view1: iconView, view2: galleryView)
     }
     @IBOutlet weak var cameraButtonOutlet: UIButton!
+    @IBOutlet weak var cameraView: UIView!
+    
+    
     @IBAction func galleryButtonAction(_ sender: Any) {
         imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = .photoLibrary
         present(imagePickerController, animated: true, completion: nil)
+        galleryView.layer.borderColor = UIColor(red:0.83, green:1.00, blue:0.91, alpha:0.8).cgColor
+        galleryView.layer.borderWidth = 5
+        setViewBorderZero(view1: iconView, view2: cameraView)
     }
     @IBOutlet weak var galleryButtonAction: UIButton!
+    @IBOutlet weak var galleryView: UIView!
+    
     @IBOutlet var viewOutlet: UIView!
     
     var primaryVisual : EventsDataBaseStringEntry!
@@ -60,6 +76,8 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     var endTime : Date!
     fileprivate var buttonPressed : ButtonPressed!
     fileprivate var visualSelected : VisualKind = .Primary
+    
+    var startTimeSelected : Date!
     
     var currentDay: Date!
     let dateFormatter = DateFormatter()
@@ -72,7 +90,6 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
         defaultIconsCollectionView.dataSource = self
@@ -101,14 +118,19 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         cameraButtonOutlet.setTitle("\u{f030}", for: .normal)
         galleryButtonAction.titleLabel?.font = UIFont(name: "FontAwesome5Free-Solid", size: 40)!
         galleryButtonAction.setTitle("\u{f03e}", for: .normal)
+        iconView?.backgroundColor = UIColor(white: 1, alpha: 0.0)
+        galleryView?.backgroundColor = UIColor(white: 1, alpha: 0.0)
+        cameraView?.backgroundColor = UIColor(white: 1, alpha: 0.0)        
     }
     
     
     @IBAction func iconSelectionButton(_ sender: Any) {
         self.visualSelected = .Primary
         performSegue(withIdentifier: "toIconsView", sender: self)
+        defaultIconsCollectionView.cellForItem(at: savedPath)?.isSelected = false
+        miscButton.layer.borderColor = UIColor(red:0.83, green:1.00, blue:0.91, alpha:0.8).cgColor
+        miscButton.layer.borderWidth = 10
     }
-    
     
     @IBAction func DoneButtonPressed(_ sender: Any) {
         
@@ -117,7 +139,13 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         navigationController?.popViewController(animated: true)
     }
     
-    //Add support for checking if primary icon selected!
+    func setViewBorderZero(view1: UIView, view2: UIView){
+        view1.layer.borderWidth = 0
+        view1.setNeedsDisplay()
+        view2.layer.borderWidth = 0
+        view2.setNeedsDisplay()
+    }
+    
     func checkFieldComplete(){
         if(startTime != nil && endTime != nil && primaryVisual != nil){
             if(endTime > startTime){
@@ -162,8 +190,6 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         let height = self.view.frame.size.height/2
         let datePicker = DatePickerWithDone(frame: CGRect(x: 0, y: self.view.frame.size.height - height, width: self.view.frame.size.width, height: height))
         datePicker.datePickerMode = .time
-        //Broken, TODO!
-        //datePicker.minuteInterval = 30
         datePicker.delegate = self
         datePicker.tag = datePickerTag
         self.view.addSubview(datePicker)
@@ -278,7 +304,6 @@ extension AddEventViewController : UICollectionViewDelegate, UICollectionViewDat
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "iconCell", for: indexPath) as! IconCollectionViewCell
         let iconCode = String(UnicodeScalar(Int(primaryIcons[indexPath.row][MainIconsDataBase.columns.icon]))!)
         let color =  UIColor(rgba: primaryIcons[indexPath.row][MainIconsDataBase.columns.color])
@@ -292,9 +317,10 @@ extension AddEventViewController : UICollectionViewDelegate, UICollectionViewDat
         let labelText = cell.iconLabel.text!
         let code = Int(labelText.utf16[labelText.utf16.startIndex])
         let convertedString = convertName(iconCode: code)
-        print(code)
+        miscButton.layer.borderWidth = 0
         primaryVisual = Icon(name: convertedString, code: UnicodeScalar(Int(code))!)
         checkFieldComplete()
+        savedPath = indexPath
     }
     
     func convertName(iconCode: Int) -> String{

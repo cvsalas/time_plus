@@ -103,7 +103,8 @@ class CalendarViewController: UIViewController, JTACMonthViewDelegate, JTACMonth
         
         if state.dateBelongsTo == .thisMonth{
             if calendar.isDate(date, equalTo: Date(), toGranularity: .day){
-                cell.contentView.backgroundColor = UIColor(red:0.24, green:0.51, blue:0.98, alpha:1.0)
+                cell.contentView.backgroundColor = UIColor(red:0.83, green:1.00, blue:0.91, alpha:0.8)
+                cell.contentView.layer.cornerRadius = 5
                 
             }
         }

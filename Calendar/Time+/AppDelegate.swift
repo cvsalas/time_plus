@@ -6,15 +6,19 @@
 //  Copyright © 2019 LibLabs-Mac. All rights reserved.
 //
 
-//TODO: Fix UI in adding times for the new events
+//TODO: repeat segment and gesture recognizers and labels in case there are more than six events and extend range of calendar (another 2 years?)
+//TODO: Start table view at the current time
+//TODO: Check for start < end time
+//TODO: Sports section in iconcollectionview not showing (DONE)
+//TODO: Two icons crashes the app!
+//TODO: Add selection box around the bottom bar in add event controllers (DONE)
+//TODO: Purge old events for memory managment
 
 import UIKit
 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

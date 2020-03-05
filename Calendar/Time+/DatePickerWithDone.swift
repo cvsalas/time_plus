@@ -44,7 +44,22 @@ class DatePickerWithDone: UIView {
             datePicker.datePickerMode
         }
     }
-    
+    var minimumDate: Date? {
+        set{
+            datePicker.minimumDate = newValue
+        }
+        get {
+            datePicker.minimumDate
+        }
+    }
+    var maximumDate: Date? {
+        set{
+            datePicker.maximumDate = newValue
+        }
+        get {
+            datePicker.maximumDate
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

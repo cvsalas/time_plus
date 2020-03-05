@@ -25,11 +25,8 @@ class IconsCollectionViewController: UICollectionViewController, UICollectionVie
         // self.clearsSelectionOnViewWillAppear = false
         loadIcons()
         collectionOutlet.backgroundColor = UIColor(red:0.81, green:0.89, blue:0.79, alpha:1.0)
-
-        
         // Do any additional setup after loading the view.
     }
-
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
@@ -70,16 +67,6 @@ class IconsCollectionViewController: UICollectionViewController, UICollectionVie
         
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
     // MARK: UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -89,12 +76,10 @@ class IconsCollectionViewController: UICollectionViewController, UICollectionVie
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return sections[section].icons.count
-        
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerReuseIdentifier, for: indexPath) as! IconCollectionReusableView
-        header.iconLabel.text = String(sections[indexPath.section].catIcon.code)
         header.nameLabel.text = sections[indexPath.section].catIcon.name
         return header
     }

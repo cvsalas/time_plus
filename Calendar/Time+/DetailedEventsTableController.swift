@@ -61,13 +61,14 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         imageView.centerXAnchor.constraint(equalTo: superview.centerXAnchor).isActive = true
         imageView.centerYAnchor.constraint(equalTo: superview.centerYAnchor).isActive = true
 
+        imageView.layoutIfNeeded()
         if(heightRatio < widthRatio){
-            imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: 1).isActive = true
-            imageView.heightAnchor.constraint(equalTo: superview.heightAnchor, multiplier: 1).isActive = true
+            imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: imageView.bounds.size.width / imageView.bounds.size.height).isActive = true
+            imageView.heightAnchor.constraint(equalTo: superview.heightAnchor, multiplier: 1.0).isActive = true
         }
         else{
-            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 1).isActive = true
-            imageView.widthAnchor.constraint(equalTo: superview.widthAnchor, multiplier: 1).isActive = true
+            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: imageView.bounds.size.height / imageView.bounds.size.width).isActive = true
+            imageView.widthAnchor.constraint(equalTo: superview.widthAnchor, multiplier: 1.0).isActive = true
 
         }
 
@@ -85,7 +86,7 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         return 200
     }
     
- 
+    
 
 }
 

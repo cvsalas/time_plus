@@ -38,9 +38,9 @@ class DayCell: JTACDayCell {
         
         self.contentView.addSubview(dotsCollectionView)
         dotsCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        dotsCollectionView.topAnchor.constraint(equalTo: dayLabel.bottomAnchor, constant: 5).isActive = true
+        dotsCollectionView.topAnchor.constraint(equalTo: dayLabel.bottomAnchor, constant: 0).isActive = true
         dotsCollectionView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor, constant: 0).isActive = true
-        dotsCollectionView.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.9).isActive = true
+        dotsCollectionView.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.6).isActive = true
         dotsCollectionView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.7).isActive = true
         dotsCollectionView.reloadData()
         
@@ -51,9 +51,10 @@ class DayCell: JTACDayCell {
         eventsIdicatorTag = tag
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 1
-        layout.minimumLineSpacing = 1
+        layout.minimumLineSpacing = 0
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.isUserInteractionEnabled = false //Used to pass touches to parent view, basically bug patch
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.tag = tag
         return collectionView
@@ -64,6 +65,11 @@ class DayCell: JTACDayCell {
         for dot in dots{
             dot.removeFromSuperview()
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        print("AJOEF")
     }
     
 }
@@ -124,5 +130,6 @@ class DotCollectionViewController: NSObject, UICollectionViewDelegate, UICollect
                return UIColor(rgba: colorValue)
            }
        }
+    
     
 }
