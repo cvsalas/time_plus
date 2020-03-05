@@ -25,25 +25,44 @@ class DayCell: JTACDayCell {
         return remElements > 3 ? 3 : remElements
     }
     
-   
-    
     func drawEventDots() -> Void{
-        
+        dotsCollectionView = attachDotsCollectionView()
         dotsCollectionViewDelegate = DotCollectionViewController()
         dotsCollectionViewDelegate.events = events
-        dotsCollectionView = attachDotsCollectionView()
         dotsCollectionView.backgroundColor = self.contentView.backgroundColor!
         dotsCollectionView.delegate = dotsCollectionViewDelegate
         dotsCollectionView.dataSource = dotsCollectionViewDelegate
         
-        self.contentView.addSubview(dotsCollectionView)
-        dotsCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        dotsCollectionView.topAnchor.constraint(equalTo: dayLabel.bottomAnchor, constant: 0).isActive = true
-        dotsCollectionView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor, constant: 0).isActive = true
-        dotsCollectionView.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.6).isActive = true
-        dotsCollectionView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.7).isActive = true
-        dotsCollectionView.reloadData()
+        //Attach the collection view if <= 6 events in that cell
+        if(dotsCollectionView.numberOfItems(inSection: 0) <= 6 ){
+            self.contentView.addSubview(dotsCollectionView)
+            dotsCollectionView.translatesAutoresizingMaskIntoConstraints = false
+            dotsCollectionView.topAnchor.constraint(equalTo: dayLabel.bottomAnchor, constant: 0).isActive = true
+            dotsCollectionView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor, constant: 0).isActive = true
+            dotsCollectionView.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.6).isActive = true
+            dotsCollectionView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.7).isActive = true
+            dotsCollectionView.reloadData()
+        } else {
+            let eventLabel = UILabel()
+            self.contentView.addSubview(eventLabel)
+            
+            eventLabel.text = String(dotsCollectionView.numberOfItems(inSection: 0))
+            eventLabel.textAlignment = .center
+            eventLabel.layer.borderWidth = 1
+            eventLabel.layer.borderColor = UIColor.black.cgColor
+            eventLabel.backgroundColor = self.contentView.backgroundColor
+            eventLabel.isUserInteractionEnabled = false
+            eventLabel.translatesAutoresizingMaskIntoConstraints = false
         
+            eventLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor, constant: 0).isActive = true
+            eventLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor, constant: 0).isActive = true
+            eventLabel.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.25).isActive = true
+            eventLabel.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.4).isActive = true
+            
+            // Why does this fix the bug where it colors other cells?
+            // @Raf I cant get the color to work, help pleaseeee
+            dotsCollectionView.reloadData()
+        }
     }
     
     private func attachDotsCollectionView() -> UICollectionView{
@@ -59,19 +78,12 @@ class DayCell: JTACDayCell {
         collectionView.tag = tag
         return collectionView
     }
-    
-    
+
     func clearDots(){
         for dot in dots{
             dot.removeFromSuperview()
         }
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        print("AJOEF")
-    }
-    
 }
 
 class DotCollectionViewController: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -117,7 +129,6 @@ class DotCollectionViewController: NSObject, UICollectionViewDelegate, UICollect
         
         view.backgroundColor = getColorValue(event: events[eventIndex])
     }
-    
     
     func getColorValue(event: Row) -> UIColor{
            let icon = Icon(dataBaseString: event[EventsDatabase.columns.icon])!

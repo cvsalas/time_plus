@@ -49,7 +49,6 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         }
     }
     
-    // DOCUMENTATION: THE CENTERING OF THE IMAGES IS NOT GOOD, WE GIVE UP!!
     func setConstraintsImage(image: UIImage, superview: UIView) {
         let imageView: UIImageView = UIImageView()
         imageView.image = image

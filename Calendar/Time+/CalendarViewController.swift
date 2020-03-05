@@ -83,12 +83,13 @@ class CalendarViewController: UIViewController, JTACMonthViewDelegate, JTACMonth
     
     
     func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
-        
-        
         formatter.dateFormat = "yyyy MM dd"
         let startDate = Date()
-        let endDate = formatter.date(from: "2020 12 31")
-        return ConfigurationParameters(startDate: startDate, endDate: endDate!)
+        //Year spans from current date to 2 years from now 
+        let yearInSeconds = 31557600 * 2
+        let endYear = startDate.advanced(by: TimeInterval(exactly: yearInSeconds)!)
+        let endDate = endYear
+        return ConfigurationParameters(startDate: startDate, endDate: endDate)
         
     }
     

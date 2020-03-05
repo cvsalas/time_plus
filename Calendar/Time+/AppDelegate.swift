@@ -6,13 +6,13 @@
 //  Copyright © 2019 LibLabs-Mac. All rights reserved.
 //
 
-//TODO: repeat segment and gesture recognizers and labels in case there are more than six events and extend range of calendar (another 2 years?)
+//TODO: repeat segment and gesture recognizers and labels in case there are more than six events and extend range of calendar (another 2 years?)(DONE)
 //TODO: Start table view at the current time
-//TODO: Check for start < end time
+//TODO: Check for start < end time (DONE)
 //TODO: Sports section in iconcollectionview not showing (DONE)
-//TODO: Two icons crashes the app!
+//TODO: Two icons crashes the app! (Need help!)
 //TODO: Add selection box around the bottom bar in add event controllers (DONE)
-//TODO: Purge old events for memory managment
+//TODO: Purge old events for memory managment (DOCUMENT)
 
 import UIKit
 

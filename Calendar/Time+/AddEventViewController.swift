@@ -133,6 +133,13 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     }
     
     @IBAction func DoneButtonPressed(_ sender: Any) {
+        if(endTime < startTime){
+            let alert = UIAlertController(title: "Event Time Error", message: "End time before start time", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
         
         EventsDatabase.sharedInstance.enterEvent(startTime: startTime, endTime: endTime, date: currentDay, iconPath: primaryVisual.entry, imagePath: secondaryVisual != nil ? secondaryVisual.entry : "")
         
@@ -223,11 +230,12 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
                 let iconView = segue.destination as! IconsCollectionViewController
                 iconView.iconSelected = {iconCell in self.primaryVisual = Icon(name: iconCell.nameLabel.text!, code: UnicodeScalar(iconCell.iconLabel.text!)!) }
             }
-                
-            else{
+            else if (visualSelected == .Secondary){
                 let iconView = segue.destination as! IconsCollectionViewController
                 iconView.iconSelected = {iconCell in self.secondaryVisual = Icon(name: iconCell.nameLabel.text!, code: UnicodeScalar(iconCell.iconLabel.text!)!) }
-                
+            }
+            else {
+                print("ERROR")
             }
         }
     }
