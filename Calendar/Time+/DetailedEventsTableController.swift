@@ -10,7 +10,7 @@ import UIKit
 import SQLite
 
 class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableViewDelegate {
-
+    
     var events : [Row] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -21,21 +21,27 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "detailedCell") as! DetailedCell
         resetCell(cell: cell)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
-        
+        dateFormatter.dateStyle = .none
+
         let thisIcon = parseString(iconSelected: events[indexPath.row][EventsDatabase.columns.icon])
         cell.icon.font = UIFont(name: "FontAwesome5Free-Solid", size: 40)
         cell.icon.text = String(thisIcon.code)
         cell.iconeTitle.text = thisIcon.name
         let startTime = events[indexPath.row][EventsDatabase.columns.startTime]
         let endTime = events[indexPath.row][EventsDatabase.columns.endTime]
-
-        let imageName = events[indexPath.row][EventsDatabase.columns.image]
-        if(!imageName.isEmpty){
-                let fullPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+        
+        let entry = events[indexPath.row][EventsDatabase.columns.image]
+        
+        if let icon = Icon(dataBaseString: entry){
+            setConstraintsView(view: IconView(icon: icon, iconFontSize: 50, nameFontSize: 30, frame: .zero), superview: cell.detailedInfo)
+        }
+        else{
+            
+            let fullPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(entry)
             setConstraintsImage(image: UIImage(contentsOfFile: fullPath)!, superview: cell.detailedInfo)
         }
+        
         cell.startTimeLabel.text = dateFormatter.string(from: startTime)
         cell.endTimeLabel.text = dateFormatter.string(from: endTime)
         
@@ -55,11 +61,11 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         let heightRatio = superview.frame.height / image.size.height
         let widthRatio = superview.frame.width / image.size.width
         superview.addSubview(imageView)
-
+        
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.centerXAnchor.constraint(equalTo: superview.centerXAnchor).isActive = true
         imageView.centerYAnchor.constraint(equalTo: superview.centerYAnchor).isActive = true
-
+        
         imageView.layoutIfNeeded()
         if(heightRatio < widthRatio){
             imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: imageView.bounds.size.width / imageView.bounds.size.height).isActive = true
@@ -68,9 +74,20 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         else{
             imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: imageView.bounds.size.height / imageView.bounds.size.width).isActive = true
             imageView.widthAnchor.constraint(equalTo: superview.widthAnchor, multiplier: 1.0).isActive = true
-
+            
         }
-
+        
+    }
+    
+    func setConstraintsView(view: UIView, superview: UIView){
+        superview.addSubview(view)
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.centerXAnchor.constraint(equalTo: superview.centerXAnchor).isActive = true
+        view.centerYAnchor.constraint(equalTo: superview.centerYAnchor).isActive = true
+        view.heightAnchor.constraint(equalTo: superview.heightAnchor, multiplier: 0.8).isActive = true
+        view.widthAnchor.constraint(equalTo: superview.widthAnchor, multiplier: 0.8).isActive = true
+        
     }
     
     func parseString(iconSelected : String) -> Icon {
@@ -86,7 +103,7 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
     }
     
     
-
+    
 }
 
 extension UIImage {
