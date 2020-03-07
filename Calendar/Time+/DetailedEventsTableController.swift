@@ -34,7 +34,7 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         let entry = events[indexPath.row][EventsDatabase.columns.image]
         
         if let icon = Icon(dataBaseString: entry){
-            setConstraintsView(view: IconView(icon: icon, iconFontSize: 50, nameFontSize: 30, frame: .zero), superview: cell.detailedInfo)
+            setConstraintsView(view: IconView(icon: icon, iconFontSize: 40, nameFontSize: 26, frame: .zero), superview: cell.detailedInfo)
         }
         else{
             
