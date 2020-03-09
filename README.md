@@ -30,6 +30,11 @@ This repository is open-source. See ``LICENSE`` for more information.
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
 
+If you wish to develop on this project you must install the appropriate pods. No fear, this is simple!
+```
+pod install 
+```
+
 ## Open-Source Libraries Used
 1. Calendar-extension [JTAppleCalendar](https://github.com/patchthecode/JTAppleCalendar/)
 2. Swift database wrapper [SQLite.swift](https://github.com/stephencelis/SQLite.swift)
