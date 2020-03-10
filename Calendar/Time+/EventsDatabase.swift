@@ -173,8 +173,42 @@ class EventsDatabase {
         dateFormatter.dateFormat = dateFormat
         
         return  getEvents(startTime: timeFormatter.date(from: startTime)!,
-                          endTime: timeFormatter.date(from: endTime)!,
-                          date: dateFormatter.date(from: date)!)
+                                 endTime: timeFormatter.date(from: endTime)!,
+                                 date: dateFormatter.date(from: date)!)
+        
+    }
+    
+    func deleteEvent(startTime: String, endTime: String, date: String, timeFormat: String = EventsDatabase.defaultTimeFormat, dateFormat: String = EventsDatabase.defaultTimeFormat){
+        timeFormatter.dateFormat = timeFormat
+        dateFormatter.dateFormat = dateFormat
+        
+        deleteEvent(startTime: timeFormatter.date(from: startTime)!,
+                                 endTime: timeFormatter.date(from: endTime)!,
+                                 date: dateFormatter.date(from: date)!)
+    }
+    
+    
+    func deleteEvent(startTime: String, endTime: String, date: Date, timeFormat: String = EventsDatabase.defaultTimeFormat){
+        timeFormatter.dateFormat = timeFormat
+        
+        deleteEvent(startTime: timeFormatter.date(from: startTime)!,
+                                 endTime: timeFormatter.date(from: endTime)!,
+                                 date: date)
+    }
+    
+    func deleteEvent(startTime: Date, endTime: Date, date: Date){
+        let query = eventsTable.filter(
+            (EventsDatabase.columns.startTime == stripDate(startTime) &&
+                EventsDatabase.columns.endTime == stripDate(endTime)) &&
+                EventsDatabase.columns.date == stripTime(date))
+        do{
+            try db.run(query.delete())
+        } catch Result.error(let message, let code, let statment){
+            fatalError("\(message) error code: \(code) statment: \(String(describing: statment))")
+        } catch {
+            fatalError("could not delete event")
+
+        }
         
     }
     

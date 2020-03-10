@@ -597,6 +597,7 @@
                                                         <constraint firstItem="z1j-6V-9cA" firstAttribute="centerX" secondItem="Eh1-dO-qAr" secondAttribute="centerX" id="oN6-9O-XlG"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
+                                                <gestureRecognizers/>
                                                 <size key="customSize" width="153" height="145"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -960,6 +961,7 @@
                                                 <constraint firstItem="060-Mu-SNX" firstAttribute="centerX" secondItem="dvP-eF-4pZ" secondAttribute="centerX" id="zJe-DG-GeM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="detailedInfo" destination="z1c-4l-jjl" id="x5Z-ds-LRN"/>
                                             <outlet property="endTimeLabel" destination="cAU-vA-pKP" id="pHP-c6-Vef"/>

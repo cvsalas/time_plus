@@ -50,6 +50,8 @@ class detailedViewController: UIViewController {
         eventsTable.reloadData()
     }
     
+   
+    
     
     
 

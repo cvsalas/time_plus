@@ -12,7 +12,7 @@ import SQLite
 class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     var events : [Row] = []
-    
+    var date : Date!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
     }
@@ -104,6 +104,18 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         return 200
     }
     
+    func attachGestureRecognizer(cell: DetailedCell){
+        cell.isUserInteractionEnabled = true
+        let holdRecog = UILongPressGestureRecognizer(target: self, action: #selector(holdGestureRecognized(_:)))
+        holdRecog.minimumPressDuration = 0.5
+        cell.addGestureRecognizer(holdRecog)
+    }
+    
+    @objc func holdGestureRecognized(_ sender: UILongPressGestureRecognizer) {
+        let cell = sender.view as! DetailedCell
+        
+       // EventsDatabase.sharedInstance.deleteEvent(startTime: cell.startTimeLabel.text!, endTime: cell.endTimeLabel.text!, date: date!, timeFormat: "h:mm a")
+    }
     
     
 }
