@@ -15,53 +15,66 @@ class DayCell: JTACDayCell {
     
     var dots = [UIView]()
     
-    var eventsIdicatorTag = 0
-    var events: [Row]!
-    var dotsCollectionViewDelegate : DotCollectionViewController!
-    var dotsCollectionView : UICollectionView!
- 
+    var eventsIdicatorTag = 0xDEADBEEF // zero doesn't work because all views have zero by default
+    
+    var events: [Row]! {
+        didSet{
+            attachEventsIndicator()
+        }
+    }
+    
+    // must be a member variable so that it can contain the events for each DayCell instance independently .
+    let dotsCollectionViewDelegate = DotCollectionViewController()
+    
     func getNumOfCol(_ row:Int, totalElems: Int, dotsPerRow: Int) -> Int{
         let remElements = totalElems - (row)*dotsPerRow ;
         return remElements > 3 ? 3 : remElements
     }
     
-    func drawEventDots() -> Void{
-        dotsCollectionView = attachDotsCollectionView()
-        dotsCollectionViewDelegate = DotCollectionViewController()
-        dotsCollectionViewDelegate.events = events
-        dotsCollectionView.backgroundColor = self.contentView.backgroundColor!
-        dotsCollectionView.delegate = dotsCollectionViewDelegate
-        dotsCollectionView.dataSource = dotsCollectionViewDelegate
-        
-        //Attach the collection view if <= 6 events in that cell
-        if(dotsCollectionView.numberOfItems(inSection: 0) <= 6 ){
-            self.contentView.addSubview(dotsCollectionView)
-            dotsCollectionView.translatesAutoresizingMaskIntoConstraints = false
-            dotsCollectionView.topAnchor.constraint(equalTo: dayLabel.bottomAnchor, constant: 0).isActive = true
-            dotsCollectionView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor, constant: 0).isActive = true
-            dotsCollectionView.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.6).isActive = true
-            dotsCollectionView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.7).isActive = true
-        } else {
-            let eventLabel = UILabel()
-            self.contentView.addSubview(eventLabel)
-            
-            eventLabel.text = String(dotsCollectionView.numberOfItems(inSection: 0))
-            eventLabel.textAlignment = .center
-            eventLabel.layer.borderWidth = 1
-            eventLabel.layer.borderColor = UIColor.black.cgColor
-            eventLabel.backgroundColor = self.contentView.backgroundColor
-            eventLabel.isUserInteractionEnabled = false
-            eventLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-            eventLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor, constant: 0).isActive = true
-            eventLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor, constant: 0).isActive = true
-            eventLabel.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.25).isActive = true
-            eventLabel.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.4).isActive = true
-        }
-        dotsCollectionView.reloadData()
+    override func prepareForReuse() {
+        super.prepareForReuse()
     }
     
-    private func attachDotsCollectionView() -> UICollectionView{
+    func clearEventsIndicator(){
+        self.viewWithTag(eventsIdicatorTag)?.removeFromSuperview()
+    }
+    
+    private func attachEventsIndicator() -> Void{
+        
+        guard !events.isEmpty else {
+            return
+        }
+        //Attach the collection view if <= 6 events in that cell
+        var eventsIndicator: UIView!
+        
+        if(events.count <= 6){
+            let dotsCollectionView = createDotsCollectionView()
+            dotsCollectionViewDelegate.events = events
+            dotsCollectionView.delegate = dotsCollectionViewDelegate
+            dotsCollectionView.dataSource = dotsCollectionViewDelegate
+            eventsIndicator = dotsCollectionView
+            dotsCollectionView.reloadData()
+        } else {
+            let eventsLabel = createEventsCountLabel()
+            self.contentView.addSubview(eventsLabel)
+            eventsLabel.text = String(events.count)
+            eventsLabel.textAlignment = .center
+            eventsLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 20.0)
+            eventsIndicator = eventsLabel
+        }
+        
+        self.addSubview(eventsIndicator)
+        eventsIndicator.isUserInteractionEnabled = false
+        eventsIndicator.translatesAutoresizingMaskIntoConstraints = false
+        eventsIndicator.backgroundColor = self.contentView.backgroundColor
+        eventsIndicator.translatesAutoresizingMaskIntoConstraints = false
+        eventsIndicator.topAnchor.constraint(equalTo: dayLabel.bottomAnchor, constant: 2).isActive = true
+        eventsIndicator.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor, constant: 0).isActive = true
+        eventsIndicator.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.6).isActive = true
+        eventsIndicator.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.7).isActive = true
+    }
+    
+    private func createDotsCollectionView() -> UICollectionView{
         let tag = 0x0C011EC7 // arbitary tag
         eventsIdicatorTag = tag
         let layout = UICollectionViewFlowLayout()
@@ -74,12 +87,15 @@ class DayCell: JTACDayCell {
         collectionView.tag = tag
         return collectionView
     }
-
-    func clearDots(){
-        for dot in dots{
-            dot.removeFromSuperview()
-        }
+    
+    private func createEventsCountLabel() -> UILabel{
+        let eventLabel = UILabel()
+        let eventLabelTag = 0x1ABE1
+        eventLabel.tag = eventLabelTag
+        eventsIdicatorTag = eventLabelTag
+        return eventLabel
     }
+    
 }
 
 class DotCollectionViewController: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -127,16 +143,16 @@ class DotCollectionViewController: NSObject, UICollectionViewDelegate, UICollect
     }
     
     func getColorValue(event: Row) -> UIColor{
-           let icon = Icon(dataBaseString: event[EventsDatabase.columns.icon])!
-           let iconFromDatabase =  MainIconsDataBase.sharedInstance.get(icon: Int64(icon.code.value))
-           if (iconFromDatabase.isEmpty){
-               return UIColor.black
-           }
-           else{
-               let colorValue = iconFromDatabase.first![MainIconsDataBase.columns.color]
-               return UIColor(rgba: colorValue)
-           }
-       }
+        let icon = Icon(dataBaseString: event[EventsDatabase.columns.icon])!
+        let iconFromDatabase =  MainIconsDataBase.sharedInstance.get(icon: Int64(icon.code.value))
+        if (iconFromDatabase.isEmpty){
+            return UIColor.black
+        }
+        else{
+            let colorValue = iconFromDatabase.first![MainIconsDataBase.columns.color]
+            return UIColor(rgba: colorValue)
+        }
+    }
     
     
 }

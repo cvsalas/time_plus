@@ -92,6 +92,11 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         super.viewDidLoad()
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
+        
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumLineSpacing = 5
+        flowLayout.minimumInteritemSpacing = 5
+        defaultIconsCollectionView.setCollectionViewLayout(flowLayout, animated: false)
         defaultIconsCollectionView.dataSource = self
         defaultIconsCollectionView.delegate = self
         ButtonItem.isEnabled = false
@@ -352,10 +357,15 @@ extension AddEventViewController : UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellsAcross: CGFloat = 3
-        let cellsAbove: CGFloat = 2
-        let spaceBetweenCells: CGFloat = 10
-        let width = (collectionView.bounds.width - (cellsAcross - 1) * spaceBetweenCells) / cellsAcross
-        let height = (collectionView.bounds.height - (cellsAbove - 1) * spaceBetweenCells) / cellsAbove
+        let cellsVertical: CGFloat = 2
+        let flowLayout = (collectionViewLayout as! UICollectionViewFlowLayout)
+        
+        let spaceBetweenCells: CGFloat = flowLayout.minimumInteritemSpacing
+        let spaceBetweenLines: CGFloat = flowLayout.minimumLineSpacing
+        
+        let width = Double((collectionView.bounds.width - (cellsAcross - 1.0) * spaceBetweenCells) / cellsAcross)
+        let height = Double((collectionView.bounds.height - (cellsVertical - 1.0) * spaceBetweenLines) / cellsVertical)
+        
         return CGSize(width: width, height: height)
     }
     

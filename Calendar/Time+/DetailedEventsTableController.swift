@@ -23,7 +23,7 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .short
         dateFormatter.dateStyle = .none
-
+        
         let thisIcon = parseString(iconSelected: events[indexPath.row][EventsDatabase.columns.icon])
         cell.icon.font = UIFont(name: "FontAwesome5Free-Solid", size: 40)
         cell.icon.text = String(thisIcon.code)
@@ -33,13 +33,15 @@ class DetailedEventsTableController: NSObject, UITableViewDataSource, UITableVie
         
         let entry = events[indexPath.row][EventsDatabase.columns.image]
         
-        if let icon = Icon(dataBaseString: entry){
-            setConstraintsView(view: IconView(icon: icon, iconFontSize: 40, nameFontSize: 26, frame: .zero), superview: cell.detailedInfo)
-        }
-        else{
-            
-            let fullPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(entry)
-            setConstraintsImage(image: UIImage(contentsOfFile: fullPath)!, superview: cell.detailedInfo)
+        if (!entry.isEmpty){
+            if let icon = Icon(dataBaseString: entry){
+                setConstraintsView(view: IconView(icon: icon, iconFontSize: 40, nameFontSize: 26, frame: .zero), superview: cell.detailedInfo)
+            }
+            else{
+                
+                let fullPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(entry)
+                setConstraintsImage(image: UIImage(contentsOfFile: fullPath)!, superview: cell.detailedInfo)
+            }
         }
         
         cell.startTimeLabel.text = dateFormatter.string(from: startTime)

@@ -29,7 +29,6 @@ class CalendarViewController: UIViewController, JTACMonthViewDelegate, JTACMonth
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         calendarView.reloadData()
-        
     }
     
     @IBAction func FAQButton(_ sender: Any) {
@@ -85,7 +84,7 @@ class CalendarViewController: UIViewController, JTACMonthViewDelegate, JTACMonth
     func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
         formatter.dateFormat = "yyyy MM dd"
         let startDate = Date()
-        //Year spans from current date to 2 years from now 
+        //Year spans from current date to 2 years from now
         let yearInSeconds = 31557600 * 2
         let endYear = startDate.advanced(by: TimeInterval(exactly: yearInSeconds)!)
         let endDate = endYear
@@ -99,29 +98,26 @@ class CalendarViewController: UIViewController, JTACMonthViewDelegate, JTACMonth
         let calendar = Calendar.current
         
         cell.dayLabel.text = state.text
-        let eventsForDate = EventsDatabase.sharedInstance.getEvents(date: date)
-        
-        
+
         if state.dateBelongsTo == .thisMonth{
             if calendar.isDate(date, equalTo: Date(), toGranularity: .day){
                 cell.contentView.backgroundColor = UIColor(red:0.83, green:1.00, blue:0.91, alpha:0.8)
                 cell.contentView.layer.cornerRadius = 5
-                
             }
         }
         else{
             cell.dayLabel.textColor = .gray;
         }
-        cell.events = eventsForDate
-        cell.drawEventDots()
         
+        let eventsForDate = EventsDatabase.sharedInstance.getEvents(date: date)
+        cell.events = eventsForDate
         
     }
     
     func resetCell(cell: DayCell){
         cell.contentView.backgroundColor = .white
         cell.dayLabel.textColor = .black
-        cell.clearDots()
+        cell.clearEventsIndicator()
     }
     
     func calendar(_ calendar: JTACMonthView, didSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath){
