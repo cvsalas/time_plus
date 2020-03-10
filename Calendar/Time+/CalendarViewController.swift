@@ -22,13 +22,12 @@ class CalendarViewController: UIViewController, JTACMonthViewDelegate, JTACMonth
         calendarView.scrollingMode = .stopAtEachCalendarFrame
         calendarView.scrollDirection = .horizontal
         // Do any additional setup after loading the view.
-        
         setupFAQ()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        calendarView.reloadData()
+        calendarView.reloadData(withAnchor: Date(), completionHandler: nil)
     }
     
     @IBAction func FAQButton(_ sender: Any) {
@@ -85,10 +84,9 @@ class CalendarViewController: UIViewController, JTACMonthViewDelegate, JTACMonth
         formatter.dateFormat = "yyyy MM dd"
         let startDate = Date()
         //Year spans from current date to 2 years from now
-        let yearInSeconds = 31557600 * 2
-        let endYear = startDate.advanced(by: TimeInterval(exactly: yearInSeconds)!)
-        let endDate = endYear
-        return ConfigurationParameters(startDate: startDate, endDate: endDate)
+        let yearAhead = Calendar.current.date(byAdding: .year, value: 1, to: startDate)!
+        let yearBehind = Calendar.current.date(byAdding: .year, value: -1, to: startDate)!
+        return ConfigurationParameters(startDate: yearBehind, endDate: yearAhead)
         
     }
     

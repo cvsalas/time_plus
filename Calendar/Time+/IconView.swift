@@ -24,24 +24,32 @@ class IconView: UIView {
         super.init(coder: coder)
     }
     
-    convenience init(icon: Icon, iconFontSize: CGFloat, nameFontSize: CGFloat, frame: CGRect){
+    convenience init(icon: Icon, frame: CGRect = .zero){
         self.init(frame: frame)
-        setup(icon: icon, iconFontSize: iconFontSize, nameFontSize: nameFontSize)
+        setup(icon: icon)
     }
     
-    func setup(icon: Icon, iconFontSize: CGFloat, nameFontSize: CGFloat){
+    func setup(icon: Icon){
         self.translatesAutoresizingMaskIntoConstraints = false
-
+        
         iconLabel.translatesAutoresizingMaskIntoConstraints = false
-        iconLabel.font = UIFont(name: "FontAwesome5Free-Solid", size: iconFontSize)
+        iconLabel.font = UIFont(name: "FontAwesome5Free-Solid", size: 100)
         iconLabel.text = String(icon.code)
         iconLabel.textAlignment = .center
+        iconLabel.numberOfLines = 0
+        iconLabel.adjustsFontSizeToFitWidth = true
+        iconLabel.minimumScaleFactor = .leastNonzeroMagnitude
+        iconLabel.lineBreakMode = .byClipping
         addSubview(iconLabel)
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.font = UIFont(name: "FontAwesome5Free-Solid", size: nameFontSize)
+        nameLabel.font = UIFont(name: "FontAwesome5Free-Solid", size: 100)
         nameLabel.text = icon.name
         nameLabel.textAlignment = .center
+        nameLabel.numberOfLines = 0
+        nameLabel.adjustsFontSizeToFitWidth = true
+        nameLabel.minimumScaleFactor = .leastNonzeroMagnitude
+        nameLabel.lineBreakMode = .byClipping
         addSubview(nameLabel)
         
         iconLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 2).isActive = true
@@ -50,8 +58,8 @@ class IconView: UIView {
         iconLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         
         nameLabel.topAnchor.constraint(equalTo: iconLabel.bottomAnchor, constant: 1).isActive = true
-        nameLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9).isActive = true
-        nameLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.4).isActive = true
+        nameLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.8).isActive = true
+        nameLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.35).isActive = true
         nameLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
 }
