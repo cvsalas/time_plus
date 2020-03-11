@@ -130,7 +130,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         startTime = sender.startTime
         endTime = sender.endTime
         currentDay = sender.receivedDate
-
+        
     }
     
     func setupButtonIcons(){
@@ -167,11 +167,23 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
             self.present(alert, animated: true, completion: nil)
         }
         
-        EventsDatabase.sharedInstance.enterEvent(startTime: startTime, endTime: endTime, date: currentDay, iconPath: primaryVisual.entry, imagePath: secondaryVisual != nil ? secondaryVisual.entry : "")
+        EventsDatabase.sharedInstance.enterEvent(startTime: startTime, endTime: endTime, date: currentDay,repeate: getRepeate(), iconPath: primaryVisual.entry, imagePath: secondaryVisual != nil ? secondaryVisual.entry : "")
         
         navigationController?.popViewController(animated: true)
     }
     
+    func getRepeate() -> EventRepeate{
+        switch repeateSegment.selectedSegmentIndex{
+        case 0:
+            return .none
+        case 1:
+            return .daily
+        case 2:
+            return .weekely
+        default:
+            assert(false)
+        }
+    }
     func setViewBorderZero(view1: UIView, view2: UIView){
         view1.layer.borderWidth = 0
         view1.setNeedsDisplay()
@@ -181,8 +193,8 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     
     func checkFieldComplete(){
         if(startTime != nil && endTime != nil && primaryVisual != nil && endTime > startTime){
-                doneButton.isEnabled = true
-                doneButton.tintColor = UIColor.systemBlue
+            doneButton.isEnabled = true
+            doneButton.tintColor = UIColor.systemBlue
             
         }
         else{

@@ -173,27 +173,40 @@ class EventsDatabase {
         dateFormatter.dateFormat = dateFormat
         
         return  getEvents(startTime: timeFormatter.date(from: startTime)!,
-                                 endTime: timeFormatter.date(from: endTime)!,
-                                 date: dateFormatter.date(from: date)!)
+                          endTime: timeFormatter.date(from: endTime)!,
+                          date: dateFormatter.date(from: date)!)
         
     }
     
-    func deleteEvent(startTime: String, endTime: String, date: String, timeFormat: String = EventsDatabase.defaultTimeFormat, dateFormat: String = EventsDatabase.defaultTimeFormat){
+    func deleteEvents(startTime: String, endTime: String, date: String, timeFormat: String = EventsDatabase.defaultTimeFormat, dateFormat: String = EventsDatabase.defaultTimeFormat){
         timeFormatter.dateFormat = timeFormat
         dateFormatter.dateFormat = dateFormat
         
         deleteEvent(startTime: timeFormatter.date(from: startTime)!,
-                                 endTime: timeFormatter.date(from: endTime)!,
-                                 date: dateFormatter.date(from: date)!)
+                    endTime: timeFormatter.date(from: endTime)!,
+                    date: dateFormatter.date(from: date)!)
     }
     
     
-    func deleteEvent(startTime: String, endTime: String, date: Date, timeFormat: String = EventsDatabase.defaultTimeFormat){
+    func deleteEvents(startTime: String, endTime: String, date: Date, timeFormat: String = EventsDatabase.defaultTimeFormat){
         timeFormatter.dateFormat = timeFormat
         
         deleteEvent(startTime: timeFormatter.date(from: startTime)!,
-                                 endTime: timeFormatter.date(from: endTime)!,
-                                 date: date)
+                    endTime: timeFormatter.date(from: endTime)!,
+                    date: date)
+    }
+    
+    func deleteEvent(id: Int64){
+        let query = eventsTable.filter(EventsDatabase.columns.id == id)
+        
+        do{
+            try db.run(query.delete())
+        } catch Result.error(let message, let code, let statment){
+            fatalError("\(message) error code: \(code) statment: \(String(describing: statment))")
+        } catch {
+            fatalError("could not delete event")
+            
+        }
     }
     
     func deleteEvent(startTime: Date, endTime: Date, date: Date){
@@ -207,13 +220,20 @@ class EventsDatabase {
             fatalError("\(message) error code: \(code) statment: \(String(describing: statment))")
         } catch {
             fatalError("could not delete event")
-
+            
         }
         
     }
     
+    
+    
     func getEvents(date: Date) -> [Row]{
-        let query = eventsTable.filter(EventsDatabase.columns.date == stripTime(date))
+        let query = eventsTable.filter(
+            EventsDatabase.columns.date == stripTime(date) || EventsDatabase.columns.repeate == EventRepeate.daily
+                || (EventsDatabase.columns.repeate == EventRepeate.weekely
+                    && cast(DateFunctions.strftime("%w", "date")) as Expression<Int64?> == 4)
+            
+        )
         do{
             return Array(try db.prepare(query))
             
@@ -228,7 +248,13 @@ class EventsDatabase {
         let query = eventsTable.filter(
             !((EventsDatabase.columns.startTime < stripDate(startTime) && EventsDatabase.columns.endTime < stripDate(startTime)) ||
                 (EventsDatabase.columns.startTime > stripDate(endTime) && EventsDatabase.columns.endTime > stripDate(endTime)))
-                && EventsDatabase.columns.date == stripTime(date))
+                &&
+                (EventsDatabase.columns.date == stripTime(date) || EventsDatabase.columns.repeate == EventRepeate.daily
+                    || (EventsDatabase.columns.repeate == EventRepeate.weekely
+                        && DateFunctions.strftime("%w", EventsDatabase.columns.date.asSQL()) == DateFunctions.strftime("%w", date.date.asSQL())
+                    )
+            )
+        )
         do{
             return Array(try db.prepare(query))
             
@@ -238,11 +264,11 @@ class EventsDatabase {
         }
     }
     
-    func stripTime(_ date: Date) -> Date{
+    private func stripTime(_ date: Date) -> Date{
         return Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: date)!
     }
     
-    func stripDate(_ date: Date) -> Date{
+    private func stripDate(_ date: Date) -> Date{
         let components = Calendar.current.dateComponents([.hour,.minute], from: date)
         let strippedDate = Calendar.current.date(from: components)
         return strippedDate!

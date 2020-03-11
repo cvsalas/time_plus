@@ -72,9 +72,10 @@ extension DetailedViewController : UITableViewDataSource, UITableViewDelegate{
         cell.icon.text = String(thisIcon.code)
         cell.iconeTitle.text = thisIcon.name
         let startTime = events[indexPath.row][EventsDatabase.columns.startTime]
-        let endTime = events[indexPath.row][EventsDatabase.columns.endTime]
+        let event = events[indexPath.row]
         
-        let entry = events[indexPath.row][EventsDatabase.columns.image]
+        let endTime = event[EventsDatabase.columns.endTime]
+        let entry = event[EventsDatabase.columns.image]
         
         if (!entry.isEmpty){
             if let icon = Icon(dataBaseString: entry){
@@ -89,6 +90,7 @@ extension DetailedViewController : UITableViewDataSource, UITableViewDelegate{
         
         cell.startTimeLabel.text = dateFormatter.string(from: startTime)
         cell.endTimeLabel.text = dateFormatter.string(from: endTime)
+        cell.eventId = event[EventsDatabase.columns.id]
         attachGestureRecognizer(cell: cell)
         return cell
         
@@ -152,7 +154,7 @@ extension DetailedViewController : UITableViewDataSource, UITableViewDelegate{
         print("howdy")
         let path = tableViewOutlet.indexPath(for: cell)
         if let indexPath = path {
-            EventsDatabase.sharedInstance.deleteEvent(startTime: cell.startTimeLabel.text!, endTime: cell.endTimeLabel.text!, date: date!, timeFormat: "h:mm a")
+            EventsDatabase.sharedInstance.deleteEvent(id: cell.eventId)
             tableViewOutlet.deleteRows(at: [indexPath], with: .automatic)
         }
     }

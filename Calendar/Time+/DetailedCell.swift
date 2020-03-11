@@ -16,9 +16,7 @@ class DetailedCell: UITableViewCell {
     @IBOutlet weak var iconeTitle: UILabel!
     @IBOutlet weak var detailedInfo: UIView!
     
-    
-    var date: Date!
-    
+    var eventId : Int64! // to support events deletion from database
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
