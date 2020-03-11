@@ -130,6 +130,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         startTime = sender.startTime
         endTime = sender.endTime
         currentDay = sender.receivedDate
+        checkFieldComplete()
         
     }
     

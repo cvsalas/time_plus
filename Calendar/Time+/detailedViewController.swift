@@ -151,7 +151,6 @@ extension DetailedViewController : UITableViewDataSource, UITableViewDelegate{
     
     @objc func holdGestureRecognized(_ sender: UILongPressGestureRecognizer) {
         let cell = sender.view as! DetailedCell
-        print("howdy")
         let path = tableViewOutlet.indexPath(for: cell)
         if let indexPath = path {
             EventsDatabase.sharedInstance.deleteEvent(id: cell.eventId)

@@ -23,9 +23,13 @@ struct Icon : EventsDataBaseStringEntry{
     
     init?(dataBaseString: String){
         let compArray = dataBaseString.components(separatedBy: ":")
-        let code = UnicodeScalar(compArray[0])!
-        let name = compArray[1]
-        self.init(name: name, code: code)
+        if let code = UnicodeScalar(compArray[0]){
+            let name = compArray[1]
+            self.init(name: name, code: code)
+        }
+        else{
+            return nil
+        }
     }
     
     init(name: String, code: UnicodeScalar){
@@ -41,6 +45,6 @@ struct ImagePath : EventsDataBaseStringEntry{
     init?(dataBaseString: String){
         path = dataBaseString
     }
-
+    
     
 }
