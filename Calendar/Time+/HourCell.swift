@@ -12,7 +12,7 @@ class HourCell: UITableViewCell {
     @IBOutlet var TopHalfViews : [UIView]!
     @IBOutlet var BottomHalfViews : [UIView]!
 
-    @IBOutlet weak var AMPMLabel: UILabel!
+    @IBOutlet weak var digitalTimeLabel: UILabel!
     @IBOutlet weak var ClockImage: UIImageView!
     
     override func awakeFromNib() {

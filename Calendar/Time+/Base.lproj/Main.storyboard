@@ -336,8 +336,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="AMPMLabel" destination="JuF-CX-e7X" id="0yD-nA-I0V"/>
                                             <outlet property="ClockImage" destination="0v0-iC-WUX" id="heh-5V-o4t"/>
+                                            <outlet property="digitalTimeLabel" destination="JuF-CX-e7X" id="0yD-nA-I0V"/>
                                             <outletCollection property="TopHalfViews" destination="DCO-hB-5Is" collectionClass="NSMutableArray" id="7k9-XD-QLo"/>
                                             <outletCollection property="TopHalfViews" destination="HjO-HG-kx3" collectionClass="NSMutableArray" id="kXb-PE-ytC"/>
                                             <outletCollection property="TopHalfViews" destination="zCs-Pk-T1A" collectionClass="NSMutableArray" id="bzF-JJ-l5P"/>
@@ -681,10 +681,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="ButtonItem" destination="6aA-Yl-Fgt" id="h6S-p0-VwQ"/>
                         <outlet property="cameraButtonOutlet" destination="yi9-Qs-adt" id="Q5B-OJ-Cqv"/>
                         <outlet property="cameraView" destination="eYd-q7-cWy" id="4LN-eM-ZRf"/>
                         <outlet property="defaultIconsCollectionView" destination="ERM-DU-a2W" id="Dr3-df-eBq"/>
+                        <outlet property="doneButton" destination="6aA-Yl-Fgt" id="h6S-p0-VwQ"/>
                         <outlet property="endButtonOutlet" destination="Cxt-fx-dav" id="p89-CS-Z66"/>
                         <outlet property="endTimeLabel" destination="3aF-tf-zQW" id="1cg-VF-eLl"/>
                         <outlet property="galleryButtonAction" destination="p8h-90-FhF" id="6dt-hL-HML"/>

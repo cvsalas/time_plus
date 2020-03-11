@@ -18,6 +18,10 @@ class DailyViewController: UIViewController {
     var receivedDate : Date!
     var selectedRow : Int!
     
+    // These variables are for when the user taps on the clock which will
+    // take him to add an event with the time defaulted to the hour he tapeed
+    var startTime : Date!
+    var endTime : Date!
     override func viewDidLoad() {
         super.viewDidLoad()
         hourlyTable.dataSource = self
@@ -37,6 +41,10 @@ class DailyViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hourlyTable.reloadData()
+        
+        // must be resetted for next usage
+        startTime = nil
+        endTime = nil
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,7 +53,7 @@ class DailyViewController: UIViewController {
             
         case "toAddEvent":
             let addEventView = segue.destination as! AddEventViewController
-            addEventView.currentDay = receivedDate
+            addEventView.sender = self
             
         case "toHourlyView":
             let hourlyView = segue.destination as! DetailedViewController
@@ -92,11 +100,15 @@ extension DailyViewController : UITableViewDataSource, UITableViewDelegate{
         resetCell(cell: cell)
         
         cell.ClockImage.image = UIImage(named: "\(clock)oClock")!
-        cell.AMPMLabel.text = timeString
+        cell.digitalTimeLabel.text = timeString
         
         populateHourPart(thisView: &cell.TopHalfViews, row: indexPath.row, begMinute: "00", endMinute: "29")
         populateHourPart(thisView: &cell.BottomHalfViews, row: indexPath.row, begMinute: "30", endMinute: "59")
-        
+        cell.ClockImage.isUserInteractionEnabled = true
+        cell.digitalTimeLabel.isUserInteractionEnabled = true
+        cell.ClockImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapOnClockDetected(_:))))
+        cell.digitalTimeLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapOnClockDetected(_:))))
+
         return cell
     }
     
@@ -155,5 +167,16 @@ extension DailyViewController : UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
+    }
+    
+    @objc func tapOnClockDetected(_ sender: UITapGestureRecognizer){
+        let hourCell = sender.view!.superview!.superview!.superview! as! HourCell
+        let cellRow = hourlyTable.indexPath(for: hourCell)!.row
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        
+        startTime = dateFormatter.date(from: "\(cellRow):00")!
+        endTime = dateFormatter.date(from: "\(cellRow):59")!
+        performSegue(withIdentifier: "toAddEvent", sender: self)
     }
 }

@@ -22,7 +22,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     
     var savedPath: IndexPath = []
     
-    @IBOutlet weak var ButtonItem: UIBarButtonItem!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
     @IBOutlet weak var repeateSegment: UISegmentedControl!
@@ -69,17 +69,37 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     
     @IBOutlet var viewOutlet: UIView!
     
-    var primaryVisual : EventsDataBaseStringEntry!
+    var primaryVisual : EventsDataBaseStringEntry! {
+        didSet{
+            checkFieldComplete()
+        }
+    }
     var secondaryVisual : EventsDataBaseStringEntry!
     
-    var startTime : Date!
-    var endTime : Date!
+    private var startTime : Date! {
+        didSet{
+            if let time = startTime{
+                self.startTimeLabel.text = self.dateFormatter.string(from: time)
+            }
+            checkFieldComplete()
+        }
+    }
+    private var endTime : Date! {
+        didSet{
+            if let time = endTime{
+                self.endTimeLabel.text = self.dateFormatter.string(from: time)
+            }
+            checkFieldComplete()
+        }
+    }
+    
+    private var currentDay : Date!
     fileprivate var buttonPressed : ButtonPressed!
     fileprivate var visualSelected : VisualKind = .Primary
     
     var startTimeSelected : Date!
     
-    var currentDay: Date!
+    var sender: DailyViewController!
     let dateFormatter = DateFormatter()
     
     var imagePickerController : UIImagePickerController!
@@ -99,8 +119,6 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         defaultIconsCollectionView.setCollectionViewLayout(flowLayout, animated: false)
         defaultIconsCollectionView.dataSource = self
         defaultIconsCollectionView.delegate = self
-        ButtonItem.isEnabled = false
-        ButtonItem.tintColor = UIColor.clear
         setupButtonIcons()
         viewOutlet.backgroundColor = UIColor(red:0.81, green:0.89, blue:0.79, alpha:1.0)
         miscButton.setTitleColor(.white, for: .normal)
@@ -109,7 +127,10 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        checkFieldComplete()
+        startTime = sender.startTime
+        endTime = sender.endTime
+        currentDay = sender.receivedDate
+
     }
     
     func setupButtonIcons(){
@@ -159,11 +180,14 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     }
     
     func checkFieldComplete(){
-        if(startTime != nil && endTime != nil && primaryVisual != nil){
-            if(endTime > startTime){
-                ButtonItem.isEnabled = true
-                ButtonItem.tintColor = UIColor.systemBlue
-            }
+        if(startTime != nil && endTime != nil && primaryVisual != nil && endTime > startTime){
+                doneButton.isEnabled = true
+                doneButton.tintColor = UIColor.systemBlue
+            
+        }
+        else{
+            doneButton.isEnabled = false
+            doneButton.tintColor = UIColor.clear
         }
     }
     
@@ -214,17 +238,14 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     
     func pickerDisappeared(picker: DatePickerWithDone) {
         setTimes(picker: picker)
-        checkFieldComplete()
     }
     
     func setTimes(picker: DatePickerWithDone){
         if(buttonPressed == .Start){
             self.startTime = picker.date
-            self.startTimeLabel.text = self.dateFormatter.string(from: self.startTime)
         }
         else{
             self.endTime = picker.date
-            self.endTimeLabel.text = self.dateFormatter.string(from: self.endTime)
         }
     }
     
@@ -332,7 +353,6 @@ extension AddEventViewController : UICollectionViewDelegate, UICollectionViewDat
         let convertedString = convertName(iconCode: code)
         miscButton.layer.borderWidth = 0
         primaryVisual = Icon(name: convertedString, code: UnicodeScalar(Int(code))!)
-        checkFieldComplete()
         savedPath = indexPath
     }
     
