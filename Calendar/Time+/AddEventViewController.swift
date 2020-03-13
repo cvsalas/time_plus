@@ -74,6 +74,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
             checkFieldComplete()
         }
     }
+    
     var secondaryVisual : EventsDataBaseStringEntry!
     
     private var startTime : Date! {
@@ -127,11 +128,14 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        startTime = sender.startTime
-        endTime = sender.endTime
+        if sender.startTime != nil{
+            startTime = sender.startTime
+        }
+        if sender.endTime != nil {
+            endTime = sender.endTime
+        }
         currentDay = sender.receivedDate
         checkFieldComplete()
-        
     }
     
     func setupButtonIcons(){
@@ -157,6 +161,7 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         defaultIconsCollectionView.cellForItem(at: savedPath)?.isSelected = false
         miscButton.layer.borderColor = UIColor(red:0.83, green:1.00, blue:0.91, alpha:0.8).cgColor
         miscButton.layer.borderWidth = 10
+        
     }
     
     @IBAction func DoneButtonPressed(_ sender: Any) {
@@ -184,7 +189,9 @@ class AddEventViewController: UIViewController, DatePickerWithDoneDelegate {
         default:
             assert(false)
         }
+        return .none
     }
+    
     func setViewBorderZero(view1: UIView, view2: UIView){
         view1.layer.borderWidth = 0
         view1.setNeedsDisplay()
